@@ -204,7 +204,7 @@ export default function CropRecommender() {
     useEffect(() => {
         const fetchCatalog = async () => {
             try {
-                const response = await axios.get("/api/reccomender/catalog");
+                const response = await axios.get(`${import.meta.env.VITE_BASE_URI}/api/reccomender/catalog`);
                 const catalog = response.data.map(c => ({
                     ...c,
                     tMin: parseInt(c.tMin, 10),
