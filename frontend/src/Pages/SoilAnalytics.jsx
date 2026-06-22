@@ -191,33 +191,33 @@ export default function FriendlySoilChecker() {
   const adviceBox = translateDataToAdvice();
   const currentLongDateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased relative pb-16">
+return (
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-black text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
       <Header />
 
       {/* Top Header Banner */}
-      <div className="w-full bg-white border-b border-slate-200/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6">
+      <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
         <div className="max-w-screen mx-auto">
           <div className="text-left md:flex md:items-left md:justify-between mb-6">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-center justify-start gap-2">
-                <Sprout className="text-emerald-600" size={26} /> Live Sub-Soil Analytics Diagnostics
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center justify-start gap-2">
+                <Sprout className="text-emerald-600 dark:text-emerald-400" size={26} /> <span className='hidden md:block'>Live Sub -</span>Soil Analytics Diagnostics
               </h1>
-              <p className="text-slate-500 text-sm mt-1 max-w-xl">
+              <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
                 Real-time sub-surface telemetry profiling, soil moisture density metrics, and root-zone agricultural advisory mapping indexes.
               </p>
             </div>
           </div>
 
           {/* Search Control Bar */}
-          <div className="max-w-screen bg-[#f1f5f9] p-1.5 rounded-xl border border-slate-200 relative">
+          <div className="max-w-screen bg-[#f1f5f9] dark:bg-zinc-900 p-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 relative transition-colors duration-200">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
-                <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
+                <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={16} />
                 <input
                   type="text"
                   placeholder="Search target village, town or region coordinates..."
-                  className="w-full pl-9 pr-4 py-2 bg-white text-slate-900 placeholder-slate-400 border border-slate-200 rounded-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
+                  className="w-full pl-9 pr-4 py-2 bg-white dark:bg-black text-slate-900 dark:text-zinc-200 placeholder-slate-400 dark:placeholder-zinc-600 border border-slate-200 dark:border-zinc-800 rounded-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
                   value={userInputCity}
                   onChange={(e) => handleTypingSuggestions(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && triggerManualSearch()}
@@ -225,14 +225,14 @@ export default function FriendlySoilChecker() {
               </div>
               <button
                 onClick={triggerManualSearch}
-                className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition text-sm font-medium flex items-center justify-center"
+                className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-700 dark:hover:bg-emerald-600 text-white px-4 py-2 rounded-lg transition text-sm font-medium flex items-center justify-center"
               >
-                Diagnostic Sync
+                Diagnostic
               </button>
             </div>
 
             {dropdownLocations.length > 0 && (
-              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white border border-slate-200 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100">
+              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100 dark:divide-zinc-800">
                 {dropdownLocations.map((place, idx) => (
                   <li
                     key={idx}
@@ -245,7 +245,7 @@ export default function FriendlySoilChecker() {
                       setDropdownLocations([]);
                       setUserInputCity("");
                     }}
-                    className="p-3 text-xs text-slate-700 cursor-pointer hover:bg-slate-50 transition-colors truncate"
+                    className="p-3 text-xs text-slate-700 dark:text-zinc-300 cursor-pointer hover:bg-slate-50 dark:hover:bg-zinc-800 transition-colors truncate"
                   >
                     🏡 {place.display_name}
                   </li>
@@ -259,14 +259,14 @@ export default function FriendlySoilChecker() {
       {/* Main Panel Interface Content */}
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {(isDataLoading || !currentLocation) ? (
-          <div className="flex flex-col justify-center items-center py-20 bg-white rounded-xl border border-slate-200 shadow-sm">
-            <div className="w-8 h-8 border-4 border-slate-200 border-t-emerald-600 rounded-full animate-spin"></div>
-            <p className="text-sm font-medium text-slate-500 mt-4">Syncing live telemetry parameters...</p>
+          <div className="flex flex-col justify-center items-center py-20 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm transition-colors duration-200">
+            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 rounded-full animate-spin"></div>
+            <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Syncing live telemetry parameters...</p>
           </div>
         ) : (
           <div className="space-y-6">
             {alertNotice && (
-              <div className="p-4 bg-rose-50 text-rose-700 rounded-xl border border-rose-200 text-sm font-medium">
+              <div className="p-4 bg-rose-50 dark:bg-rose-950/30 text-rose-700 dark:text-rose-400 rounded-xl border border-rose-200 dark:border-rose-900/50 text-sm font-medium">
                 Notice: {alertNotice}
               </div>
             )}
@@ -275,29 +275,29 @@ export default function FriendlySoilChecker() {
               {/* Left Column: Geographic Status Block */}
               {soilReport && (
                 <div className="lg:col-span-4 w-full">
-                  <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm h-full flex flex-col justify-between">
+                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm h-full flex flex-col justify-between transition-colors duration-200">
                     <div>
-                      <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center border-b border-slate-100 pb-3 mb-4">
+                      <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800 pb-3 mb-4">
                         <Info className="w-4 h-4 mr-1.5 text-slate-400" /> Ground Baseline Node
                       </h2>
 
-                      <h3 className="text-base font-bold text-slate-900 flex items-start gap-1">
-                        <MapPin className="w-4 h-4 mt-0.5 text-emerald-600 flex-shrink-0" size={16} />
+                      <h3 className="text-base font-bold text-slate-900 dark:text-zinc-100 flex items-start gap-1">
+                        <MapPin className="w-4 h-4 mt-0.5 text-emerald-600 dark:text-emerald-500 flex-shrink-0" size={16} />
                         <span className="line-clamp-2">{currentLocation.friendlyName.split(",")[0].trim()}</span>
                       </h3>
 
-                      <p className="text-xs text-slate-400 mt-1 pl-5">
+                      <p className="text-xs text-slate-400 dark:text-zinc-500 mt-1 pl-5">
                         {currentLongDateStr}
                       </p>
 
-                      <div className="flex flex-col items-center py-8 my-2 border-b border-slate-100 text-center">
-                        <div className="p-4 bg-emerald-50 rounded-full border border-emerald-100/50 text-emerald-600">
+                      <div className="flex flex-col items-center py-8 my-2 border-b border-slate-100 dark:border-zinc-800 text-center">
+                        <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-full border border-emerald-100/50 dark:border-emerald-900/50 text-emerald-600 dark:text-emerald-500">
                           <Sprout size={36} />
                         </div>
-                        <p className="text-4xl font-extrabold text-slate-900 tracking-tight mt-4">
+                        <p className="text-4xl font-extrabold text-slate-900 dark:text-zinc-50 tracking-tight mt-4">
                           {soilReport.surfaceWetness}%<span className="text-lg text-slate-400 font-medium ml-1">VWC Status</span>
                         </p>
-                        <p className="text-sm font-medium text-slate-600 mt-1 px-4">
+                        <p className="text-sm font-medium text-slate-600 dark:text-zinc-400 mt-1 px-4">
                           Topsoil composite index holds {soilReport.surfaceTemp}°C residual heat.
                         </p>
                       </div>
@@ -305,20 +305,20 @@ export default function FriendlySoilChecker() {
 
                     <div>
                       <div className="grid grid-cols-2 gap-3 pt-2">
-                        <div className="p-2.5 bg-slate-50 border border-slate-200/60 rounded-lg text-center">
-                          <Thermometer className="w-5 h-5 mx-auto text-slate-400 mb-1" />
-                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400">Surface Temp</p>
-                          <p className="text-xs font-bold text-slate-800 font-mono mt-0.5">{soilReport.surfaceTemp}°C</p>
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 rounded-lg text-center">
+                          <Thermometer className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-600 mb-1" />
+                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Surface Temp</p>
+                          <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{soilReport.surfaceTemp}°C</p>
                         </div>
 
-                        <div className="p-2.5 bg-slate-50 border border-slate-200/60 rounded-lg text-center">
-                          <Droplet className="w-5 h-5 mx-auto text-slate-400 mb-1" />
-                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400">Top Hydration</p>
-                          <p className="text-xs font-bold text-slate-800 font-mono mt-0.5">{soilReport.surfaceWetness}%</p>
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 rounded-lg text-center">
+                          <Droplet className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-600 mb-1" />
+                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Top Hydration</p>
+                          <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{soilReport.surfaceWetness}%</p>
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 border border-slate-100 mt-4 px-3 py-2 rounded-lg text-slate-400 italic text-[11px] text-center">
+                      <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800 mt-4 px-3 py-2 rounded-lg text-slate-400 dark:text-zinc-600 italic text-[11px] text-center">
                         Soil profiles scale dynamically based on soil topology variations.
                       </div>
                     </div>
@@ -329,56 +329,56 @@ export default function FriendlySoilChecker() {
               {/* Right Column: In-Depth Stratum Layers */}
               {soilReport && (
                 <div className="lg:col-span-8 w-full flex flex-col gap-6">
-                  <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm flex-grow">
-                    <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center border-b border-slate-100 pb-3 mb-4">
+                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm flex-grow transition-colors duration-200">
+                    <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800 pb-3 mb-4">
                       <BarChart3 className="w-4 h-4 mr-1.5 text-slate-400" /> Vertical Stratum Layer Vectors
                     </h2>
 
                     <div className="space-y-5">
                       {/* Stratum 1: Shallow Topsoil Bed */}
-                      <div className="p-4 rounded-xl bg-slate-50/50 border border-slate-200/60 space-y-3">
+                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
-                            <p className="font-semibold text-xs text-slate-900 uppercase tracking-wider">Topsoil Layer (0 to 7 cm Depth)</p>
+                            <p className="font-semibold text-xs text-slate-900 dark:text-zinc-200 uppercase tracking-wider">Topsoil Layer (0 to 7 cm Depth)</p>
                             <p className="text-[11px] text-slate-400 font-medium">Seed sprout incubation and shallow fertilization level</p>
                           </div>
                           <div className="text-right">
-                            <span className="text-slate-900 font-mono font-bold text-xs bg-white border border-slate-200 px-2 py-0.5 rounded shadow-3xs">
+                            <span className="text-slate-900 dark:text-zinc-200 font-mono font-bold text-xs bg-white dark:bg-black border border-slate-200 dark:border-zinc-700 px-2 py-0.5 rounded shadow-3xs">
                               {soilReport.surfaceTemp}°C
                             </span>
                           </div>
                         </div>
                         <div className="space-y-1">
-                          <div className="flex justify-between text-[11px] font-bold text-slate-500">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-500 dark:text-zinc-400">
                             <span>Volumetric Moisture Content Level:</span>
-                            <span className="font-mono text-blue-600">{soilReport.surfaceWetness}% Cap</span>
+                            <span className="font-mono text-blue-600 dark:text-blue-400">{soilReport.surfaceWetness}% Cap</span>
                           </div>
-                          <div className="w-full bg-slate-200/60 h-2 rounded-full overflow-hidden">
-                            <div className="bg-blue-500 h-full rounded-full transition-all duration-500" style={{ width: `${soilReport.surfaceWetness}%` }} />
+                          <div className="w-full bg-slate-200/60 dark:bg-zinc-800 h-2 rounded-full overflow-hidden">
+                            <div className="bg-blue-500 dark:bg-blue-600 h-full rounded-full transition-all duration-500" style={{ width: `${soilReport.surfaceWetness}%` }} />
                           </div>
                         </div>
                       </div>
 
                       {/* Stratum 2: Deep Root Zone Infrastructure */}
-                      <div className="p-4 rounded-xl bg-slate-50/50 border border-slate-200/60 space-y-3">
+                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
-                            <p className="font-semibold text-xs text-slate-900 uppercase tracking-wider">Deep Root Stratum (7 to 28 cm Depth)</p>
+                            <p className="font-semibold text-xs text-slate-900 dark:text-zinc-200 uppercase tracking-wider">Deep Root Stratum (7 to 28 cm Depth)</p>
                             <p className="text-[11px] text-slate-400 font-medium">Core root hydration reservoir and structural growth zone</p>
                           </div>
                           <div className="text-right">
-                            <span className="text-slate-900 font-mono font-bold text-xs bg-white border border-slate-200 px-2 py-0.5 rounded shadow-3xs">
+                            <span className="text-slate-900 dark:text-zinc-200 font-mono font-bold text-xs bg-white dark:bg-black border border-slate-200 dark:border-zinc-700 px-2 py-0.5 rounded shadow-3xs">
                               {soilReport.deepTemp}°C
                             </span>
                           </div>
                         </div>
                         <div className="space-y-1">
-                          <div className="flex justify-between text-[11px] font-bold text-slate-500">
+                          <div className="flex justify-between text-[11px] font-bold text-slate-500 dark:text-zinc-400">
                             <span>Sub-Surface Deep Water Reserves:</span>
-                            <span className="font-mono text-teal-600">{soilReport.rootWetness}% Cap</span>
+                            <span className="font-mono text-teal-600 dark:text-teal-400">{soilReport.rootWetness}% Cap</span>
                           </div>
-                          <div className="w-full bg-slate-200/60 h-2 rounded-full overflow-hidden">
-                            <div className="bg-teal-500 h-full rounded-full transition-all duration-500" style={{ width: `${soilReport.rootWetness}%` }} />
+                          <div className="w-full bg-slate-200/60 dark:bg-zinc-800 h-2 rounded-full overflow-hidden">
+                            <div className="bg-teal-500 dark:bg-teal-600 h-full rounded-full transition-all duration-500" style={{ width: `${soilReport.rootWetness}%` }} />
                           </div>
                         </div>
                       </div>

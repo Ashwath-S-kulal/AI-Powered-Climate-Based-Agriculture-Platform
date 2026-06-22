@@ -115,7 +115,7 @@ export default function ChatbotPopup() {
     }
   };
 
-  return (
+return (
     <div className="fixed bottom-6 right-6 z-50 font-sans antialiased">
       {/* Trigger Button */}
       {!isOpen && (
@@ -129,10 +129,10 @@ export default function ChatbotPopup() {
 
       {/* Chat Window */}
       {isOpen && (
-        <div className="w-[360px] h-[520px] bg-white rounded-2xl shadow-2xl border border-slate-200/80 flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
+        <div className="w-[360px] h-[520px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-slate-200/80 dark:border-zinc-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
 
           {/* Header */}
-          <div className="bg-emerald-600 px-4 py-3.5 flex justify-between items-center text-white shadow-sm">
+          <div className="bg-emerald-600 dark:bg-emerald-700 px-4 py-3.5 flex justify-between items-center text-white shadow-sm">
             <div className="flex items-center gap-2.5">
               <div className="p-1 bg-white/10 rounded-lg">
                 <Bot size={20} />
@@ -151,7 +151,7 @@ export default function ChatbotPopup() {
           </div>
 
           {/* Messages Body */}
-          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/60">
+          <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/60 dark:bg-zinc-950">
             {messages.map((msg, i) => {
               const isUser = msg.sender === "user";
               return (
@@ -159,7 +159,7 @@ export default function ChatbotPopup() {
                   
                   {/* Assistant Avatar Icon */}
                   {!isUser && (
-                    <div className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-600 mt-0.5 shadow-sm">
+                    <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-800 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5 shadow-sm">
                       <Bot size={14} />
                     </div>
                   )}
@@ -168,7 +168,7 @@ export default function ChatbotPopup() {
                     <div className={`px-3.5 py-2 shadow-sm border border-transparent ${
                       isUser 
                         ? "bg-emerald-600 text-white rounded-2xl rounded-tr-none" 
-                        : "bg-white border-slate-200/70 text-slate-700 rounded-2xl rounded-tl-none"
+                        : "bg-white dark:bg-zinc-950 border-slate-200/70 dark:border-zinc-700 text-slate-700 dark:text-white rounded-2xl rounded-tl-none"
                     }`}>
                       {isUser ? (
                         <p className="text-sm font-medium leading-relaxed break-words">{msg.text}</p>
@@ -179,7 +179,7 @@ export default function ChatbotPopup() {
                       )}
                     </div>
                     {/* Timestamp element */}
-                    <span className={`text-[9px] font-bold text-slate-400 tracking-wide px-1 ${isUser ? "text-right" : "text-left"}`}>
+                    <span className={`text-[9px] font-bold text-slate-400 dark:text-zinc-500 tracking-wide px-1 ${isUser ? "text-right" : "text-left"}`}>
                       {msg.time}
                     </span>
                   </div>
@@ -190,13 +190,13 @@ export default function ChatbotPopup() {
             {/* Micro Dot Typing Animation */}
             {loading && (
               <div className="flex items-start gap-2.5 justify-start">
-                <div className="w-7 h-7 rounded-lg bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0 text-emerald-600 shadow-sm">
+                <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-800 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 shadow-sm">
                   <Bot size={14} />
                 </div>
-                <div className="bg-white border border-slate-200/70 px-4 py-3 rounded-2xl rounded-tl-none flex gap-1.5 items-center shadow-sm h-[36px]">
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-duration:1s]" />
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-duration:1s] [animation-delay:0.2s]" />
-                  <span className="w-1.5 h-1.5 bg-emerald-500 rounded-full animate-bounce [animation-duration:1s] [animation-delay:0.4s]" />
+                <div className="bg-white dark:bg-zinc-800 border border-slate-200/70 dark:border-zinc-700 px-4 py-3 rounded-2xl rounded-tl-none flex gap-1.5 items-center shadow-sm h-[36px]">
+                  <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-bounce [animation-duration:1s]" />
+                  <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-bounce [animation-duration:1s] [animation-delay:0.2s]" />
+                  <span className="w-1.5 h-1.5 bg-emerald-500 dark:bg-emerald-400 rounded-full animate-bounce [animation-duration:1s] [animation-delay:0.4s]" />
                 </div>
               </div>
             )}
@@ -204,13 +204,13 @@ export default function ChatbotPopup() {
           </div>
 
           {/* Footer Input Bar */}
-          <div className="p-3 border-t border-slate-100 flex gap-2 bg-white">
+          <div className="p-3 border-t border-slate-100 dark:border-zinc-800 flex gap-2 bg-white dark:bg-zinc-900">
             <input
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={(e) => e.key === "Enter" && handleSend()}
               placeholder={currentUser ? "Ask your farming question..." : "Login required to chat"}
-              className="flex-1 text-sm px-3.5 py-2 bg-slate-50 border border-slate-200 rounded-xl outline-none focus:bg-white focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/10 transition-all font-medium placeholder-slate-400 text-slate-700"
+              className="flex-1 text-sm px-3.5 py-2 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-xl outline-none focus:bg-white dark:focus:bg-zinc-900 focus:border-emerald-500/50 focus:ring-2 focus:ring-emerald-500/10 transition-all font-medium placeholder-slate-400 dark:placeholder-zinc-600 text-slate-700 dark:text-zinc-200"
               disabled={loading || !currentUser}
             />
             <button

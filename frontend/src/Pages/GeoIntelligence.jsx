@@ -120,34 +120,33 @@ export default function GeoIntelligencePage() {
         <div className="space-y-6 animate-pulse">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
                 {[...Array(8)].map((_, i) => (
-                    <div key={i} className="bg-slate-200 h-20 rounded-xl" />
+                    <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-20 rounded-xl" />
                 ))}
             </div>
 
             <div className="grid lg:grid-cols-3 gap-6">
-                <div className="col-span-1 bg-slate-200 h-[800px] rounded-2xl" />
+                <div className="col-span-1 bg-slate-200 dark:bg-neutral-900 h-[800px] rounded-2xl" />
 
                 <div className="col-span-1 lg:col-span-2 grid md:grid-cols-2 gap-6">
                     {[...Array(6)].map((_, i) => (
-                        <div key={i} className="bg-slate-200 h-[360px] rounded-2xl" />
+                        <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-[360px] rounded-2xl" />
                     ))}
                 </div>
             </div>
         </div>
     );
 
-
     if (!coords) {
         return (
             <>
                 <Header />
-                <div className="min-h-screen bg-slate-50 p-4 md:p-6 lg:p-8">
+                <div className="min-h-screen bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
                     <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
-                            <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                            <h1 className="text-2xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
                                 Locating... Intelligence
                             </h1>
-                            <p className="text-slate-500 flex items-center gap-2 mt-1 font-mono text-sm">
+                            <p className="text-slate-500 dark:text-neutral-500 flex items-center gap-2 mt-1 font-mono text-sm">
                                 <MapPin size={14} />
                                 00.0000° N, 00.0000° E
                             </p>
@@ -162,14 +161,14 @@ export default function GeoIntelligencePage() {
     return (
         <div>
             <Header />
-            <div className="min-h-screen bg-slate-50 p-4 md:p-6 lg:p-8">
-                {/* Header with OpenStreetMap Location Name */}
+            <div className="min-h-screen bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
+                {/* Header Section */}
                 <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
-                        <h1 className="text-2xl font-bold text-slate-900 flex items-center gap-3">
+                        <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
                             {locationName} Intelligence
                         </h1>
-                        <p className="text-slate-500 flex items-center gap-2 mt-1 font-mono text-sm">
+                        <p className="text-slate-500 dark:text-neutral-400 flex items-center gap-2 mt-1 font-mono text-sm">
                             <MapPin size={14} />
                             {coords.lat.toFixed(4)}° N, {coords.lon.toFixed(4)}° E
                         </p>
@@ -193,12 +192,12 @@ export default function GeoIntelligencePage() {
                                 { icon: Cloud, label: "Cloud Cover", val: `${data.current.cloud_cover}%`, color: "text-slate-500" },
                                 { icon: Gauge, label: "Pressure", val: `${data.current.surface_pressure} hPa`, color: "text-purple-500" },
                             ].map((stat, i) => (
-                                <div key={i} className="bg-white p-3 rounded-xl shadow-sm border border-slate-100 flex flex-col items-center justify-center text-center group relative cursor-help">
+                                <div key={i} className="bg-white dark:bg-black p-3 rounded-xl shadow-sm border border-slate-100 dark:border-neutral-900 flex flex-col items-center justify-center text-center group relative cursor-help transition-all">
                                     <stat.icon size={20} className={`mb-1 ${stat.color}`} />
-                                    <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider">{stat.label}</span>
-                                    <span className="text-base font-bold text-slate-800">{stat.val}</span>
+                                    <span className="text-[10px] font-bold text-slate-400 dark:text-neutral-500 uppercase tracking-wider">{stat.label}</span>
+                                    <span className="text-base font-bold text-slate-800 dark:text-neutral-200">{stat.val}</span>
                                     {stat.desc && (
-                                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 text-white text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 pointer-events-none">
+                                        <div className="absolute -top-8 left-1/2 -translate-x-1/2 bg-slate-800 dark:bg-neutral-800 text-white dark:text-neutral-200 text-xs py-1 px-2 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap z-20 pointer-events-none">
                                             {stat.desc}
                                         </div>
                                     )}
@@ -209,12 +208,12 @@ export default function GeoIntelligencePage() {
                         <div className="grid lg:grid-cols-3 gap-6">
 
                             {/* Map Panel (Left 1/3) */}
-                            <div className="col-span-1 bg-white p-4 rounded-2xl shadow-sm border border-slate-100 flex flex-col h-[800px] mb-10">
-                                <div className="flex items-start gap-2 mb-4 text-emerald-700 bg-emerald-50 p-3 rounded-xl border border-emerald-100">
+                            <div className="col-span-1 bg-white dark:bg-black p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 flex flex-col h-[800px] mb-10 transition-all">
+                                <div className="flex items-start gap-2 mb-4 text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 p-3 rounded-xl border border-emerald-100 dark:border-emerald-900/40">
                                     <MousePointerClick size={20} className="mt-0.5 shrink-0" />
-                                    <span className="text-sm font-medium">Map Active: Click any region to auto-resolve location name via OSM and run a 24-hour microclimate analysis.</span>
+                                    <span className="text-xs md:text-sm font-medium">Map Active: Click any region to auto-resolve location name via OSM and run a 24-hour microclimate analysis.</span>
                                 </div>
-                                <div className="flex-grow w-full relative z-0 rounded-xl overflow-hidden border border-slate-200">
+                                <div className="flex-grow w-full relative z-0 rounded-xl overflow-hidden border border-slate-200 dark:border-neutral-900 dark:invert dark:brightness-90 dark:hue-rotate-180">
                                     <MapContainer center={[coords.lat, coords.lon]} zoom={10} style={{ height: "100%", width: "100%" }}>
                                         <TileLayer url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png" />
                                         <Marker position={[coords.lat, coords.lon]} />
@@ -228,16 +227,16 @@ export default function GeoIntelligencePage() {
                             <div className="col-span-1 lg:col-span-2 grid md:grid-cols-2 gap-6 h-[800px] overflow-y-auto pr-2 custom-scrollbar">
 
                                 {/* Chart 1: Deep Soil Moisture Profile */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Sprout className="text-emerald-600" size={18} /> Deep Soil Moisture Profile
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <LineChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis domain={[0, 'auto']} tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Line type="monotone" name="Surface (0-7cm)" dataKey="moistSurface" stroke="#34d399" strokeWidth={2} dot={false} />
                                             <Line type="monotone" name="Root Zone (7-28cm)" dataKey="moistRoot" stroke="#059669" strokeWidth={2} dot={false} />
@@ -247,16 +246,16 @@ export default function GeoIntelligencePage() {
                                 </div>
 
                                 {/* Chart 2: Deep Soil Temperature Profile */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
-                                        <Thermometer className="text-orange-600" size={18} /> Subterranean Temperature
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
+                                        <Sprout className="text-orange-600" size={18} /> Subterranean Temperature
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <LineChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis domain={['auto', 'auto']} tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Line type="monotone" name="Surface Temp" dataKey="tempSurface" stroke="#fb923c" strokeWidth={2} dot={false} />
                                             <Line type="monotone" name="Root Temp" dataKey="tempRoot" stroke="#ea580c" strokeWidth={2} dot={false} />
@@ -265,17 +264,17 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 3: Air Temp vs Dew Point (Condensation Risk) */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                {/* Chart 3: Air Temp vs Dew Point */}
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Snowflake className="text-cyan-500" size={18} /> Air Temp vs Dew Point
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <AreaChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis domain={['auto', 'auto']} tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Area type="monotone" name="Air Temp (°C)" dataKey="temp" stroke="#ef4444" fill="#fee2e2" fillOpacity={0.3} />
                                             <Area type="monotone" name="Dew Point (°C)" dataKey="dew" stroke="#06b6d4" fill="#cffafe" fillOpacity={0.5} />
@@ -284,16 +283,16 @@ export default function GeoIntelligencePage() {
                                 </div>
 
                                 {/* Chart 4: Wind Dynamics */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Wind className="text-teal-500" size={18} /> Wind Speed & Gust Dynamics
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <ComposedChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Area type="monotone" name="Wind Gusts (km/h)" dataKey="gusts" fill="#ccfbf1" stroke="#14b8a6" fillOpacity={0.4} />
                                             <Line type="monotone" name="Wind Speed (km/h)" dataKey="wind" stroke="#0f766e" strokeWidth={2} dot={false} />
@@ -302,16 +301,16 @@ export default function GeoIntelligencePage() {
                                 </div>
 
                                 {/* Chart 5: Solar Radiation */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Sun className="text-yellow-500" size={18} /> Solar Radiation (W/m²)
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <ComposedChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Area type="monotone" name="Diffuse Rad" dataKey="radDiffuse" fill="#fef08a" stroke="#facc15" fillOpacity={0.5} />
                                             <Bar name="Direct Rad" dataKey="radDirect" fill="#f59e0b" barSize={10} radius={[2, 2, 0, 0]} />
@@ -320,17 +319,17 @@ export default function GeoIntelligencePage() {
                                 </div>
 
                                 {/* Chart 6: Evapotranspiration vs Rainfall */}
-                                <div className="bg-white p-5 rounded-2xl shadow-sm border border-slate-100 h-[360px] flex flex-col">
-                                    <h2 className="text-sm font-bold text-slate-800 mb-4 flex items-center gap-2">
+                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
+                                    <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <CloudRain className="text-blue-500" size={18} /> Water Balance (Loss vs Gain)
                                     </h2>
                                     <ResponsiveContainer width="100%" height="100%">
                                         <ComposedChart data={data.trend}>
-                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="#f1f5f9" />
+                                            <CartesianGrid strokeDasharray="3 3" vertical={false} stroke="currentColor" className="text-slate-100 dark:text-neutral-900" />
                                             <XAxis dataKey="time" tick={{ fontSize: 10 }} tickMargin={8} stroke="#94a3b8" />
                                             <YAxis yAxisId="left" tick={{ fontSize: 10 }} stroke="#94a3b8" />
                                             <YAxis yAxisId="right" orientation="right" tick={{ fontSize: 10 }} stroke="#94a3b8" />
-                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px' }} />
+                                            <Tooltip contentStyle={{ borderRadius: '8px', fontSize: '12px', backgroundColor: 'var(--tw-chart-bg, #fff)', borderColor: '#94a3b8' }} className="dark:[--tw-chart-bg:#000]" />
                                             <Legend wrapperStyle={{ fontSize: '11px', paddingTop: '10px' }} />
                                             <Area yAxisId="left" type="monotone" name="Water Loss (ET0)" dataKey="et0" fill="#fed7aa" stroke="#f97316" fillOpacity={0.4} />
                                             <Bar yAxisId="right" name="Rainfall (mm)" dataKey="rain" fill="#3b82f6" barSize={8} radius={[2, 2, 0, 0]} />

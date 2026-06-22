@@ -136,23 +136,23 @@ export default function CropSearchCSV() {
   };
 
   return (
-    <div className="min-h-screen bg-slate-50 text-slate-800">
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-800 dark:text-zinc-200 font-sans">
       <Header />
       
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
         <div className="text-center mb-10">
-          <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 tracking-tight text-left">
+          <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight text-left">
             Crop Deep Information
           </h1>
-          <p className="mt-2 text-sm text-slate-500 text-left">
+          <p className="mt-2 text-sm text-slate-500 dark:text-zinc-400 text-left">
             Search and analyze comprehensive cultivation data
           </p>
         </div>
 
         {loading && (
           <div className="flex flex-col justify-center items-center py-20">
-            <Loader2 className="w-8 h-8 animate-spin text-emerald-600 mb-4" />
-            <p className="text-sm font-medium text-slate-500">
+            <Loader2 className="w-8 h-8 animate-spin text-emerald-600 dark:text-emerald-400 mb-4" />
+            <p className="text-sm font-medium text-slate-500 dark:text-zinc-400">
               Loading crop database...
             </p>
           </div>
@@ -161,21 +161,21 @@ export default function CropSearchCSV() {
         {!loading && (
           <main className="w-full space-y-8">
             {(isInitialState || isDataState) && (
-              <div className="w-full bg-white border border-slate-200 rounded-2xl shadow-sm p-3 md:p-5 space-y-10">
+              <div className="w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm p-3 md:p-5 space-y-10">
                 
                 {/* Search & Header Section */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 pb-6">
+                <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 dark:border-zinc-800 pb-6">
                   <div className="flex items-center gap-4 w-full md:w-auto">
-                    <div className="bg-emerald-50 border border-emerald-100 p-3 rounded-xl">
-                      <FaLeaf className="text-emerald-600 w-6 h-6" />
+                    <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900 p-3 rounded-xl">
+                      <FaLeaf className="text-emerald-600 dark:text-emerald-400 w-6 h-6" />
                     </div>
-                    <h2 className="text-2xl font-bold text-slate-900">
+                    <h2 className="text-2xl font-bold text-slate-900 dark:text-white">
                       {isDataState ? result["Crop Name"] : "Explore Crops"}
                     </h2>
                   </div>
 
                   <div className="w-full md:max-w-md relative">
-                    <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 text-lg" />
+                    <FiSearch className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 dark:text-zinc-500 text-lg" />
                     <input
                       type="text"
                       placeholder="Search for a crop..."
@@ -184,22 +184,22 @@ export default function CropSearchCSV() {
                       onKeyDown={handleKeyDown}
                       onFocus={() => setIsFocused(true)}
                       onBlur={() => setTimeout(() => setIsFocused(false), 200)}
-                      className="w-full pl-11 pr-24 py-2.5 bg-slate-50 border border-slate-200 text-slate-900 rounded-xl placeholder-slate-400 outline-none focus:bg-white focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all sm:text-sm"
+                      className="w-full pl-11 pr-24 py-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 text-slate-900 dark:text-zinc-100 rounded-xl placeholder-slate-400 dark:placeholder-zinc-600 outline-none focus:bg-white dark:focus:bg-zinc-900 focus:ring-2 focus:ring-emerald-500/20 focus:border-emerald-500 transition-all sm:text-sm"
                     />
                     <button
                       onClick={() => handleSearch(search)}
-                      className="absolute right-1.5 top-1/2 transform -translate-y-1/2 bg-slate-900 hover:bg-slate-800 text-white px-4 py-1.5 rounded-lg font-medium text-xs tracking-wide transition-colors"
+                      className="absolute right-1.5 top-1/2 transform -translate-y-1/2 bg-slate-900 dark:bg-zinc-700 hover:bg-slate-800 dark:hover:bg-zinc-600 text-white px-4 py-1.5 rounded-lg font-medium text-xs tracking-wide transition-colors"
                     >
                       Search
                     </button>
 
                     {suggestions.length > 0 && isFocused && (
-                      <ul className="absolute left-0 top-full mt-2 w-full bg-white border border-slate-200 rounded-xl shadow-lg overflow-hidden max-h-48 overflow-y-auto z-30">
+                      <ul className="absolute left-0 top-full mt-2 w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl shadow-lg overflow-hidden max-h-48 overflow-y-auto z-30">
                         {suggestions.map((s, i) => (
                           <li
                             key={i}
                             onClick={() => handleSuggestionClick(s["Crop Name"])}
-                            className="px-4 py-2.5 hover:bg-slate-50 cursor-pointer text-sm text-slate-700 transition-colors border-b border-slate-100 last:border-0"
+                            className="px-4 py-2.5 hover:bg-slate-50 dark:hover:bg-zinc-800 cursor-pointer text-sm text-slate-700 dark:text-zinc-300 transition-colors border-b border-slate-100 dark:border-zinc-800 last:border-0"
                           >
                             {s["Crop Name"]}
                           </li>
@@ -219,7 +219,7 @@ export default function CropSearchCSV() {
                       const rawValue = isDataState ? (
                         result[key]
                       ) : (
-                        <span className="text-slate-400 italic text-[13px] font-normal">
+                        <span className="text-slate-400 dark:text-zinc-600 italic text-[13px] font-normal">
                           Awaiting search...
                         </span>
                       );
@@ -227,15 +227,15 @@ export default function CropSearchCSV() {
                       return (
                         <div
                           key={key}
-                          className="bg-white border border-slate-200 p-5 rounded-2xl shadow-sm hover:border-slate-300 transition-colors flex flex-col items-center text-center group"
+                          className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-5 rounded-2xl shadow-sm hover:border-slate-300 dark:hover:border-zinc-700 transition-colors flex flex-col items-center text-center group"
                         >
-                          <div className="bg-slate-50 border border-slate-100 group-hover:bg-emerald-50 group-hover:border-emerald-100 transition-colors p-3 rounded-xl mb-3">
-                            <Icon className="text-slate-500 group-hover:text-emerald-600 w-5 h-5 transition-colors" />
+                          <div className="bg-slate-50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-800 group-hover:bg-emerald-50 dark:group-hover:bg-emerald-950/30 group-hover:border-emerald-100 dark:group-hover:border-emerald-900 transition-colors p-3 rounded-xl mb-3">
+                            <Icon className="text-slate-500 dark:text-zinc-500 group-hover:text-emerald-600 dark:group-hover:text-emerald-400 w-5 h-5 transition-colors" />
                           </div>
-                          <h4 className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                          <h4 className="text-[11px] font-bold text-slate-500 dark:text-zinc-500 uppercase tracking-wider mb-1">
                             {formatted}
                           </h4>
-                          <p className="text-sm font-semibold text-slate-900">
+                          <p className="text-sm font-semibold text-slate-900 dark:text-zinc-100">
                             {isDataState ? formatValue(rawValue) : rawValue}
                           </p>
                         </div>
@@ -245,44 +245,33 @@ export default function CropSearchCSV() {
 
                 {/* Detailed Cultivation Data Table */}
                 <section className="pt-6">
-                  <h3 className="text-lg font-bold text-slate-900 mb-4 flex items-center gap-2">
+                  <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                     Detailed Cultivation Data
                   </h3>
 
-                  <div className="overflow-hidden rounded-xl border border-slate-200 bg-white shadow-sm">
+                  <div className="overflow-hidden rounded-xl border border-slate-200 dark:border-zinc-800 bg-white dark:bg-zinc-900 shadow-sm">
                     <table className="min-w-full text-sm text-left table-fixed">
-                      <thead className="bg-slate-50/50 border-b border-slate-200">
+                      <thead className="bg-slate-50/50 dark:bg-zinc-950 border-b border-slate-200 dark:border-zinc-800">
                         <tr>
-                          <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider w-1/3">
-                            Parameter
-                          </th>
-                          <th className="px-5 py-3.5 font-semibold text-slate-600 text-xs uppercase tracking-wider w-2/3">
-                            Value
-                          </th>
+                          <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-zinc-400 text-xs uppercase tracking-wider w-1/3">Parameter</th>
+                          <th className="px-5 py-3.5 font-semibold text-slate-600 dark:text-zinc-400 text-xs uppercase tracking-wider w-2/3">Value</th>
                         </tr>
                       </thead>
-                      <tbody className="divide-y divide-slate-100">
+                      <tbody className="divide-y divide-slate-100 dark:divide-zinc-800">
                         {headers
-                          .filter(
-                            (key) =>
-                              !["Crop Name", "Image Description", ...keyStatHeaders].includes(key)
-                          )
+                          .filter((key) => !["Crop Name", "Image Description", ...keyStatHeaders].includes(key))
                           .map((key) => {
                             const formatted = formatKeyName(key);
                             const rawValue = isDataState ? result[key] : "—";
-
                             return (
-                              <tr
-                                key={key}
-                                className="hover:bg-slate-50/50 transition-colors"
-                              >
-                                <td className="px-5 py-4 font-medium text-slate-700 align-top">
+                              <tr key={key} className="hover:bg-slate-50/50 dark:hover:bg-zinc-800/50 transition-colors">
+                                <td className="px-5 py-4 font-medium text-slate-700 dark:text-zinc-300 align-top">
                                   <div className="flex items-start gap-2">
-                                    <FaLeaf className="text-slate-300 w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
+                                    <FaLeaf className="text-slate-300 dark:text-zinc-600 w-3.5 h-3.5 mt-0.5 flex-shrink-0" />
                                     <span>{formatted}</span>
                                   </div>
                                 </td>
-                                <td className="px-5 py-4 text-slate-600 align-top">
+                                <td className="px-5 py-4 text-slate-600 dark:text-zinc-400 align-top">
                                   {formatValue(rawValue)}
                                 </td>
                               </tr>
@@ -292,12 +281,11 @@ export default function CropSearchCSV() {
                     </table>
                   </div>
                 </section>
-
               </div>
             )}
 
             {isErrorState && (
-              <div className="w-full bg-amber-50 border border-amber-200 text-amber-800 p-5 rounded-xl flex items-start sm:items-center gap-3 shadow-sm">
+              <div className="w-full bg-amber-50 dark:bg-amber-950/20 border border-amber-200 dark:border-amber-900/50 text-amber-800 dark:text-amber-400 p-5 rounded-xl flex items-start sm:items-center gap-3 shadow-sm">
                 <FaExclamationTriangle className="text-amber-500 w-5 h-5 flex-shrink-0 mt-0.5 sm:mt-0" />
                 <p className="text-sm font-medium">{result.error}</p>
               </div>

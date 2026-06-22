@@ -283,40 +283,40 @@ export default function CropRecommender() {
     };
 
     return (
-        <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased relative pb-16">
+        <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-300 font-sans antialiased relative pb-16 transition-colors duration-200">
             <Header />
 
             {/* Top Minimal Dashboard Banner */}
-            <div className="w-full bg-white border-b border-slate-200/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6">
+            <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
                 <div className="max-w-screen mx-auto">
                     <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
                         <div>
-                            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-                                <IconLeaf className="text-emerald-600" size={26} /> Smart Crop Recommender
+                            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
+                                <IconLeaf className="text-emerald-600 dark:text-emerald-400" size={26} /> Smart Crop Recommender
                             </h1>
-                            <p className="text-slate-500 text-sm mt-1 max-w-xl">
+                            <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
                                 Leverage historical point-climatology algorithms and location tracking to establish optimized crop matching models.
                             </p>
                         </div>
                     </div>
-                   
+                    
 
                     {/* Integrated Modern Search Control Bar */}
-                    <div className="max-w-screen bg-[#f1f5f9] p-2 rounded-xl border border-slate-200">
+                    <div className="max-w-screen bg-[#f1f5f9] dark:bg-[#121212] p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
                         <div className="flex flex-col sm:flex-row gap-2 relative">
                             <div className="relative flex-1 w-full">
-                                <IconSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={18} />
+                                <IconSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={18} />
                                 <input
                                     type="text"
                                     placeholder="Search location (e.g. Ujire, India)..."
                                     value={place}
                                     onChange={(e) => { setPlace(e.target.value); fetchSuggestions(e.target.value); }}
-                                    className="w-full rounded-lg pl-10 pr-4 py-2.5 bg-white text-slate-900 placeholder-slate-400 border border-slate-200 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 outline-none transition-all text-sm"
+                                    className="w-full rounded-lg pl-10 pr-4 py-2.5 bg-white dark:bg-black text-slate-900 dark:text-white placeholder-slate-400 dark:placeholder-zinc-500 border border-slate-200 dark:border-zinc-800 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 outline-none transition-all text-sm"
                                 />
                                 {suggestions.length > 0 && (
-                                    <ul className="absolute left-0 right-0 z-30 bg-white text-slate-800 rounded-lg mt-1.5 shadow-xl max-h-52 overflow-y-auto border border-slate-200/80 divide-y divide-slate-100">
+                                    <ul className="absolute left-0 right-0 z-30 bg-white dark:bg-[#0f0f11] text-slate-800 dark:text-zinc-200 rounded-lg mt-1.5 shadow-xl dark:shadow-2xl max-h-52 overflow-y-auto border border-slate-200/80 dark:border-zinc-800 divide-y divide-slate-100 dark:divide-zinc-800/50">
                                         {suggestions.map((s, idx) => (
-                                            <li key={idx} className="p-3 cursor-pointer hover:bg-slate-50 text-xs text-slate-700 transition-colors"
+                                            <li key={idx} className="p-3 cursor-pointer hover:bg-slate-50 dark:hover:bg-zinc-900 text-xs text-slate-700 dark:text-zinc-300 transition-colors"
                                                 onClick={() => {
                                                     setPlace(s.display_name); setSuggestions([]);
                                                     fetchForLocation(parseFloat(s.lat), parseFloat(s.lon));
@@ -335,17 +335,16 @@ export default function CropRecommender() {
                                     title="Use current location"
                                     aria-label="Auto fetch location"
                                     disabled={loading || !isCatalogLoaded}
-                                    className="px-4 py-2.5 bg-white hover:bg-slate-50 text-slate-700 border border-slate-200 rounded-lg transition-colors text-sm font-medium disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                                    className="px-4 py-2.5 bg-white dark:bg-emerald-600 hover:bg-slate-50 dark:hover:bg-emerald-500 text-slate-700 dark:text-zinc-200 border border-slate-200 dark:border-zinc-800 rounded-lg transition-colors text-sm font-medium disabled:opacity-50 dark:disabled:opacity-40 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                                 >
-                                    <Navigation size={15} className="text-slate-500" />
+                                    <Navigation size={15} className="text-slate-500 dark:text-white" />
                                     <span className="hidden md:inline">Auto Locate</span>
                                 </button>
 
                                 <button
                                     onClick={handleSubmit}
-                                    // Added !place.trim() to the disabled condition
                                     disabled={loading || !isCatalogLoaded || !place.trim()}
-                                    className="bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 transition-colors text-sm font-medium disabled:bg-slate-400 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px]"
+                                    className="bg-emerald-600 text-white px-5 py-2.5 rounded-lg hover:bg-emerald-700 dark:hover:bg-emerald-500 transition-colors text-sm font-medium disabled:bg-slate-400 dark:disabled:bg-zinc-800 dark:disabled:text-zinc-500 disabled:cursor-not-allowed flex items-center justify-center gap-2 min-w-[140px]"
                                 >
                                     {loading ? (
                                         <><IconLoader className="animate-spin" size={16} /> Parsing...</>
@@ -365,18 +364,15 @@ export default function CropRecommender() {
             <main className="w-full max-w-screen mx-auto py-8 px-4 sm:px-6">
                 {(loading || !isCatalogLoaded) && (
                     <div className="flex flex-col justify-center items-center py-20 ">
-                        {/* Simple Spinner */}
-                        <div className="w-8 h-8 border-4 border-slate-200 border-t-emerald-600 rounded-full animate-spin"></div>
-
-                        {/* General, user-friendly text */}
-                        <p className="text-sm font-medium text-slate-500 mt-4">
+                        <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-800 border-t-emerald-600 dark:border-t-emerald-500 rounded-full animate-spin"></div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">
                             Loading data...
                         </p>
                     </div>
                 )}
 
                 {error && (
-                    <div className="bg-rose-50 border border-rose-200 text-rose-700 p-4 rounded-xl text-center text-sm font-medium max-w-xl mx-auto">
+                    <div className="bg-rose-50 dark:bg-rose-950/20 border border-rose-200 dark:border-rose-900/40 text-rose-700 dark:text-rose-400 p-4 rounded-xl text-center text-sm font-medium max-w-xl mx-auto">
                         {error}
                     </div>
                 )}
@@ -385,60 +381,60 @@ export default function CropRecommender() {
                     <div className="space-y-6">
                         {/* Environmental Core Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm flex flex-col justify-between">
+                            <div className="bg-white dark:bg-[#09090b] p-5 rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between transition-colors duration-200">
                                 <div>
-                                    <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                                        <IconMapMarker size={14} className="text-slate-400" /> Target Boundary Area
+                                    <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                                        <IconMapMarker size={14} className="text-slate-400 dark:text-zinc-500" /> Target Boundary Area
                                     </h2>
-                                    <p className="font-semibold text-slate-800 text-sm line-clamp-2 leading-relaxed">{geocode.name}</p>
+                                    <p className="font-semibold text-slate-800 dark:text-zinc-200 text-sm line-clamp-2 leading-relaxed">{geocode.name}</p>
                                 </div>
-                                <div className="mt-4 pt-3 border-t border-slate-100 grid grid-cols-3 gap-1 text-[11px] text-slate-500 font-mono">
-                                    <div><span className="text-slate-400 font-sans">LAT:</span> {geocode.lat.toFixed(3)}°</div>
-                                    <div><span className="text-slate-400 font-sans">LON:</span> {geocode.lon.toFixed(3)}°</div>
-                                    <div className="truncate"><span className="text-slate-400 font-sans">TYP:</span> {geocode.type}</div>
+                                <div className="mt-4 pt-3 border-t border-slate-100 dark:border-zinc-800/50 grid grid-cols-3 gap-1 text-[11px] text-slate-500 dark:text-zinc-400 font-mono">
+                                    <div><span className="text-slate-400 dark:text-zinc-500 font-sans">LAT:</span> {geocode.lat.toFixed(3)}°</div>
+                                    <div><span className="text-slate-400 dark:text-zinc-500 font-sans">LON:</span> {geocode.lon.toFixed(3)}°</div>
+                                    <div className="truncate"><span className="text-slate-400 dark:text-zinc-500 font-sans">TYP:</span> {geocode.type}</div>
                                 </div>
                             </div>
 
-                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                                    <IconThermometer size={14} className="text-slate-400" /> Mean Thermal Climate
+                            <div className="bg-white dark:bg-[#09090b] p-5 rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm transition-colors duration-200">
+                                <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                                    <IconThermometer size={14} className="text-slate-400 dark:text-zinc-500" /> Mean Thermal Climate
                                 </h2>
-                                <p className="text-3xl font-bold text-slate-900 tracking-tight">
-                                    {climate.meanAnnualTemp.toFixed(1)}<span className="text-lg font-medium text-slate-400 ml-0.5">°C</span>
+                                <p className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                    {climate.meanAnnualTemp.toFixed(1)}<span className="text-lg font-medium text-slate-400 dark:text-zinc-500 ml-0.5">°C</span>
                                 </p>
-                                <p className="text-slate-400 text-xs mt-1">Calculated point-climatology annual median</p>
+                                <p className="text-slate-400 dark:text-zinc-500 text-xs mt-1">Calculated point-climatology annual median</p>
                             </div>
 
-                            <div className="bg-white p-5 rounded-xl border border-slate-200 shadow-sm">
-                                <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center gap-1.5 mb-2">
-                                    <IconCloudDrizzle size={14} className="text-slate-400" /> Cumulative Precipitation
+                            <div className="bg-white dark:bg-[#09090b] p-5 rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm transition-colors duration-200">
+                                <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center gap-1.5 mb-2">
+                                    <IconCloudDrizzle size={14} className="text-slate-400 dark:text-zinc-500" /> Cumulative Precipitation
                                 </h2>
-                                <p className="text-3xl font-bold text-slate-900 tracking-tight">
-                                    {Math.round(climate.annualPrecip)}<span className="text-lg font-medium text-slate-400 ml-0.5">mm</span>
+                                <p className="text-3xl font-bold text-slate-900 dark:text-white tracking-tight">
+                                    {Math.round(climate.annualPrecip)}<span className="text-lg font-medium text-slate-400 dark:text-zinc-500 ml-0.5">mm</span>
                                 </p>
-                                <p className="text-slate-400 text-xs mt-1">Aggregated monthly precipitation baseline</p>
+                                <p className="text-slate-400 dark:text-zinc-500 text-xs mt-1">Aggregated monthly precipitation baseline</p>
                             </div>
                         </div>
 
                         {/* Top Crop Suitability Matrix */}
-                        <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                            <div className="p-5 border-b border-slate-100 flex items-center justify-between">
-                                <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
-                                    <IconLeaf className="text-emerald-600" size={18} /> Optimized Suitability Recommendations
+                        <div className="bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm overflow-hidden transition-colors duration-200">
+                            <div className="p-5 border-b border-slate-100 dark:border-zinc-800/50 flex items-center justify-between">
+                                <h2 className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <IconLeaf className="text-emerald-600 dark:text-emerald-400" size={18} /> Optimized Suitability Recommendations
                                 </h2>
-                                <span className="text-xs text-slate-400 font-medium">Top Matrix Profiles</span>
+                                <span className="text-xs text-slate-400 dark:text-zinc-500 font-medium">Top Matrix Profiles</span>
                             </div>
 
                             <div className="p-5">
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                     {recommendations.map((crop, idx) => (
-                                        <div key={idx} className="bg-white rounded-lg border border-slate-200 overflow-hidden flex flex-col group hover:border-slate-300 hover:shadow-sm transition-all">
-                                            <div className="relative bg-slate-50 h-32 w-full overflow-hidden">
+                                        <div key={idx} className="bg-white dark:bg-[#0d0d11] rounded-lg border border-slate-200 dark:border-zinc-800/80 overflow-hidden flex flex-col group hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-sm transition-all duration-200">
+                                            <div className="relative bg-slate-50 dark:bg-zinc-900 h-32 w-full overflow-hidden">
                                                 <img
                                                     src={crop.image}
                                                     alt={crop.name}
-                                                    className="w-full h-full object-cover grayscale-[10%] group-hover:scale-102 transition-transform duration-300"
-                                                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x150/f1f5f9/94a3b8?text=No+Image+Available"; }}
+                                                    className="w-full h-full object-cover grayscale-[10%] dark:grayscale-[20%] dark:brightness-[85%] group-hover:scale-102 transition-transform duration-300"
+                                                    onError={(e) => { e.target.onerror = null; e.target.src = "https://placehold.co/400x150/18181b/a1a1aa?text=No+Image+Available"; }}
                                                 />
                                                 <div className="absolute bottom-2 left-2">
                                                     {getWaterIcon(crop.water)}
@@ -450,8 +446,8 @@ export default function CropRecommender() {
 
                                             <div className="p-4 flex-1 flex flex-col justify-between">
                                                 <div>
-                                                    <h3 className="text-sm font-semibold text-slate-900 mb-1">{crop.name}</h3>
-                                                    <p className="text-xs text-slate-500 leading-relaxed font-normal">{crop.reason}</p>
+                                                    <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-100 mb-1">{crop.name}</h3>
+                                                    <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed font-normal">{crop.reason}</p>
                                                 </div>
                                             </div>
                                         </div>
@@ -459,7 +455,7 @@ export default function CropRecommender() {
                                 </div>
 
                                 {recommendations.length === 0 && (
-                                    <div className="text-center py-12 text-slate-400 text-sm">
+                                    <div className="text-center py-12 text-slate-400 dark:text-zinc-500 text-sm">
                                         No indexed items matched the minimum compliance parameters threshold (15%).
                                     </div>
                                 )}
@@ -467,28 +463,28 @@ export default function CropRecommender() {
                         </div>
 
                         {/* Point Climatology Table Structure */}
-                        <div className="bg-white rounded-xl border border-slate-200 shadow-sm overflow-hidden">
-                            <div className="p-5 border-b border-slate-100">
-                                <h2 className="text-base font-semibold text-slate-900 flex items-center gap-2">
-                                    <IconCloudDrizzle className="text-emerald-600" size={18} /> Detailed Climatology Distribution Model
+                        <div className="bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm overflow-hidden transition-colors duration-200">
+                            <div className="p-5 border-b border-slate-100 dark:border-zinc-800/50">
+                                <h2 className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
+                                    <IconCloudDrizzle className="text-emerald-600 dark:text-emerald-400" size={18} /> Detailed Climatology Distribution Model
                                 </h2>
                             </div>
 
                             <div className="overflow-x-auto">
-                                <table className="w-full text-slate-700 text-left border-collapse text-xs">
+                                <table className="w-full text-slate-700 dark:text-zinc-300 text-left border-collapse text-xs">
                                     <thead>
-                                        <tr className="bg-slate-50 text-slate-500 font-medium uppercase tracking-wider border-b border-slate-200">
+                                        <tr className="bg-slate-50 dark:bg-zinc-900/50 text-slate-500 dark:text-zinc-400 font-medium uppercase tracking-wider border-b border-slate-200 dark:border-zinc-800">
                                             <th className="px-5 py-3">Temporal Index (Month)</th>
                                             <th className="px-5 py-3 text-center">Temperature (°C)</th>
                                             <th className="px-5 py-3 text-center">Precipitation Data Volume (mm)</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-slate-100">
+                                    <tbody className="divide-y divide-slate-100 dark:divide-zinc-800/50">
                                         {["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"].map((m, i) => (
-                                            <tr key={m} className="hover:bg-slate-50/80 transition-colors">
-                                                <td className="px-5 py-2.5 font-medium text-slate-900">{m}</td>
-                                                <td className="px-5 py-2.5 text-center font-mono text-slate-600">{climate.tempMonthly[i].toFixed(2)}</td>
-                                                <td className="px-5 py-2.5 text-center font-mono text-slate-600">{climate.precipMonthly[i].toFixed(2)}</td>
+                                            <tr key={m} className="hover:bg-slate-50/80 dark:hover:bg-zinc-900/40 transition-colors">
+                                                <td className="px-5 py-2.5 font-medium text-slate-900 dark:text-zinc-200">{m}</td>
+                                                <td className="px-5 py-2.5 text-center font-mono text-slate-600 dark:text-zinc-400">{climate.tempMonthly[i].toFixed(2)}</td>
+                                                <td className="px-5 py-2.5 text-center font-mono text-slate-600 dark:text-zinc-400">{climate.precipMonthly[i].toFixed(2)}</td>
                                             </tr>
                                         ))}
                                     </tbody>

@@ -79,32 +79,32 @@ export default function ClimateRiskCalculator() {
 
   const { score, alerts, advice, tier } = calculateResilience();
 
-  return (
-    <div className="w-full bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden font-sans">
+ return (
+    <div className="w-full bg-white dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800/80 rounded-xl shadow-sm overflow-hidden font-sans transition-colors duration-200">
       
       {/* Module Navigation Subheader Banner */}
-      <div className="bg-slate-50 border-b border-slate-200 px-6 py-4 flex items-center justify-between">
+      <div className="bg-slate-50 dark:bg-zinc-900/50 border-b border-slate-200 dark:border-zinc-800/80 px-6 py-4 flex items-center justify-between transition-colors duration-200">
         <div className="flex items-center gap-2">
-          <LeafIcon className="text-emerald-600" />
-          <h3 className="text-sm font-bold text-slate-800 tracking-tight">Interactive Vulnerability Index</h3>
+          <LeafIcon className="text-emerald-600 dark:text-emerald-400" />
+          <h3 className="text-sm font-bold text-slate-800 dark:text-zinc-200 tracking-tight">Interactive Vulnerability Index</h3>
         </div>
-        <span className="hidden md:inline text-[10px] bg-slate-200 text-slate-600 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
+        <span className="hidden md:inline text-[10px] bg-slate-200 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 font-extrabold px-2 py-0.5 rounded-full uppercase tracking-wider">
           Sandbox Component
         </span>
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200">
+      <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-zinc-800">
         
         {/* Left Column: Interactive Parametric Input Form */}
         <div className="lg:col-span-6 p-6 space-y-6">
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Environmental Variables</h4>
+            <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-4">Environmental Variables</h4>
             
             {/* Input 1: Soil Moisture */}
             <div className="space-y-2 mb-5">
-              <div className="flex justify-between items-center text-xs font-semibold text-slate-700">
+              <div className="flex justify-between items-center text-xs font-semibold text-slate-700 dark:text-zinc-300">
                 <label htmlFor="moisture-slider">Soil Moisture Level</label>
-                <span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-900">{moisture}%</span>
+                <span className="font-mono bg-slate-100 dark:bg-zinc-900 px-1.5 py-0.5 rounded text-slate-900 dark:text-zinc-100 border dark:border-zinc-800/60">{moisture}%</span>
               </div>
               <input 
                 id="moisture-slider"
@@ -113,15 +113,15 @@ export default function ClimateRiskCalculator() {
                 max="100" 
                 value={moisture} 
                 onChange={(e) => setMoisture(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 focus:outline-none"
+                className="w-full h-1.5 bg-slate-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-600 dark:accent-emerald-500 focus:outline-none"
               />
             </div>
 
             {/* Input 2: Temperature */}
             <div className="space-y-2">
-              <div className="flex justify-between items-center text-xs font-semibold text-slate-700">
+              <div className="flex justify-between items-center text-xs font-semibold text-slate-700 dark:text-zinc-300">
                 <label htmlFor="temp-slider">Ambient Temperature</label>
-                <span className="font-mono bg-slate-100 px-1.5 py-0.5 rounded text-slate-900">{temperature}°C</span>
+                <span className="font-mono bg-slate-100 dark:bg-zinc-900 px-1.5 py-0.5 rounded text-slate-900 dark:text-zinc-100 border dark:border-zinc-800/60">{temperature}°C</span>
               </div>
               <input 
                 id="temp-slider"
@@ -130,42 +130,42 @@ export default function ClimateRiskCalculator() {
                 max="45" 
                 value={temperature} 
                 onChange={(e) => setTemperature(Number(e.target.value))}
-                className="w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600 focus:outline-none"
+                className="w-full h-1.5 bg-slate-200 dark:bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-emerald-600 dark:accent-emerald-500 focus:outline-none"
               />
             </div>
           </div>
 
-          <div className="border-t border-slate-100 pt-5 space-y-4">
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider">Crop Configuration Matrices</h4>
+          <div className="border-t border-slate-100 dark:border-zinc-800/60 pt-5 space-y-4">
+            <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider">Crop Configuration Matrices</h4>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {/* Input 3: Rainfall Select Box */}
               <div className="space-y-1.5">
-                <label htmlFor="rainfall-select" className="text-xs font-bold text-slate-700">7-Day Rainfall Forecast</label>
+                <label htmlFor="rainfall-select" className="text-xs font-bold text-slate-700 dark:text-zinc-300">7-Day Rainfall Forecast</label>
                 <select 
                   id="rainfall-select"
                   value={rainfall}
                   onChange={(e) => setRainfall(e.target.value)}
-                  className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2.5 focus:border-slate-400 focus:outline-none"
+                  className="w-full text-xs font-semibold text-slate-700 dark:text-zinc-300 bg-white dark:bg-black border border-slate-200 dark:border-zinc-800 rounded-lg px-3 py-2.5 focus:border-slate-400 dark:focus:border-zinc-600 focus:outline-none transition-colors"
                 >
-                  <option value="low">Low / Extended Drought</option>
-                  <option value="moderate">Moderate / Normal Distribution</option>
-                  <option value="heavy">Heavy / Extreme Inundation</option>
+                  <option value="low" className="dark:bg-black">Low / Extended Drought</option>
+                  <option value="moderate" className="dark:bg-black">Moderate / Normal Distribution</option>
+                  <option value="heavy" className="dark:bg-black">Heavy / Extreme Inundation</option>
                 </select>
               </div>
 
               {/* Input 4: Crop Category Type Select Box */}
               <div className="space-y-1.5">
-                <label htmlFor="crop-select" className="text-xs font-bold text-slate-700">Main Canopy Target</label>
+                <label htmlFor="crop-select" className="text-xs font-bold text-slate-700 dark:text-zinc-300">Main Canopy Target</label>
                 <select 
                   id="crop-select"
                   value={cropType}
                   onChange={(e) => setCropType(e.target.value)}
-                  className="w-full text-xs font-semibold text-slate-700 bg-white border border-slate-200 rounded-lg px-3 py-2.5 focus:border-slate-400 focus:outline-none"
+                  className="w-full text-xs font-semibold text-slate-700 dark:text-zinc-300 bg-white dark:bg-black border border-slate-200 dark:border-zinc-800 rounded-lg px-3 py-2.5 focus:border-slate-400 dark:focus:border-zinc-600 focus:outline-none transition-colors"
                 >
-                  <option value="cereals">Cereals (Rice, Wheat, Corn)</option>
-                  <option value="legumes">Legumes (Beans, Lentils, Peas)</option>
-                  <option value="root crops">Root Crops (Potatoes, Cassava)</option>
+                  <option value="cereals" className="dark:bg-black">Cereals (Rice, Wheat, Corn)</option>
+                  <option value="legumes" className="dark:bg-black">Legumes (Beans, Lentils, Peas)</option>
+                  <option value="root crops" className="dark:bg-black">Root Crops (Potatoes, Cassava)</option>
                 </select>
               </div>
             </div>
@@ -173,17 +173,17 @@ export default function ClimateRiskCalculator() {
         </div>
 
         {/* Right Column: Calculated Assessment & Blueprint Advice Display */}
-        <div className="lg:col-span-6 p-6 bg-slate-50/50 flex flex-col justify-between space-y-6">
+        <div className="lg:col-span-6 p-6 bg-slate-50/50 dark:bg-zinc-900/20 flex flex-col justify-between space-y-6 transition-colors duration-200">
           <div>
-            <h4 className="text-xs font-bold text-slate-400 uppercase tracking-wider mb-4">Calculated Diagnostics</h4>
+            <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-4">Calculated Diagnostics</h4>
             
             {/* Dynamic Score Indicator and State Tracker */}
-            <div className="flex items-center gap-5 bg-white border border-slate-200 p-4 rounded-xl shadow-sm">
-              <div className="relative flex items-center justify-center w-16 h-16 rounded-full border-4 border-slate-100 flex-shrink-0">
-                <span className="text-lg font-black text-slate-800 tracking-tighter">{score}</span>
+            <div className="flex items-center gap-5 bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-4 rounded-xl shadow-sm transition-colors duration-200">
+              <div className="relative flex items-center justify-center w-16 h-16 rounded-full border-4 border-slate-100 dark:border-zinc-800 flex-shrink-0">
+                <span className="text-lg font-black text-slate-800 dark:text-zinc-100 tracking-tighter">{score}</span>
               </div>
               <div className="space-y-1">
-                <span className="text-xs text-slate-400 font-bold uppercase tracking-wider">Farm Resilience Index</span>
+                <span className="text-xs text-slate-400 dark:text-zinc-500 font-bold uppercase tracking-wider">Farm Resilience Index</span>
                 <div className={`text-xs font-extrabold px-2.5 py-0.5 rounded-md border w-max ${tier.color}`}>
                   {tier.name}
                 </div>
@@ -191,17 +191,17 @@ export default function ClimateRiskCalculator() {
             </div>
 
             {/* Micro Gauge Track Bar */}
-            <div className="w-full bg-slate-200 h-1.5 rounded-full overflow-hidden mt-4">
+            <div className="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-4">
               <div className={`h-full transition-all duration-300 ${tier.fill}`} style={{ width: `${score}%` }}></div>
             </div>
 
             {/* Parameter Warning Chips Area */}
             {alerts.length > 0 && (
               <div className="mt-5 space-y-1.5">
-                <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider block">Identified Hazard Vectors:</span>
+                <span className="text-[10px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider block">Identified Hazard Vectors:</span>
                 <div className="flex flex-wrap gap-1.5">
                   {alerts.map((alert, idx) => (
-                    <span key={idx} className="inline-flex items-center gap-1 text-[11px] font-bold bg-white border border-slate-200 text-slate-700 px-2.5 py-1 rounded-md shadow-2xs">
+                    <span key={idx} className="inline-flex items-center gap-1 text-[11px] font-bold bg-white dark:bg-black border border-slate-200 dark:border-zinc-800 text-slate-700 dark:text-zinc-300 px-2.5 py-1 rounded-md shadow-2xs transition-colors">
                       <span className="w-1.5 h-1.5 rounded-full bg-rose-500 flex-shrink-0"></span>
                       {alert}
                     </span>
@@ -212,12 +212,12 @@ export default function ClimateRiskCalculator() {
           </div>
 
           {/* Contextual Action Items Response Field */}
-          <div className="bg-white border border-slate-200/80 p-4 rounded-xl shadow-xs space-y-2">
-            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 tracking-tight">
-              <ShieldAlertIcon className="w-3.5 h-3.5 text-slate-500" />
+          <div className="bg-white dark:bg-[#0d0d11] border border-slate-200/80 dark:border-zinc-800/80 p-4 rounded-xl shadow-xs space-y-2 transition-colors duration-200">
+            <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-zinc-200 tracking-tight">
+              <ShieldAlertIcon className="w-3.5 h-3.5 text-slate-500 dark:text-zinc-400" />
               <span>Targeted Operational Action Step</span>
             </div>
-            <p className="text-xs text-slate-600 leading-relaxed font-normal">
+            <p className="text-xs text-slate-600 dark:text-zinc-400 leading-relaxed font-normal">
               {advice}
             </p>
           </div>

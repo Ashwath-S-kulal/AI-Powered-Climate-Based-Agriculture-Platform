@@ -199,31 +199,32 @@ export default function Weather() {
   };
 
 
-  return (
-    <div className="min-h-screen bg-[#f8fafc] text-slate-800 font-sans antialiased relative pb-16">
+return (
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased relative pb-16 transition-colors duration-300">
       <Header />
 
-      <div className="w-full bg-white border-b border-slate-200/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6">
+      {/* Top Banner & Search Console */}
+      <div className="w-full bg-white dark:bg-zinc-950 border-b border-slate-200/80 dark:border-zinc-800/50 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
         <div className="max-w-screen mx-auto">
           <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
             <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-                <CloudSun className="text-emerald-600" size={26} /> Live Weather Forecast Tool
+              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
+                <CloudSun className="text-emerald-600 dark:text-emerald-400" size={26} /> Live Weather Forecast Tool
               </h1>
-              <p className="text-slate-500 text-sm mt-1 max-w-xl">
+              <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
                 Reliable chronological atmospheric indexing and metric mapping models for adaptive resource management.
               </p>
             </div>
           </div>
 
-          <div className="max-w-screen bg-[#f1f5f9] p-1.5 rounded-xl border border-slate-200 relative">
+          <div className="max-w-screen bg-[#f1f5f9] dark:bg-zinc-950 p-1.5 rounded-xl  dark:border-zinc-800/80 relative transition-colors">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
-                <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 pointer-events-none" size={16} />
+                <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={16} />
                 <input
                   type="text"
                   placeholder="Search location, town or region..."
-                  className="w-full pl-9 pr-4 py-2 bg-white text-slate-900 placeholder-slate-400 border border-slate-200 rounded-lg focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
+                  className="w-full pl-9 pr-4 py-2 bg-white dark:bg-zinc-900 text-slate-900 dark:text-zinc-50 placeholder-slate-400 dark:placeholder-zinc-500 border border-slate-200 dark:border-zinc-800 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
                   value={city}
                   onChange={(e) => fetchSuggestions(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && searchCity()}
@@ -231,19 +232,20 @@ export default function Weather() {
               </div>
               <button
                 onClick={() => searchCity()}
-                className="bg-emerald-600 text-white px-4 py-2 rounded-lg hover:bg-emerald-700 transition text-sm font-medium flex items-center justify-center"
+                className="bg-emerald-600 hover:bg-emerald-700 dark:bg-emerald-500 dark:hover:bg-emerald-600 text-white px-4 py-2 rounded-lg transition text-sm font-medium flex items-center justify-center shrink-0"
               >
                 Search
               </button>
             </div>
 
+            {/* Suggestions Dropdown */}
             {suggestions.length > 0 && (
-              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white border border-slate-200 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100">
+              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100 dark:divide-zinc-800/60">
                 {suggestions.map((s, i) => (
                   <li
                     key={i}
                     onClick={() => searchCity(s.name)}
-                    className="p-3 text-xs text-slate-700 cursor-pointer hover:bg-slate-50 transition-colors"
+                    className="p-3 text-xs text-slate-700 dark:text-zinc-300 cursor-pointer hover:bg-slate-50 dark:hover:bg-zinc-800/40 transition-colors"
                   >
                     {s.name}
                   </li>
@@ -254,15 +256,16 @@ export default function Weather() {
         </div>
       </div>
 
-      <div className="pt-3 border-t border-slate-200 px-6 font-sans antialiased">
+      {/* AI Insights Segment */}
+      <div className="pt-3 border-t border-slate-200 dark:border-zinc-800/60 px-6 font-sans antialiased">
         {!insights && !isFetchingAI && !loading && (
-          <div className="text-left rounded-xl border border-slate-200 bg-white p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4">
+          <div className="text-left rounded-xl border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
-                <h3 className="text-sm font-semibold text-slate-900">AI Weather Summary</h3>
-                <span className="text-[10px] font-bold text-slate-400 bg-slate-100 px-1.5 py-0.5 rounded">BETA</span>
+                <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-50">AI Weather Summary</h3>
+                <span className="text-[10px] font-bold text-slate-400 dark:text-zinc-500 bg-slate-100 dark:bg-zinc-950 px-1.5 py-0.5 rounded">BETA</span>
               </div>
-              <p className="text-xs text-slate-500 leading-relaxed">
+              <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">
                 Automatically generate an intelligent analysis of your current micro-climate data using our advanced predictive model.
               </p>
             </div>
@@ -270,7 +273,7 @@ export default function Weather() {
             <button
               onClick={getAIInsights}
               disabled={isFetchingAI}
-              className="flex-shrink-0 flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 text-white px-4 py-2 rounded-lg text-xs font-medium transition-all shadow-sm active:scale-[0.97]"
+              className="flex-shrink-0 flex items-center gap-2 bg-gradient-to-r from-violet-600 to-indigo-600 hover:from-violet-700 hover:to-indigo-700 dark:from-violet-500 dark:to-indigo-500 text-white px-4 py-2 rounded-lg text-xs font-medium transition-all shadow-sm active:scale-[0.97]"
             >
               {isFetchingAI ? (
                 <>
@@ -287,29 +290,31 @@ export default function Weather() {
           </div>
         )}
 
+        {/* AI Insight Placeholder Skeleton */}
         {isFetchingAI && (
-          <div className="rounded-2xl border border-emerald-100/70 bg-emerald-50/20 p-6 shadow-sm animate-pulse space-y-5">
+          <div className="rounded-2xl border border-emerald-100/70 dark:border-emerald-500/10 bg-emerald-50/20 dark:bg-emerald-950/5 p-6 shadow-sm animate-pulse space-y-5">
             <div className="space-y-2">
-              <div className="h-4 w-1/4 bg-emerald-200/60 rounded" />
-              <div className="h-3 w-3/4 bg-slate-200/60 rounded" />
+              <div className="h-4 w-1/4 bg-emerald-200/60 dark:bg-emerald-900/20 rounded" />
+              <div className="h-3 w-3/4 bg-slate-200/60 dark:bg-zinc-800/40 rounded" />
             </div>
             <div className="space-y-3">
-              <div className="h-12 w-full bg-slate-100 rounded-xl" />
-              <div className="h-12 w-full bg-slate-100 rounded-xl" />
+              <div className="h-12 w-full bg-slate-100 dark:bg-zinc-800/30 rounded-xl" />
+              <div className="h-12 w-full bg-slate-100 dark:bg-zinc-800/30 rounded-xl" />
             </div>
           </div>
         )}
 
+        {/* AI Insight Readout */}
         {insights && !isFetchingAI && (
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-400">
-            <div className="rounded-2xl border border-emerald-100 bg-emerald-50/40 p-6 shadow-[0_2px_12px_rgba(16,185,129,0.02)]">
+            <div className="rounded-2xl border border-emerald-100 dark:border-emerald-500/10 bg-emerald-50/40 dark:bg-emerald-950/10 p-6 shadow-[0_2px_12px_rgba(16,185,129,0.01)]">
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-sm font-bold text-emerald-900 tracking-tight">
+                <h3 className="text-sm font-bold text-emerald-900 dark:text-emerald-300 tracking-tight">
                   {insights.title || "Agronomist Insights"}
                 </h3>
               </div>
 
-              <p className="text-xs text-emerald-800/90 leading-relaxed mb-5">
+              <p className="text-xs text-emerald-800/90 dark:text-emerald-400/90 leading-relaxed mb-5">
                 {insights.explanation}
               </p>
 
@@ -317,14 +322,14 @@ export default function Weather() {
                 {insights.steps?.map((step, i) => (
                   <li
                     key={i}
-                    className="bg-emerald-50/80 border border-emerald-100/60 p-4 rounded-xl flex items-start gap-3 transition-all hover:bg-emerald-50"
+                    className="bg-emerald-50/80 dark:bg-emerald-950/20 border border-emerald-100/60 dark:border-emerald-500/10 p-4 rounded-xl flex items-start gap-3 transition-all hover:bg-emerald-50 dark:hover:bg-emerald-950/30"
                   >
-                    <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                    <CheckCircle2 className="w-4 h-4 text-emerald-600 dark:text-emerald-400 shrink-0 mt-0.5" />
                     <div className="space-y-1">
-                      <p className="text-xs font-bold text-emerald-950 leading-tight">
+                      <p className="text-xs font-bold text-emerald-950 dark:text-emerald-200 leading-tight">
                         {step.action}
                       </p>
-                      <span className="inline-block text-[10px] font-medium text-emerald-600/80 bg-emerald-100/40 px-2 py-0.5 rounded-md border border-emerald-100/30">
+                      <span className="inline-block text-[10px] font-medium text-emerald-600/80 dark:text-emerald-400 bg-emerald-100/40 dark:bg-emerald-900/30 px-2 py-0.5 rounded-md border border-emerald-100/30 dark:border-emerald-500/20">
                         ({step.type || "General"})
                       </span>
                     </div>
@@ -333,9 +338,9 @@ export default function Weather() {
               </ul>
             </div>
 
-            <div className="bg-amber-50/60 border border-amber-100 p-4 rounded-xl flex gap-3 items-start">
-              <AlertCircle className="w-4 h-4 text-amber-700 shrink-0 mt-0.5" />
-              <p className="text-[11px] text-amber-900/80 leading-relaxed italic">
+            <div className="bg-amber-50/60 dark:bg-amber-950/10 border border-amber-100 dark:border-amber-500/20 p-4 rounded-xl flex gap-3 items-start">
+              <AlertCircle className="w-4 h-4 text-amber-700 dark:text-amber-500 shrink-0 mt-0.5" />
+              <p className="text-[11px] text-amber-900/80 dark:text-amber-300/80 leading-relaxed italic">
                 {insights.disclaimer || "This advice is AI-generated and should not be considered a substitute for professional agricultural consultation."} Always consult a local expert.
               </p>
             </div>
@@ -343,7 +348,7 @@ export default function Weather() {
             <div className="flex justify-end pt-1">
               <button
                 onClick={() => setInsights(null)}
-                className="text-[11px] font-bold text-slate-400 hover:text-slate-600 uppercase tracking-wider transition-colors px-3 py-1.5 rounded-lg"
+                className="text-[11px] font-bold text-slate-400 hover:text-slate-600 dark:hover:text-zinc-300 uppercase tracking-wider transition-colors px-3 py-1.5 rounded-lg"
               >
                 Dismiss Analysis
               </button>
@@ -352,11 +357,12 @@ export default function Weather() {
         )}
       </div>
 
+      {/* Main Metric Visualizations Content */}
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {loading && (
           <div className="flex flex-col justify-center items-center py-20 ">
-            <div className="w-8 h-8 border-4 border-slate-200 border-t-emerald-600 rounded-full animate-spin"></div>
-            <p className="text-sm font-medium text-slate-500 mt-4">
+            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-800 border-t-emerald-600 dark:border-t-emerald-400 rounded-full animate-spin"></div>
+            <p className="text-sm font-medium text-slate-500 dark:text-zinc-400 mt-4">
               Loading data...
             </p>
           </div>
@@ -365,64 +371,66 @@ export default function Weather() {
         {!loading && (
           <div className="space-y-6">
             {error && (
-              <div className="p-4 bg-rose-50 text-rose-700 rounded-xl border border-rose-200 text-sm font-medium">
+              <div className="p-4 bg-rose-50 dark:bg-rose-950/20 text-rose-700 dark:text-rose-400 rounded-xl border border-rose-200 dark:border-rose-500/20 text-sm font-medium">
                 Error: {error}
               </div>
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
+              {/* Left Column: Today's Conditions */}
               {today && (
                 <div className="lg:col-span-4 w-full">
-                  <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm h-full flex flex-col justify-between">
+                  <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm h-full flex flex-col justify-between transition-colors">
                     <div>
-                      <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center border-b border-slate-100 pb-3 mb-4">
-                        <Calendar className="w-4 h-4 mr-1.5 text-slate-400" /> Current Condition
+                      <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
+                        <Calendar className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> Current Condition
                       </h2>
 
-                      <h3 className="text-base font-bold text-slate-900 flex items-start gap-1">
-                        <MapPin className="w-4 h-4 mt-0.5 text-slate-400 flex-shrink-0" />
+                      <h3 className="text-base font-bold text-slate-900 dark:text-zinc-50 flex items-start gap-1">
+                        <MapPin className="w-4 h-4 mt-0.5 text-slate-400 dark:text-zinc-500 flex-shrink-0" />
                         <span>{locationName.split(",")[0].trim()}</span>
                       </h3>
 
-                      <p className="text-xs text-slate-400 mt-1 flex items-center">
+                      <p className="text-xs text-slate-400 dark:text-zinc-500 mt-1 flex items-center">
                         {todayDate}
                       </p>
 
-                      <div className="flex flex-col items-center py-6 my-2 border-b border-slate-100">
+                      <div className="flex flex-col items-center py-6 my-2 border-b border-slate-100 dark:border-zinc-800/40">
                         <div>
                           {getWeatherIcon(today.weather_code, "w-20 h-20")}
                         </div>
-                        <p className="text-5xl font-extrabold text-slate-900 tracking-tight mt-3">
-                          {Math.round(today.temp)}<span className="text-2xl text-slate-400 font-medium ml-0.5">°C</span>
+                        <p className="text-5xl font-extrabold text-slate-900 dark:text-zinc-50 tracking-tight mt-3">
+                          {Math.round(today.temp)}<span className="text-2xl text-slate-400 dark:text-zinc-500 font-medium ml-0.5">°C</span>
                         </p>
-                        <p className="text-sm font-medium text-slate-600 mt-1">
+                        <p className="text-sm font-medium text-slate-600 dark:text-zinc-300 mt-1">
                           {weatherCodeText(today.weather_code)}
                         </p>
                       </div>
                     </div>
 
+                    {/* Today Mini Stats Strip */}
                     <div>
                       <div className="grid grid-cols-3 gap-3 pt-2">
-                        <div className="p-2.5 bg-slate-50 border border-slate-200/60 rounded-lg text-center">
-                          <Thermometer className="w-5 h-5 mx-auto text-slate-400 mb-1" />
-                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400">Temp</p>
-                          <p className="text-xs font-bold text-slate-800 font-mono mt-0.5">{today.temp.toFixed(1)}°C</p>
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-800/80 rounded-lg text-center">
+                          <Thermometer className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-500 mb-1" />
+                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Temp</p>
+                          <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{today.temp.toFixed(1)}°C</p>
                         </div>
 
-                        <div className="p-2.5 bg-slate-50 border border-slate-200/60 rounded-lg text-center">
-                          <Droplet className="w-5 h-5 mx-auto text-slate-400 mb-1" />
-                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400">Humidity</p>
-                          <p className="text-xs font-bold text-slate-800 font-mono mt-0.5">{today.humidity}%</p>
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-800/80 rounded-lg text-center">
+                          <Droplet className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-500 mb-1" />
+                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Humidity</p>
+                          <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{today.humidity}%</p>
                         </div>
 
-                        <div className="p-2.5 bg-slate-50 border border-slate-200/60 rounded-lg text-center">
-                          <Wind className="w-5 h-5 mx-auto text-slate-400 mb-1" />
-                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400">Wind</p>
-                          <p className="text-xs font-bold text-slate-800 font-mono mt-0.5">{today.wind.toFixed(1)} m/s</p>
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-800/80 rounded-lg text-center">
+                          <Wind className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-500 mb-1" />
+                          <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Wind</p>
+                          <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{today.wind.toFixed(1)} m/s</p>
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 border border-slate-100 mt-4 px-3 py-2 rounded-lg text-slate-400 italic text-[11px] text-center">
+                      <div className="bg-slate-50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-800/80 mt-4 px-3 py-2 rounded-lg text-slate-400 dark:text-zinc-500 italic text-[11px] text-center">
                         Local micro-climates may present minor deviations.
                       </div>
                     </div>
@@ -430,11 +438,12 @@ export default function Weather() {
                 </div>
               )}
 
+              {/* Right Column: 7-Day Forecast Aggregation */}
               <div className="lg:col-span-8 w-full">
                 {forecast.length > 0 && (
-                  <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm">
-                    <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center border-b border-slate-100 pb-3 mb-4">
-                      <Calendar className="w-4 h-4 mr-1.5 text-slate-400" /> 7-Day Aggregation Forecast
+                  <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm transition-colors">
+                    <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
+                      <Calendar className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> 7-Day Aggregation Forecast
                     </h2>
 
                     <div className="space-y-3">
@@ -444,26 +453,26 @@ export default function Weather() {
                         return (
                           <div
                             key={i}
-                            className="flex items-center p-3 rounded-lg bg-slate-50/50 hover:bg-slate-50 border border-slate-200/60 hover:border-slate-300 transition-all text-xs"
+                            className="flex items-center p-3 rounded-lg bg-slate-50/50 dark:bg-zinc-950/30 hover:bg-slate-50 dark:hover:bg-zinc-950 border border-slate-200/60 dark:border-zinc-800/40 hover:border-slate-300 dark:hover:border-zinc-700 transition-all text-xs"
                           >
                             <div className="w-24 sm:w-32">
-                              <p className="font-semibold text-slate-900">{dayName}</p>
-                              <p className="text-[11px] text-slate-400 font-medium">{date}</p>
+                              <p className="font-semibold text-slate-900 dark:text-zinc-200">{dayName}</p>
+                              <p className="text-[11px] text-slate-400 dark:text-zinc-500 font-medium">{date}</p>
                             </div>
 
                             <div className="flex items-center flex-1 px-2">
                               {getWeatherIcon(day.weather_code, "w-5 h-5 mr-2 flex-shrink-0")}
-                              <span className="text-slate-600 font-medium hidden sm:inline">
+                              <span className="text-slate-600 dark:text-zinc-400 font-medium hidden sm:inline">
                                 {weatherCodeText(day.weather_code)}
                               </span>
                             </div>
 
                             <div className="flex space-x-4 ml-auto text-right font-mono font-bold">
-                              <span className="text-rose-600 flex items-center gap-0.5">
-                                <TrendingUp size={13} className="text-rose-400" /> {Math.round(day.temp_max)}°
+                              <span className="text-rose-600 dark:text-rose-400 flex items-center gap-0.5">
+                                <TrendingUp size={13} className="text-rose-400 dark:text-rose-500" /> {Math.round(day.temp_max)}°
                               </span>
-                              <span className="text-blue-600 flex items-center gap-0.5">
-                                <TrendingDown size={13} className="text-blue-400" /> {Math.round(day.temp_min)}°
+                              <span className="text-blue-600 dark:text-blue-400 flex items-center gap-0.5">
+                                <TrendingDown size={13} className="text-blue-400 dark:text-blue-500" /> {Math.round(day.temp_min)}°
                               </span>
                             </div>
                           </div>
@@ -475,15 +484,16 @@ export default function Weather() {
               </div>
             </div>
 
+            {/* Historical Database Logs Table */}
             {history.length > 0 && (
-              <div className="p-5 bg-white rounded-xl border border-slate-200 shadow-sm mt-6 w-full">
-                <h2 className="text-xs font-semibold text-slate-400 uppercase tracking-wider flex items-center border-b border-slate-100 pb-3 mb-4">
-                  <BarChart3 className="w-4 h-4 mr-1.5 text-slate-400" /> 30-Day Historical Baseline Logs
+              <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm mt-6 w-full transition-colors">
+                <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
+                  <BarChart3 className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> 30-Day Historical Baseline Logs
                 </h2>
 
-                <div className="overflow-x-auto rounded-lg border border-slate-200">
-                  <table className="min-w-full divide-y divide-slate-200 text-xs text-left">
-                    <thead className="bg-slate-50 text-slate-500 font-semibold uppercase tracking-wider">
+                <div className="overflow-x-auto rounded-lg border border-slate-200 dark:border-zinc-800/80">
+                  <table className="min-w-full divide-y divide-slate-200 dark:divide-zinc-800/80 text-xs text-left">
+                    <thead className="bg-slate-50 dark:bg-zinc-950 text-slate-500 dark:text-zinc-400 font-semibold uppercase tracking-wider">
                       <tr>
                         <th className="px-4 py-2.5">Date Index</th>
                         <th className="px-4 py-2.5 text-center">Atmospheric Condition</th>
@@ -494,20 +504,20 @@ export default function Weather() {
                       </tr>
                     </thead>
 
-                    <tbody className="divide-y divide-slate-100 font-medium text-slate-700">
+                    <tbody className="divide-y divide-slate-100 dark:divide-zinc-800/50 font-medium text-slate-700 dark:text-zinc-300">
                       {history.map((day, i) => (
-                        <tr key={i} className="bg-white hover:bg-slate-50/80 transition-colors font-mono">
-                          <td className="px-4 py-2.5 text-slate-900 font-sans font-medium">{day.date}</td>
+                        <tr key={i} className="bg-white dark:bg-zinc-900 hover:bg-slate-50/80 dark:hover:bg-zinc-800/30 transition-colors font-mono">
+                          <td className="px-4 py-2.5 text-slate-900 dark:text-zinc-50 font-sans font-medium">{day.date}</td>
                           <td className="px-4 py-2.5 text-center font-sans">
                             <span className="flex items-center justify-center gap-1.5">
                               {getWeatherIcon(day.weather_code, "w-4 h-4")}
-                              <span className="text-slate-600">{weatherCodeText(day.weather_code)}</span>
+                              <span className="text-slate-600 dark:text-zinc-400">{weatherCodeText(day.weather_code)}</span>
                             </span>
                           </td>
-                          <td className="px-4 py-2.5 text-right text-rose-600 font-bold">{day.temp_max}°C</td>
-                          <td className="px-4 py-2.5 text-right text-blue-600 font-bold">{day.temp_min}°C</td>
-                          <td className="px-4 py-2.5 text-right text-blue-500">{day.rain} mm</td>
-                          <td className="px-4 py-2.5 text-right text-slate-500 font-normal">{day.wind} m/s</td>
+                          <td className="px-4 py-2.5 text-right text-rose-600 dark:text-rose-400 font-bold">{day.temp_max}°C</td>
+                          <td className="px-4 py-2.5 text-right text-blue-600 dark:text-blue-400 font-bold">{day.temp_min}°C</td>
+                          <td className="px-4 py-2.5 text-right text-blue-500 dark:text-blue-400">{day.rain} mm</td>
+                          <td className="px-4 py-2.5 text-right text-slate-500 dark:text-zinc-400 font-normal">{day.wind} m/s</td>
                         </tr>
                       ))}
                     </tbody>

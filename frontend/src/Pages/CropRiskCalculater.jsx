@@ -24,48 +24,48 @@ const SlidersIcon = ({ className }) => (
 export default function WorkspaceManager() {
   const [activeTab, setActiveTab] = useState('tool1');
 
-  return (
+return (
     <>
       <Header />
-      <div className="w-full bg-white border-b border-slate-200/80 pt-5 md:pt-8 px-4 sm:px-6">
+      <div className="w-full bg-white dark:bg-zinc-950 border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-8 px-4 sm:px-6 transition-colors duration-200">
         <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
           <div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-              <FaChartBar className="text-emerald-600" size={26} /> AgriSense Climate Risk Tool
+            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
+              <FaChartBar className="text-emerald-600 dark:text-emerald-400" size={26} /> AgriSense Climate Risk Tool
             </h1>
-            <p className="text-slate-500 text-sm mt-1 max-w-xl">
+            <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
               Evaluate real-time crop resilience margins, predict contextual hazards, and map optimal environmental risk distributions.
             </p>
           </div>
         </div>
       </div>
 
-      <div className="w-full max-w-screen mx-auto px-2 md:px-8 py-5 pb-16 font-sans antialiased text-slate-900 selection:bg-slate-200">
-        <div className="inline-flex items-center w-full sm:w-auto bg-[#edf2f6] p-0.5 rounded-lg border border-slate-200/50 shadow-3xs mb-5 transition-all">
+      <div className="w-full max-w-screen mx-auto px-2 md:px-8 py-5 pb-16 font-sans antialiased text-slate-900 dark:text-zinc-300 selection:bg-slate-200 dark:selection:bg-zinc-800 transition-colors duration-200">
+        <div className="inline-flex items-center w-full sm:w-auto bg-[#edf2f6] dark:bg-[#121212] p-0.5 rounded-lg border border-slate-200/50 dark:border-zinc-800 shadow-3xs mb-5 transition-all">
           <button
             onClick={() => setActiveTab('tool1')}
             className={`flex items-center justify-center gap-2 px-3.5 py-1.5 text-[11px] tracking-tight rounded-md font-semibold transition-all duration-150 focus:outline-none flex-1 sm:flex-initial select-none ${activeTab === 'tool1'
-              ? 'bg-white text-slate-900 shadow-3xs border border-slate-200/20'
-              : 'text-slate-400 hover:text-slate-600 bg-transparent'
+              ? 'bg-white dark:bg-zinc-800 text-slate-900 dark:text-white shadow-3xs border border-slate-200/20 dark:border-zinc-700'
+              : 'text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 bg-transparent'
               }`}
           >
-            <SearchIcon className={`w-3 h-3 flex-shrink-0 stroke-[2.5px] transition-colors ${activeTab === 'tool1' ? 'text-slate-900' : 'text-slate-400'}`} />
+            <SearchIcon className={`w-3 h-3 flex-shrink-0 stroke-[2.5px] transition-colors ${activeTab === 'tool1' ? 'text-slate-900 dark:text-white' : 'text-slate-400 dark:text-zinc-500'}`} />
             <span>Tool 1: Climate Risk Finder</span>
           </button>
 
           <button
             onClick={() => setActiveTab('tool2')}
             className={`flex items-center justify-center gap-2 px-3.5 py-1.5 text-[11px] tracking-tight rounded-md font-semibold transition-all duration-150 focus:outline-none flex-1 sm:flex-initial select-none ${activeTab === 'tool2'
-              ? 'bg-white text-slate-900 shadow-3xs border border-slate-200/20'
-              : 'text-slate-400 hover:text-slate-600 bg-transparent'
+              ? 'bg-white dark:bg-zinc-800 text-slate-900 dark:text-white shadow-3xs border border-slate-200/20 dark:border-zinc-700'
+              : 'text-slate-400 dark:text-zinc-500 hover:text-slate-600 dark:hover:text-zinc-300 bg-transparent'
               }`}
           >
-            <SlidersIcon className={`w-3 h-3 flex-shrink-0 stroke-[2.5px] transition-colors ${activeTab === 'tool2' ? 'text-slate-900' : 'text-slate-400'}`} />
+            <SlidersIcon className={`w-3 h-3 flex-shrink-0 stroke-[2.5px] transition-colors ${activeTab === 'tool2' ? 'text-slate-900 dark:text-white' : 'text-slate-400 dark:text-zinc-500'}`} />
             <span>Tool 2: Risk Calculator</span>
           </button>
         </div>
 
-        <div className="w-full bg-[#f8fafc] rounded-xl border border-slate-200/60 shadow-3xs p-1 md:p-2 transition-all duration-200 min-h-[350px]">
+        <div className="w-full bg-[#f8fafc] dark:bg-[#09090b] rounded-xl border border-slate-200/60 dark:border-zinc-800/80 shadow-3xs p-1 md:p-2 transition-colors duration-200 min-h-[350px]">
           <div className="w-full animate-fadeIn transition-opacity duration-150">
             {activeTab === 'tool1' ? (
               <CropRiskCalculator />

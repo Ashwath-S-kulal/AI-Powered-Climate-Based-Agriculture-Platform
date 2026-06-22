@@ -33,53 +33,53 @@ export default function Breadcrumbs() {
   if (paths.includes("chatbot")) return null;
   if (paths.length === 0) return null;
 
-  return (
-    <nav
-      aria-label="Breadcrumb"
-      className="fixed bottom-0 left-0 z-[50] w-full overflow-x-auto no-scrollbar transition-all duration-300"
-    >
-      <ol className="flex items-center whitespace-nowrap py-1 px-3 bg-white/80 backdrop-blur-md border border-gray-200  shadow-sm border-l-0">
-        <li className="flex items-center">
-          <Link
-            to="/"
-            className="flex items-center text-gray-500 hover:text-green-600 p-1"
-            title="Dashboard"
-          >
-            <Home size={16} />
-          </Link>
-        </li>
+ return (
+  <nav
+    aria-label="Breadcrumb"
+    className="fixed bottom-0 left-0 z-[50] w-full overflow-x-auto no-scrollbar transition-all duration-300"
+  >
+    <ol className="flex items-center whitespace-nowrap py-1 px-3 bg-white/80 dark:bg-black/90 backdrop-blur-md border border-gray-200 dark:border-neutral-900 shadow-sm border-l-0">
+      <li className="flex items-center">
+        <Link
+          to="/"
+          className="flex items-center text-gray-500 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 p-1 transition-colors"
+          title="Dashboard"
+        >
+          <Home size={16} />
+        </Link>
+      </li>
 
-        {paths.map((path, index) => {
-          const isLast = index === paths.length - 1;
-          const link = "/" + paths.slice(0, index + 1).join("/");
-          const label = routeNameMap[path] || path;
-          const Icon = iconMap[path];
+      {paths.map((path, index) => {
+        const isLast = index === paths.length - 1;
+        const link = "/" + paths.slice(0, index + 1).join("/");
+        const label = routeNameMap[path] || path;
+        const Icon = iconMap[path];
 
-          return (
-            <li key={index} className="flex items-center">
-              <ChevronRight size={14} className="text-gray-400 mx-0.5" />
+        return (
+          <li key={index} className="flex items-center">
+            <ChevronRight size={14} className="text-gray-400 dark:text-neutral-700 mx-0.5" />
 
-              {!isLast ? (
-                <Link
-                  to={link}
-                  className="flex items-center gap-1 text-xs font-medium text-gray-500 hover:text-green-600 transition-colors px-1"
-                >
-                  {/* Icon hidden on very small screens to save space */}
-                  <span className="hidden xs:inline-flex">{Icon}</span>
-                  <span className="capitalize">{label}</span>
-                </Link>
-              ) : (
-                <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100/50 text-green-700 rounded-md border border-green-200">
-                  <span className="xs:inline-flex">{Icon}</span>
-                  <span className="text-xs font-semibold capitalize truncate max-w-[100px] sm:max-w-none">
-                    {label}
-                  </span>
-                </div>
-              )}
-            </li>
-          );
-        })}
-      </ol>
-    </nav>
-  );
+            {!isLast ? (
+              <Link
+                to={link}
+                className="flex items-center gap-1 text-xs font-medium text-gray-500 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 transition-colors px-1"
+              >
+                {/* Icon hidden on very small screens to save space */}
+                <span className="hidden xs:inline-flex">{Icon}</span>
+                <span className="capitalize">{label}</span>
+              </Link>
+            ) : (
+              <div className="flex items-center gap-1 px-2 py-0.5 bg-green-100/50 dark:bg-green-950/40 text-green-700 dark:text-green-400 rounded-md border border-green-200 dark:border-green-900/60">
+                <span className="xs:inline-flex">{Icon}</span>
+                <span className="text-xs font-semibold capitalize truncate max-w-[100px] sm:max-w-none">
+                  {label}
+                </span>
+              </div>
+            )}
+          </li>
+        );
+      })}
+    </ol>
+  </nav>
+);
 }

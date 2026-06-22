@@ -42,7 +42,7 @@ export default function OAuthFacebook() {
         <button
             type="button"
             onClick={handleFacebookClick}
-            className="w-full flex items-center justify-center gap-3 bg-white border border-[#e2e8f0] py-3 px-6 rounded-full transition-all hover:bg-slate-50 hover:border-slate-300 shadow-sm group"
+            className="w-full flex items-center justify-center gap-3 bg-white dark:bg-zinc-900 border border-[#e2e8f0] dark:border-zinc-800 py-3 px-6 rounded-full transition-all hover:bg-slate-50 dark:hover:bg-zinc-800 hover:border-slate-300 dark:hover:border-zinc-700 shadow-sm group"
         >
             <svg
                 className="w-5 h-5"
@@ -56,13 +56,13 @@ export default function OAuthFacebook() {
                 />
             </svg>
 
-            <span className="text-[15px] font-semibold text-[#2d3748]">
+            <span className="text-[15px] font-semibold text-[#2d3748] dark:text-zinc-200">
                 Sign in with Facebook
             </span>
 
             <ArrowRight
                 size={18}
-                className="text-slate-300 group-hover:text-slate-500 group-hover:translate-x-0.5 transition-all"
+                className="text-slate-300 dark:text-zinc-600 group-hover:text-slate-500 dark:group-hover:text-zinc-400 group-hover:translate-x-0.5 transition-all"
             />
         </button>
     );

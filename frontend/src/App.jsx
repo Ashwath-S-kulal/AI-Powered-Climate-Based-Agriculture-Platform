@@ -5,15 +5,14 @@ import Home from "./Pages/Home"
 import Weather from './Pages/Weather'
 import Disease from './Pages/Disease';
 import SoilAnalytics from './Pages/SoilAnalytics';
-import About from './Pages/About';
 import SignIn from './Pages/SignIn';
 import Profile from './Pages/Profile';
 import PrivateRoute from './Components/PrivateRoute';
 import CropsList from './Pages/CropList';
 import AccessPage from './Components/AccessPage';
-import CropRecomnder from './Pages/CropRecomnder';
+import CropRecomnder from './Pages/CropRecomnder'; // Note: spelling error matches your file path
 import CropInfo from './Pages/CropInfo';
-import CropRiskCalculater from './Pages/CropRiskCalculater';
+import CropRiskCalculater from './Pages/CropRiskCalculater'; // Note: spelling error matches your file path
 import Tips from "./Pages/ClimateResilientIdeas/Tips"
 import ScrollToTop from './Components/ScrollToTop';
 import DiseaseData from "./Pages/DiseaseData"
@@ -27,18 +26,22 @@ import Breadcrumbs from "./Components/Breadcrumbs";
 import ChatbotIcon from "./Components/ChatbotIcon";
 import GeoIntelligencePage from './Pages/GeoIntelligence';
 
-
 export default function App() {
   return (
-    <div>
-      <BrowserRouter>
+    <BrowserRouter>
+      {/* 🌟 MASTER GLOBAL THEME WRAPPER 🌟 */}
+      <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-zinc-950 dark:text-slate-50 transition-colors duration-300">
+        
+        {/* Persistent Components */}
         <ScrollToTop />
         <Breadcrumbs />
         <ChatbotIcon />
+        
+        {/* Application Core Routes */}
         <Routes>
+          {/* Public Routes */}
           <Route path="/" element={<Dashboard />} />
           <Route path="/home" element={<Home />} />
-          <Route path='/about' element={<About />} />
           <Route path='/signin' element={<SignIn />} />
           <Route path='/accesspage' element={<AccessPage />} />
           <Route path='/croplibrary' element={<CropsLibrary />} />
@@ -52,6 +55,7 @@ export default function App() {
           <Route path='/geointelligence' element={<GeoIntelligencePage />} />
           <Route path='/weather' element={<Weather />} />
 
+          {/* Protected Regular User Routes */}
           <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
             <Route path='/disease' element={<Disease />} />
@@ -60,13 +64,13 @@ export default function App() {
             <Route path='/cropriskcalculater' element={<CropRiskCalculater />} />
           </Route>
 
-
+          {/* Protected Admin Routes */}
           <Route element={<AdminRoute />}>
             <Route path='/profile/adminpanel' element={<AdminDashboard />} />
           </Route>
-
         </Routes>
-      </BrowserRouter>
-    </div>
-  )
+
+      </div>
+    </BrowserRouter>
+  );
 }

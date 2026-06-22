@@ -192,23 +192,23 @@ export default function Practices() {
     setSelectedItem(category.items.length > 0 ? category.items[0] : null);
   };
 
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+return (
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-100 font-sans antialiased">
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
         {/* Clean Architectural Header Area */}
-        <header className="border-b border-slate-200 pb-6 mb-8">
-          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 mt-1 mb-2">
+        <header className="border-b border-slate-200 dark:border-zinc-800 pb-6 mb-8">
+          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1 mb-2">
             Good Practices
           </h1>
-          <p className="text-sm text-slate-500 font-medium">
+          <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
             Proven systematic frameworks and operational methodologies optimized for resilient farm management.
           </p>
         </header>
 
         {/* Clean Segment Navigation Controls */}
-        <div className="flex border-b border-slate-200 overflow-x-auto scrollbar-none gap-6 mb-8">
+        <div className="flex border-b border-slate-200 dark:border-zinc-800 overflow-x-auto scrollbar-none gap-6 mb-8">
           {resilienceData.map((category) => {
             const isActive = activeCategory.category === category.category;
             return (
@@ -216,12 +216,12 @@ export default function Practices() {
                 key={category.category}
                 onClick={() => handleCategoryChange(category)}
                 className={`pb-4 text-sm font-semibold tracking-tight relative whitespace-nowrap transition-all focus:outline-none ${
-                  isActive ? 'text-emerald-600' : 'text-slate-500 hover:text-slate-800'
+                  isActive ? 'text-emerald-600 dark:text-emerald-400' : 'text-slate-500 dark:text-zinc-500 hover:text-slate-800 dark:hover:text-zinc-300'
                 }`}
               >
                 {category.category}
                 {isActive && (
-                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-emerald-600 rounded-full" />
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px] bg-emerald-600 dark:bg-emerald-400 rounded-full" />
                 )}
               </button>
             );
@@ -234,11 +234,11 @@ export default function Practices() {
           {/* Left Master Segment Column */}
           <div className="lg:col-span-5 flex flex-col space-y-5">
             {/* Category Context Summary Box */}
-            <div className="bg-white border border-slate-200 rounded-xl p-5 shadow-sm">
-              <h2 className="text-lg font-bold text-slate-900 tracking-tight mb-2">
+            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm">
+              <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
                 {activeCategory.category} Frameworks
               </h2>
-              <p className="text-xs text-slate-500 leading-relaxed font-medium">
+              <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed font-medium">
                 {activeCategory.detail}
               </p>
             </div>
@@ -253,16 +253,16 @@ export default function Practices() {
                     onClick={() => setSelectedItem(item)}
                     className={`w-full text-left p-3.5 rounded-xl border flex items-center gap-3 transition-all focus:outline-none ${
                       isSelected
-                        ? 'bg-white border-slate-400 text-slate-900 shadow-sm ring-1 ring-slate-400/20'
-                        : 'bg-white border-slate-200 text-slate-600 hover:border-slate-300 hover:bg-slate-50/50'
+                        ? 'bg-white dark:bg-zinc-800 border-slate-400 dark:border-zinc-600 text-slate-900 dark:text-white shadow-sm ring-1 ring-slate-400/20'
+                        : 'bg-white dark:bg-zinc-900 border-slate-200 dark:border-zinc-800 text-slate-600 dark:text-zinc-400 hover:border-slate-300 dark:hover:border-zinc-700 hover:bg-slate-50/50 dark:hover:bg-zinc-800/50'
                     }`}
                   >
                     <div className={`p-2 rounded-lg border transition-colors ${
-                      isSelected ? 'bg-slate-50 border-slate-200' : 'bg-slate-50/40 border-slate-100'
+                      isSelected ? 'bg-slate-50 dark:bg-zinc-700 border-slate-200 dark:border-zinc-600' : 'bg-slate-50/40 dark:bg-zinc-800 border-slate-100 dark:border-zinc-700'
                     }`}>
                       <SparklesIcon />
                     </div>
-                    <span className="text-sm font-semibold tracking-tight text-slate-800">
+                    <span className="text-sm font-semibold tracking-tight text-slate-800 dark:text-zinc-200">
                       {item.title}
                     </span>
                   </button>
@@ -272,7 +272,7 @@ export default function Practices() {
           </div>
 
           {/* Right Detail Preview Workspace Canvas */}
-          <div className="lg:col-span-7 bg-white border border-slate-200 rounded-xl p-6 shadow-sm min-h-[500px] flex flex-col justify-between">
+          <div className="lg:col-span-7 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 shadow-sm min-h-[500px] flex flex-col justify-between">
             {selectedItem ? (
               <div className="w-full flex flex-col h-full">
                 {/* Clean Image Border Frame */}
@@ -280,13 +280,13 @@ export default function Practices() {
                   <img
                     src={selectedItem.imageUrl}
                     alt={selectedItem.title}
-                    className="w-full h-64 object-cover rounded-xl border border-slate-200 shadow-sm mb-6 bg-slate-50"
+                    className="w-full h-64 object-cover rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm mb-6 bg-slate-50 dark:bg-zinc-950"
                     loading="lazy"
                   />
                 ) : (
-                  <div className="w-full h-64 bg-slate-50 rounded-xl flex flex-col items-center justify-center border border-dashed border-slate-200 mb-6">
+                  <div className="w-full h-64 bg-slate-50 dark:bg-zinc-950 rounded-xl flex flex-col items-center justify-center border border-dashed border-slate-200 dark:border-zinc-700 mb-6">
                     <span className="text-2xl mb-2">{activeCategory.icon || "🌱"}</span>
-                    <p className="text-xs text-slate-400 font-semibold tracking-tight">
+                    <p className="text-xs text-slate-400 dark:text-zinc-500 font-semibold tracking-tight">
                       System Reference Layout Grid
                     </p>
                   </div>
@@ -294,16 +294,16 @@ export default function Practices() {
 
                 {/* Content Block */}
                 <div>
-                  <h3 className="text-xl font-extrabold text-slate-900 tracking-tight mb-3">
+                  <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
                     {selectedItem.title}
                   </h3>
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal bg-slate-50/50 border border-slate-100 p-5 rounded-xl">
+                  <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed font-normal bg-slate-50/50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-800 p-5 rounded-xl">
                     {selectedItem.description}
                   </p>
                 </div>
               </div>
             ) : (
-              <div className="text-center text-slate-400 flex-1 flex flex-col items-center justify-center py-12">
+              <div className="text-center text-slate-400 dark:text-zinc-600 flex-1 flex flex-col items-center justify-center py-12">
                 <span className="text-3xl mb-3 opacity-60">🌾</span>
                 <p className="text-sm font-semibold tracking-tight">
                   Select a tactical methodology configuration to view blueprint architecture.

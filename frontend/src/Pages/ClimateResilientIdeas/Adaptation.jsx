@@ -98,49 +98,49 @@ const TipCard = ({ tip, isActive, onToggle }) => {
   const IconComponent = iconMap[tip.id];
 
   return (
-    <div className="bg-white border border-slate-200 rounded-xl overflow-hidden hover:border-emerald-300 transition-colors duration-200">
+    <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl overflow-hidden hover:border-emerald-300 dark:hover:border-emerald-700 transition-colors duration-200">
       <button
         onClick={() => onToggle(tip.id)}
-        className="w-full flex items-center justify-between p-5 text-left bg-white hover:bg-slate-50/50 transition-colors focus:outline-none"
+        className="w-full flex items-center justify-between p-5 text-left bg-white dark:bg-zinc-900 hover:bg-slate-50/50 dark:hover:bg-zinc-800/50 transition-colors focus:outline-none"
       >
         <div className="flex items-center space-x-4">
-          <div className="p-3 bg-slate-50 rounded-lg text-slate-600 border border-slate-100 flex-shrink-0">
+          <div className="p-3 bg-slate-50 dark:bg-zinc-800 rounded-lg text-slate-600 dark:text-zinc-400 border border-slate-100 dark:border-zinc-700 flex-shrink-0">
             {IconComponent && <IconComponent />}
           </div>
           <div>
-            <h3 className="text-base font-semibold text-slate-900 tracking-tight leading-tight">{tip.title}</h3>
-            <p className="text-xs text-slate-500 mt-1 hidden sm:block font-medium">{tip.summary}</p>
+            <h3 className="text-base font-semibold text-slate-900 dark:text-white tracking-tight leading-tight">{tip.title}</h3>
+            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 hidden sm:block font-medium">{tip.summary}</p>
           </div>
         </div>
-        <ChevronDown className={`${isActive ? 'rotate-180 text-emerald-600' : 'text-slate-400'}`} />
+        <ChevronDown className={`${isActive ? 'rotate-180 text-emerald-600 dark:text-emerald-400' : 'text-slate-400 dark:text-zinc-500'}`} />
       </button>
 
       <div
         className={`grid overflow-hidden transition-all duration-300 ease-in-out ${
-          isActive ? 'grid-rows-[1fr] opacity-100 border-t border-slate-100' : 'grid-rows-[0fr] opacity-0'
+          isActive ? 'grid-rows-[1fr] opacity-100 border-t border-slate-100 dark:border-zinc-800' : 'grid-rows-[0fr] opacity-0'
         }`}
       >
         <div className="overflow-hidden">
-          <div className="p-5 bg-slate-50/40">
+          <div className="p-5 bg-slate-50/40 dark:bg-zinc-950">
             {/* Mobile Summary fallback */}
-            <p className="text-xs text-slate-500 font-medium mb-3 block sm:hidden">
-              <span className="text-slate-800 font-semibold">Summary:</span> {tip.summary}
+            <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mb-3 block sm:hidden">
+              <span className="text-slate-800 dark:text-zinc-200 font-semibold">Summary:</span> {tip.summary}
             </p>
 
-            <p className="text-sm text-slate-600 leading-relaxed font-normal mb-5">
+            <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed font-normal mb-5">
               {tip.detail}
             </p>
 
-            <div className="bg-white border border-slate-200 p-3 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
-              <div className="flex items-center text-xs font-semibold text-slate-700">
-                <Shield className="w-4 h-4 text-emerald-600 mr-2 flex-shrink-0" />
+            <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 p-3 rounded-lg flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+              <div className="flex items-center text-xs font-semibold text-slate-700 dark:text-zinc-300">
+                <Shield className="w-4 h-4 text-emerald-600 dark:text-emerald-400 mr-2 flex-shrink-0" />
                 <span>Source Foundation: {tip.sourceCredit}</span>
               </div>
               <a
                 href={tip.sourceLink}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs font-bold text-emerald-600 hover:text-emerald-700 transition-colors inline-flex items-center"
+                className="text-xs font-bold text-emerald-600 dark:text-emerald-400 hover:text-emerald-700 dark:hover:text-emerald-300 transition-colors inline-flex items-center"
               >
                 Explore Concept Guides &rarr;
               </a>
@@ -159,18 +159,20 @@ export default function Tips() {
     setActiveTipId(activeTipId === id ? null : id);
   };
 
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+return (
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-100 font-sans antialiased">
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
         {/* Clean Architectural Header Area */}
-        <header className="border-b border-slate-200 pb-8 mb-10">
-          <span className="text-emerald-600 font-semibold text-xs tracking-wider uppercase">Agri Knowledge Core</span>
-          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 mt-2 mb-3">
+        <header className="border-b border-slate-200 dark:border-zinc-800 pb-8 mb-10">
+          <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-xs tracking-wider uppercase">
+            Agri Knowledge Core
+          </span>
+          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-2 mb-3">
             Adaptation Strategies
           </h1>
-          <p className="text-sm sm:text-sm text-slate-500 max-w-2xl font-medium leading-relaxed">
+          <p className="text-sm sm:text-sm text-slate-500 dark:text-slate-400 max-w-2xl font-medium leading-relaxed">
             Data-driven agricultural tactics and structural adjustments engineered to maximize macro-level crop resilience and operational yield.
           </p>
         </header>

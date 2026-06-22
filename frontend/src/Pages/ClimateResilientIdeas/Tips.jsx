@@ -73,23 +73,23 @@ export default function Tips() {
   const section = tips.find((s) => s.id === active);
   const ActiveIcon = section?.icon;
 
-  return (
-    <div className="min-h-screen bg-slate-50 text-slate-900 font-sans antialiased">
+return (
+    <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-100 font-sans antialiased">
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
         {/* Clean Architectural Header Area */}
-        <header className="border-b border-slate-200 pb-6 mb-8">
-          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 mt-1 mb-2">
+        <header className="border-b border-slate-200 dark:border-zinc-800 pb-6 mb-8">
+          <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1 mb-2">
             Climate Resilience Framework
           </h1>
-          <p className="text-sm text-slate-500 font-medium">
+          <p className="text-sm text-slate-500 dark:text-slate-400 font-medium">
             Interactive guide to environmental protection adjustments, resource management, and conservation matrices.
           </p>
         </header>
 
         {/* Unified Horizontal Selection Bar */}
-        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 mb-8 p-1.5 bg-slate-200/60 rounded-xl border border-slate-200">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 mb-8 p-1.5 bg-slate-200/60 dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800">
           {tips.map((sec) => {
             const Icon = sec.icon;
             const isActive = sec.id === active;
@@ -100,12 +100,12 @@ export default function Tips() {
                 onClick={() => setActive(sec.id)}
                 className={`flex items-center justify-center sm:justify-start gap-2.5 flex-1 min-w-[120px] px-4 py-3 text-xs font-bold tracking-tight rounded-lg transition-all focus:outline-none ${
                   isActive
-                    ? `bg-white border-slate-200/80 text-slate-900 shadow-sm ${sec.color}`
-                    : "text-slate-600 hover:text-slate-900 hover:bg-white/40"
+                    ? `bg-white dark:bg-zinc-800 border-slate-200/80 dark:border-zinc-700 text-slate-900 dark:text-white shadow-sm ${sec.color}`
+                    : "text-slate-600 dark:text-zinc-400 hover:text-slate-900 dark:hover:text-zinc-100 hover:bg-white/40 dark:hover:bg-zinc-800/50"
                 }`}
               >
                 {Icon && (
-                  <Icon className={`w-4 h-4 flex-shrink-0 transition-colors ${isActive ? sec.color : "text-slate-400"}`} />
+                  <Icon className={`w-4 h-4 flex-shrink-0 transition-colors ${isActive ? sec.color : "text-slate-400 dark:text-zinc-500"}`} />
                 )}
                 <span>{sec.title.split(" ")[0]}</span>
               </button>
@@ -115,17 +115,17 @@ export default function Tips() {
 
         {/* Feature Detail Board Workspace */}
         {section && (
-          <div className="bg-white border border-slate-200 rounded-xl p-6 sm:p-8 shadow-sm animate-fadeIn">
+          <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 shadow-sm animate-fadeIn">
             {/* Header Description Element */}
-            <div className="flex items-start gap-4 pb-6 mb-6 border-b border-slate-100">
+            <div className="flex items-start gap-4 pb-6 mb-6 border-b border-slate-100 dark:border-zinc-800">
               {ActiveIcon && (
-                <div className="p-3 bg-slate-50 border border-slate-100 rounded-xl flex-shrink-0">
+                <div className="p-3 bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700 rounded-xl flex-shrink-0">
                   <ActiveIcon className={`w-6 h-6 ${section.color}`} />
                 </div>
               )}
               <div>
-                <h3 className="text-xl font-bold tracking-tight text-slate-900">{section.title}</h3>
-                <p className="text-xs sm:text-sm font-medium text-slate-500 mt-0.5">{section.subtitle}</p>
+                <h3 className="text-xl font-bold tracking-tight text-slate-900 dark:text-white">{section.title}</h3>
+                <p className="text-xs sm:text-sm font-medium text-slate-500 dark:text-slate-400 mt-0.5">{section.subtitle}</p>
               </div>
             </div>
 
@@ -134,13 +134,13 @@ export default function Tips() {
               {section.tips.map((tip, i) => (
                 <li 
                   key={i} 
-                  className="flex items-start gap-4 p-4 rounded-xl border border-slate-100 bg-slate-50/40 hover:bg-slate-50 hover:border-slate-200/80 transition-colors"
+                  className="flex items-start gap-4 p-4 rounded-xl border border-slate-100 dark:border-zinc-800 bg-slate-50/40 dark:bg-zinc-950 hover:bg-slate-50 dark:hover:bg-zinc-900 hover:border-slate-200/80 dark:hover:border-zinc-700 transition-colors"
                 >
-                  <span className={`p-1 rounded-md bg-white border border-slate-200 shadow-sm mt-0.5 flex-shrink-0 ${section.color}`}>
+                  <span className={`p-1 rounded-md bg-white dark:bg-zinc-800 border border-slate-200 dark:border-zinc-700 shadow-sm mt-0.5 flex-shrink-0 ${section.color}`}>
                     <CheckIcon className="w-3 h-3" />
                   </span>
-                  <p className="text-sm text-slate-600 leading-relaxed font-normal">
-                    <span className="font-bold text-slate-800 mr-1">{i + 1}.</span>
+                  <p className="text-sm text-slate-600 dark:text-zinc-400 leading-relaxed font-normal">
+                    <span className="font-bold text-slate-800 dark:text-zinc-200 mr-1">{i + 1}.</span>
                     {tip}
                   </p>
                 </li>
