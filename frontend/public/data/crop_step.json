@@ -1,0 +1,800 @@
+[
+  {
+    "num":1,
+    "name": "Corn",
+    "type": "Sweet Corn",
+    "season": "Summer",
+    "image": "https://3.imimg.com/data3/GH/QI/MY-11765206/corn.jpg",
+    "title": "How to Plant Corn",
+    "overview": "Sweet corn is a warm-season annual. Sow in blocks for good pollination and keep evenly watered.",
+    "steps": [
+      "Pick a full-sun site with fertile, well-drained soil (pH 6.0–6.8).",
+      "Amend soil with compost; rake into 30–36 in (75–90 cm) rows.",
+      "Direct-sow seeds 1–1.5 in deep, 8–10 in apart; plant in at least 3 short rows (a block).",
+      "Keep soil consistently moist; mulch to retain water.",
+      "Side-dress with nitrogen when plants are 12 in tall and again at tasseling.",
+      "Weed carefully; avoid disturbing shallow roots.",
+      "Harvest when silks brown and kernels exude milky juice (about 18–24 days after silking).",
+      "Cool ears immediately after picking for best sweetness."
+    ]
+  },
+  {
+    "num":2,
+    "name": "Wheat",
+    "type": "Winter Wheat",
+    "season": "Winter",
+    "image": "https://cdn.pixabay.com/photo/2023/07/30/07/23/soft-wheat-8158264_1280.jpg",
+    "title": "How to Grow Wheat",
+    "overview": "Winter wheat is sown in fall and harvested the following summer.",
+    "steps": [
+      "Choose a full-sun field with well-drained loam.",
+      "Till and level, then broadcast seed at recommended rate (~90–120 lbs/acre) or drill 1–1.5 in deep.",
+      "Irrigate lightly to establish; avoid waterlogging.",
+      "Fertilize based on soil test; add nitrogen at tillering and again at jointing.",
+      "Scout for rusts/aphids; treat if thresholds are exceeded.",
+      "Reduce weeds with early canopy and mechanical control.",
+      "Harvest when heads are golden and kernels hard (~13–15% moisture).",
+      "Dry/clean grain and store in a cool, dry place."
+    ]
+  },
+  {
+    "num":3,
+    "name": "Tomatoes",
+    "type": "Roma Tomatoes",
+    "season": "Summer",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/8/89/Tomato_je.jpg",
+    "title": "How to Grow Roma Tomatoes",
+    "overview": "Tomatoes love heat and steady moisture; stake early for tidy plants.",
+    "steps": [
+      "Start with disease-resistant seedlings; harden off before transplanting.",
+      "Plant in full sun after frost; space 18–24 in apart.",
+      "Bury stems deep to encourage roots; add compost and slow-release fertilizer.",
+      "Install stakes/cages immediately; tie as they grow.",
+      "Water at soil level 1–1.5 in/week; mulch to prevent splash.",
+      "Prune lower leaves; remove suckers if desired.",
+      "Feed with balanced fertilizer at first fruit set.",
+      "Harvest when fruits are deep red and firm; avoid refrigeration for flavor."
+    ]
+  },
+  {
+    "num":4,
+    "name": "Rice",
+    "type": "Basmati",
+    "season": "Monsoon",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAlXxpenUacn2IlP-bTWR9DRv2JrtKmzmPag&s",
+    "title": "How to Plant Rice",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":5,
+    "name": "Potatoes",
+    "type": "Russet",
+    "season": "Winter",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/a/ab/Patates.jpg",
+    "title": "How to Plant Potatoes",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":6,
+    "name": "Soybeans",
+    "type": "Edamame",
+    "season": "Summer",
+    "image": "https://rukminim2.flixcart.com/image/300/300/kj7gwi80-0/plant-seed/x/z/i/100-hs272-shop-360-garden-original-imafyt4reuhczmsh.jpeg",
+    "title": "How to Plant Soybeans",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":7,
+    "name": "Barley",
+    "type": "Spring Barley",
+    "season": "Spring",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTOMSRkSLwr04jukwqqHWQMshRzaOZ9Y5j0dw&s",
+    "title": "How to Plant Barley",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":8,
+    "name": "Carrots",
+    "type": "Nantes",
+    "season": "Winter",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0ifbJ25ZNQA6ebCK3jd3-vd9D_iYUjgqgkg&s",
+    "title": "How to Plant Carrots",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":9,
+    "name": "Onions",
+    "type": "Red Onions",
+    "season": "Winter",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRxt73admOKbwm147GRvX3a2gNZwTBJYMqsOA&s",
+    "title": "How to Plant Onions",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":10,
+    "name": "Lettuce",
+    "type": "Iceberg",
+    "season": "Spring",
+    "image": "https://cdn.britannica.com/77/170677-050-F7333D51/lettuce.jpg",
+    "title": "How to Plant Lettuce",
+    "overview": "General steps for starting, caring, and harvesting a healthy crop.",
+    "steps": [
+      "Select a full-sun site with well-drained soil; amend with compost.",
+      "Plant at recommended spacing/depth for the crop.",
+      "Irrigate consistently; mulch to conserve moisture and suppress weeds.",
+      "Fertilize based on soil test and crop needs.",
+      "Scout for pests/diseases weekly; act only if thresholds are exceeded.",
+      "Keep the bed weed-free during early growth.",
+      "Harvest at proper maturity; handle gently; store appropriately."
+    ]
+  },
+  {
+    "num":11,
+    "name": "Cucumber",
+    "type": "Slicing Cucumber",
+    "season": "Summer",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ARS_cucumber.jpg/960px-ARS_cucumber.jpg",
+    "title": "How to Grow Cucumbers",
+    "overview": "A vining annual that needs warmth, rich soil, and plenty of water; supports are recommended.",
+    "steps": [
+      "Direct-sow seeds $\\frac{1}{2}$ in deep after all danger of frost is past; or use transplants.",
+      "Plant in full sun, 12–18 in apart; provide a trellis or cage.",
+      "Amend soil heavily with compost and manure; side-dress every 3–4 weeks.",
+      "Water consistently and deeply at the base to prevent bitterness.",
+      "Hand-pick cucumber beetles and scout for powdery mildew.",
+      "Harvest when fruits are deep green, firm, and before they turn yellow (usually 50–70 days)."
+    ]
+  },
+  {
+    "num":12,
+    "name": "Spinach",
+    "type": "Bloomsdale",
+    "season": "Spring/Fall",
+    "image": "https://cdn.mos.cms.futurecdn.net/kkktxmxBV4mSLCSZXDpcEb.jpg",
+    "title": "How to Grow Spinach",
+    "overview": "A cool-season crop that quickly \"bolts\" (goes to seed) in heat; plant early.",
+    "steps": [
+      "Direct-sow seeds $\\frac{1}{2}$ in deep, 1–2 in apart, as soon as soil can be worked in spring or late summer.",
+      "Choose a partial shade location in warmer weather; full sun in cool weather.",
+      "Keep soil moist and fertile; side-dress with nitrogen after first cutting.",
+      "Use row covers to protect from leaf miners in spring.",
+      "Harvest outer leaves when they are large enough to eat, or cut the whole plant before bolting.",
+      "Mulch helps keep the roots cool and moist."
+    ]
+  },
+  {
+    "num":13,
+    "name": "Peppers",
+    "type": "Bell Pepper",
+    "season": "Summer",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9eF3OZ_JJDT1-iMMWqwG4es7IqFK9daVzgw&s",
+    "title": "How to Grow Bell Peppers",
+    "overview": "Require a long, hot growing season; start indoors early and protect from cold.",
+    "steps": [
+      "Start seeds indoors 8–10 weeks before last frost; use heat mats for best germination.",
+      "Harden off seedlings and transplant into full sun when night temps are above $55^{\\circ}\\text{F}$ ($13^{\\circ}\\text{C}$).",
+      "Space 18–24 in apart; use cages or stakes to support heavy fruit loads.",
+      "Water evenly and deeply; avoid overhead watering.",
+      "Fertilize with a balanced formula until flowering, then switch to low nitrogen/high phosphorus.",
+      "Harvest when firm and fully colored (green, red, yellow, etc.); a gentle twist releases the fruit."
+    ]
+  },
+  {
+    "num":14,
+    "name": "Oats",
+    "type": "Common Oat",
+    "season": "Spring",
+    "image": "https://images.immediate.co.uk/production/volatile/sites/30/2023/08/Porridge-oats-d09fae8.jpg",
+    "title": "How to Grow Oats",
+    "overview": "A cool-season grain grown primarily for its edible seed; tolerant of poor soils.",
+    "steps": [
+      "Sow as early as the ground can be worked in spring, typically 1–2 in deep.",
+      "Broadcast or drill seed at the recommended rate (e.g., 60–100 lbs/acre).",
+      "Prefers full sun and well-drained soil, but is tolerant of heavy soils.",
+      "Fertilize with nitrogen based on soil test, usually less than wheat requires.",
+      "Scout for common diseases like rusts; ensure good field drainage.",
+      "Harvest when grains are firm and the tops of the plants have turned a golden-yellow (mid-summer)."
+    ]
+  },
+  {
+    "num":15,
+    "name": "Garlic",
+    "type": "Hardneck",
+    "season": "Fall",
+    "image": "https://eos.com/wp-content/uploads/2024/06/growing-garlic.png.webp",
+    "title": "How to Plant Garlic",
+    "overview": "Plant in the fall to harvest in the summer; requires a cold period for bulb formation.",
+    "steps": [
+      "Break apart bulbs; plant individual cloves, pointy-side up, 2 in deep and 6 in apart, in late fall (Oct/Nov).",
+      "Choose a full-sun site with very loose, rich, well-drained soil.",
+      "Mulch heavily with straw (4–6 in) immediately after planting for winter protection.",
+      "Water during dry spells in spring; stop watering once leaves start to yellow in early summer.",
+      "Remove scapes (flower stalks) on hardneck varieties in late spring to redirect energy to the bulb.",
+      "Harvest when the lower third of the leaves are brown and two-thirds are still green."
+    ]
+  },
+  {
+    "num":16,
+    "name": "Broccoli",
+    "type": "Calabrese",
+    "season": "Spring/Fall",
+    "image": "https://www.apnikheti.com/upload/crops/7260idea99broccoli-head-lo.jpg",
+    "title": "How to Grow Broccoli",
+    "overview": "A cool-season vegetable needing consistent moisture and plenty of nitrogen.",
+    "steps": [
+      "Start seeds indoors 5–6 weeks before the last frost; or sow mid-to-late summer for a fall crop.",
+      "Transplant into rich, full-sun soil, spacing 18–24 in apart.",
+      "Side-dress with high-nitrogen fertilizer 3 weeks after transplanting.",
+      "Keep soil constantly moist; use mulch to keep roots cool.",
+      "Use row covers to protect from cabbage worms and flea beetles.",
+      "Harvest the main head when tight and firm before the flower buds begin to open (turn yellow).",
+      "Side shoots will often grow after the main head is cut."
+    ]
+  },
+  {
+    "num":17,
+    "name": "Sweet Potato",
+    "type": "Jewel",
+    "season": "Summer",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVdX7wf8GcwCJ4rnBu07wMueAPvutJYHf1HQ&s",
+    "title": "How to Plant Sweet Potatoes",
+    "overview": "Needs a long, hot growing season and rich, well-drained soil; planted from \"slips.\"",
+    "steps": [
+      "Plant \"slips\" (sprouts) 12–18 in apart in well-drained, mounded rows after the soil is warm (min $60^{\\circ}\\text{F}$/$16^{\\circ}\\text{C}$).",
+      "Choose a full-sun site; amend soil with compost, but avoid fresh manure/high nitrogen.",
+      "Water consistently for the first few weeks, then reduce watering later in the season.",
+      "Hilling or mounding is often done to increase soil warmth and drainage.",
+      "Weed shallowly to avoid disturbing the developing roots.",
+      "Harvest before the first hard frost, typically 90–120 days after planting slips."
+    ]
+  },
+  {
+    "num":18,
+    "name": "Lentils",
+    "type": "Red Lentil",
+    "season": "Spring",
+    "image": "https://www.thespruce.com/thmb/f8-niOvpPidFfJJdr6bUvMhDAIA=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-1224476409-2eeb09202b9b4dd38959b4770b3d369d.jpg",
+    "title": "How to Grow Lentils",
+    "overview": "A cool-season legume that fixes nitrogen; sensitive to heat and moisture extremes.",
+    "steps": [
+      "Direct-sow $\\frac{1}{2}$–1 in deep in early spring, spacing 3–6 in apart.",
+      "Choose a full-sun site with loose, well-drained, slightly acidic soil.",
+      "Do not apply nitrogen fertilizer; use a phosphorus/potassium-based one if needed.",
+      "Require little water after establishment, but irrigate during flowering if rainfall is low.",
+      "Control weeds early; dense planting can help suppress later weed growth.",
+      "Harvest when the lower pods are dry and rattling, but before they shatter (split open)."
+    ]
+  },
+  {
+    "num":19,
+    "name": "Blueberries",
+    "type": "Highbush",
+    "season": "Year-Round",
+    "image": "https://royalsplant.com/wp-content/uploads/2023/12/rare-hybrid-bush-blueberry-fruit-live-plant-1-m-technologies-original-imafpat8dzsvgtw5.jpg",
+    "title": "How to Grow Blueberries",
+    "overview": "A perennial shrub needing very acidic soil and cross-pollination; takes years to fully produce.",
+    "steps": [
+      "Select a full-sun site and amend soil heavily to reach a low pH (4.5–5.5); use peat moss or sulfur.",
+      "Plant two or more different varieties for best cross-pollination and yield.",
+      "Plant dormant bare-root or potted plants 4–6 ft apart in early spring.",
+      "Mulch heavily with pine needles or sawdust to maintain acidity and moisture.",
+      "Prune to remove old, woody canes in late winter/early spring.",
+      "Water with rainwater or acidic water; avoid chlorinated/hard tap water.",
+      "Harvest when the berries are fully blue and drop easily into your hand."
+    ]
+  },
+  {
+    "num":20,
+    "name": "Cabbage",
+    "type": "Green Cabbage",
+    "season": "Spring/Fall",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRWQtjRdJG1ZIfRnxksgGkzzCwX4g-ZAXSBLg&s",
+    "title": "How to Grow Cabbage",
+    "overview": "A cool-season crop that needs consistent moisture and a rich, deep soil.",
+    "steps": [
+      "Start seeds indoors 6–8 weeks before last expected frost; or sow mid-summer for fall harvest.",
+      "Transplant into full sun (or partial shade in heat), spacing 12–24 in apart.",
+      "Amend soil with plenty of compost; side-dress with nitrogen when the head begins to form.",
+      "Keep soil constantly moist; inconsistent water can cause heads to split.",
+      "Cover with row covers to deter cabbage moths and worms.",
+      "Harvest when the head is solid, firm, and fully sized; cut the stem at the base."
+    ]
+  },
+  {
+    "num":21,
+    "name": "Zucchini",
+    "type": "Black Beauty",
+    "season": "Summer",
+    "image": "https://cdn.britannica.com/96/138896-050-A640EBE8/Zucchini-vines.jpg",
+    "title": "How to Grow Zucchini",
+    "overview": "A prolific, fast-growing squash requiring full sun and consistent water; often harvested when young.",
+    "steps": [
+      "Direct-sow 2 seeds 1 in deep after last frost; thin to the strongest seedling.",
+      "Plant in hills 3-4 ft apart in rich, well-composted soil.",
+      "Water deeply and consistently, especially during flowering and fruiting.",
+      "Hand-pollinate if early fruit is dropping; scout for squash vine borer and powdery mildew.",
+      "Harvest when 6–8 inches long and skin is shiny; check daily during peak season.",
+      "Mulch heavily to retain moisture and suppress weeds."
+    ]
+  },
+  {
+    "num":22,
+    "name": "Cabbage",
+    "type": "Savoy Cabbage",
+    "season": "Spring/Fall",
+    "image": "https://www.koppert.in/content/_processed_/0/4/csm_Cabbage_7b2773b5e6.jpg",
+    "title": "How to Grow Cabbage",
+    "overview": "Needs a long, cool period to form a tight, solid head; high water and nitrogen needs.",
+    "steps": [
+      "Start indoors 6-8 weeks before last frost or in mid-summer for fall.",
+      "Plant 12–24 in apart in deeply prepared, fertile soil with a pH of 6.0-6.5.",
+      "Side-dress with high-nitrogen fertilizer when plants are 6 in tall and again when heads begin to form.",
+      "Keep soil consistently moist; uneven watering can cause the head to split.",
+      "Cover plants to deter cabbage worms; rotate crops annually.",
+      "Harvest when the head is very firm and solid; cut the stem close to the ground."
+    ]
+  },
+  {
+    "num":23,
+    "name": "Sunflowers",
+    "type": "Mammoth",
+    "season": "Summer",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_5y9xLK5ksPi7eEpkyEj1ffqJT5tFdaO5ig&s",
+    "title": "How to Grow Sunflowers",
+    "overview": "Tall, drought-tolerant plants grown for seeds, oil, or ornamental value; needs lots of sun.",
+    "steps": [
+      "Direct-sow seeds $\\frac{1}{2}$–1 in deep and 12–36 in apart after the last spring frost.",
+      "Choose a full-sun site with average, well-drained soil.",
+      "Water deeply until well established, then only during severe drought.",
+      "Stake tall varieties in windy areas; fertilize sparingly.",
+      "Protect maturing seed heads from birds (e.g., netting).",
+      "Harvest when the back of the head turns yellow-brown and the seeds are plump and dry."
+    ]
+  },
+  {
+    "num":24,
+    "name": "Kidney Beans",
+    "type": "Bush Bean",
+    "season": "Summer",
+    "image": "https://i0.wp.com/images-prod.healthline.com/hlcmsresource/images/AN_images/kidney-beans-1296x728-feature.jpg?w=1155&h=1528",
+    "title": "How to Grow Kidney Beans",
+    "overview": "Bush varieties are easy to grow; nitrogen-fixing and prefer warm soil.",
+    "steps": [
+      "Direct-sow 1 in deep after the soil has warmed and all danger of frost is past.",
+      "Plant 4-6 in apart in rows 2-3 ft apart in full sun.",
+      "Does not require trellising (bush type); water regularly, especially during flowering.",
+      "Do not over-fertilize with nitrogen; they produce their own.",
+      "Avoid disturbing foliage when wet to prevent fungal diseases.",
+      "Harvest when the pods are dry, brittle, and the seeds inside are hard and rattling."
+    ]
+  },
+  {
+    "num":25,
+    "name": "Beets",
+    "type": "Detroit Dark Red",
+    "season": "Spring/Fall",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQWmNTDJhMXmhbC8IyDZP_6GjGX_BXQKvzOAw&s",
+    "title": "How to Grow Beets",
+    "overview": "Cool-season root vegetable grown for both their root and edible tops; needs loose soil.",
+    "steps": [
+      "Direct-sow $\\frac{1}{2}$ in deep, 2–3 in apart, in early spring or late summer.",
+      "Choose a full-sun site with loose, fertile, stone-free soil (pH 6.0–7.0).",
+      "Thin seedlings when 2 in tall; eat the thinnings as greens.",
+      "Water consistently to prevent the roots from becoming woody.",
+      "Side-dress with phosphorus and potassium, as they are heavy feeders.",
+      "Harvest roots when they reach the desired size (usually 1.5-3 in diameter)."
+    ]
+  },
+  {
+    "num":26,
+    "name": "Sweet Pea",
+    "type": "Shelling Pea",
+    "season": "Spring",
+    "image": "https://extension.okstate.edu/fact-sheets/images/sweet-potato-production/figure-1.png",
+    "title": "How to Grow Peas",
+    "overview": "A cool-season crop that needs support; plant early and protect from heat.",
+    "steps": [
+      "Direct-sow 1 in deep, 2 in apart, as soon as the soil can be worked in spring.",
+      "Plant in full sun and provide a trellis or netting immediately for climbing vines.",
+      "Keep well-watered, especially once flowering begins.",
+      "Avoid high-nitrogen fertilizer; amend with compost before planting.",
+      "Mulch heavily to keep roots cool and moist.",
+      "Harvest when the pods are plump and firm but before the peas get hard (usually 60–70 days)."
+    ]
+  },
+  {
+    "num":27,
+    "name": "Pumpkin",
+    "type": "Jack O'Lantern",
+    "season": "Summer",
+    "image": "https://m.media-amazon.com/images/I/51mS2B0dxIL._AC_UF1000,1000_QL80_.jpg",
+    "title": "How to Grow Pumpkins",
+    "overview": "A sprawling vine that requires a lot of space, rich soil, and a long growing season.",
+    "steps": [
+      "Direct-sow 1 in deep in hills 5–10 ft apart after the last spring frost.",
+      "Plant in a full-sun location with extremely rich, well-drained soil.",
+      "Water deeply and regularly, aiming water at the base of the plant.",
+      "Fertilize regularly with a balanced feed until flowering, then a high-potassium/phosphorus feed.",
+      "Prune vines to 1-2 fruits per vine for larger sizing.",
+      "Harvest when the rind is hard and deep orange and the stem is dry and woody."
+    ]
+  },
+  {
+    "num":28,
+    "name": "Kale",
+    "type": "Dino Kale",
+    "season": "Spring/Fall",
+    "image": "https://www.taylorfarms.com/wp-content/uploads/2025/06/kale-image-1.webp",
+    "title": "How to Grow Kale",
+    "overview": "A hardy leafy green that tolerates frost well and can be harvested throughout the winter in mild climates.",
+    "steps": [
+      "Start indoors 4-6 weeks before last frost or direct-sow in early fall.",
+      "Plant 12–18 in apart in full sun to partial shade; prefers slightly acidic soil (pH 6.0-7.0).",
+      "Water consistently; it thrives in moist soil.",
+      "Side-dress with nitrogen every 4-6 weeks for continuous leaf growth.",
+      "Protect from cabbage moths (use row covers) and aphids.",
+      "Harvest by picking the oldest, outer leaves first, leaving the center bud intact."
+    ]
+  },
+  {
+    "num":29,
+    "name": "Leeks",
+    "type": "American Flag",
+    "season": "Spring/Winter",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPOhpxvWmd_4pKym6KjKjq9kAQy1DRUy2CwA&s",
+    "title": "How to Grow Leeks",
+    "overview": "A slow-growing, cold-tolerant relative of the onion grown for its edible white stalk.",
+    "steps": [
+      "Start seeds indoors 8-10 weeks before the last frost or buy transplants.",
+      "Plant 6 in deep in trenches; gradually fill the trench to \"blanch\" (whiten) the stems as they grow.",
+      "Plant in a full-sun site with very rich, loose, well-drained soil.",
+      "Keep consistently moist; do not allow the soil to dry out.",
+      "Fertilize monthly with a balanced feed, but not excessively high in nitrogen.",
+      "Harvest when they reach the desired size, usually the diameter of a quarter or more."
+    ]
+  },
+  {
+    "num":30,
+    "name": "Mint",
+    "type": "Peppermint",
+    "season": "Spring/Fall",
+    "image": "https://m.media-amazon.com/images/I/61oeRRr9q+L._AC_UF1000,1000_QL80_.jpg",
+    "title": "How to Grow Mint",
+    "overview": "A vigorously spreading perennial herb; best grown in containers to prevent invasiveness.",
+    "steps": [
+      "Plant potted plants or root cuttings in spring or fall.",
+      "Plant in a container or a confined area, as it spreads aggressively via runners.",
+      "Prefers partial shade but will tolerate full sun with adequate moisture.",
+      "Water regularly to keep the soil moist.",
+      "Fertilize sparingly, if at all; high fertility reduces oil content/flavor.",
+      "Prune aggressively to promote fresh new growth and prevent flowering.",
+      "Harvest leaves any time, but best just before flowering for peak oil content."
+    ]
+  },
+  {
+    "num":31,
+    "name": "Eggplant",
+    "type": "Black Beauty",
+    "season": "Summer",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT7K5A41Y2QT8db6KbhiE8xrCzSQCNk_7egIA&s",
+    "title": "How to Grow Eggplant",
+    "overview": "A heat-loving vegetable; treat similar to tomatoes and peppers.",
+    "steps": [
+      "Start seeds indoors 8–10 weeks before last frost; needs warm soil to germinate.",
+      "Transplant after soil is warm (min $60^{\\circ}\\text{F}$/$16^{\\circ}\\text{C}$) and night temperatures are consistently warm.",
+      "Plant 24–30 in apart in full sun; needs rich, well-drained soil.",
+      "Stake or cage plants to support heavy fruit.",
+      "Water consistently and mulch heavily to maintain moisture.",
+      "Fertilize regularly with a balanced feed throughout the season.",
+      "Harvest when the skin is firm and shiny; cut the stem with clippers (do not pull)."
+    ]
+  },
+  {
+    "num":32,
+    "name": "Asparagus",
+    "type": "Mary Washington",
+    "season": "Spring",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlCSwxD-ph5W52C8YKJisarRXtQFnghunprA&s",
+    "title": "How to Grow Asparagus",
+    "overview": "A long-lived perennial vegetable that can produce for 15-20 years; plant in spring.",
+    "steps": [
+      "Dig a deep trench (8-10 in); plant 1-year-old crowns 15-18 in apart, spreading roots out.",
+      "Gradually fill the trench with soil as the spears grow taller over the first year.",
+      "Plant in a dedicated, full-sun spot with very well-drained, deeply amended soil.",
+      "Keep the area weed-free; do not harvest the first 2-3 years to establish the crown.",
+      "Fertilize in early spring and again after the cutting season ends.",
+      "Harvest spears 6-8 in tall and $\\frac{1}{2}$ in thick by snapping them off at ground level."
+    ]
+  },
+  {
+    "num":33,
+    "name": "Hops",
+    "type": "Cascade",
+    "season": "Spring",
+    "image": "https://cdn.britannica.com/41/10941-050-817C0823/flowers-Hop-vine-brewing.jpg",
+    "title": "How to Grow Hops",
+    "overview": "A climbing perennial vine (bine) grown for its cones (flowers) used in brewing.",
+    "steps": [
+      "Plant rhizomes (root cuttings) in early spring after the last frost.",
+      "Plant in full sun with rich, well-drained soil; space 3-5 ft apart.",
+      "Requires a strong trellis or support system (coir/twine) at least 15-20 ft tall.",
+      "Water deeply, especially during the first year of establishment.",
+      "Fertilize heavily with nitrogen in early spring and again in mid-summer.",
+      "Harvest cones when they are springy, papery, and fragrant (usually late August/early September)."
+    ]
+  },
+  {
+    "num":34,
+    "name": "Raspberries",
+    "type": "Red Raspberry",
+    "season": "Spring",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPOSScFTwYx1m_qMEzofzmXrHDdZ6pXSJ8bw&s",
+    "title": "How to Grow Raspberries",
+    "overview": "A perennial shrub that spreads by suckers; requires trellising and yearly pruning.",
+    "steps": [
+      "Plant dormant bare-root canes in early spring, 2-3 ft apart in rows 6-8 ft apart.",
+      "Choose a full-sun site with deep, well-drained, slightly acidic soil.",
+      "Install a support system (trellis/posts) immediately after planting.",
+      "Water consistently and deeply, especially when fruit is developing.",
+      "Prune dead or old canes yearly; follow specific pruning methods for floricanes vs. primocanes.",
+      "Harvest when berries are fully colored and detach easily from the central core (receptacle)."
+    ]
+  },
+  {
+    "num":35,
+    "name": "Almonds",
+    "type": "Nonpareil",
+    "season": "Winter/Spring",
+    "image": "https://images.ctfassets.net/3s5io6mnxfqz/6RHYWQd7uWg6t6ex11eXFX/4afa03870c38a771660a58b51d8d20e7/AdobeStock_119517019_2.jpeg?w=1920",
+    "title": "How to Grow Almonds",
+    "overview": "A deciduous tree that needs a Mediterranean climate (mild winters, hot summers); requires cross-pollination.",
+    "steps": [
+      "Plant dormant bare-root trees in winter or early spring.",
+      "Plant two different varieties for adequate cross-pollination.",
+      "Requires full sun and deep, well-drained loam.",
+      "Water deeply during the spring and summer, especially as nuts fill.",
+      "Prune to maintain shape and encourage air circulation; remove water sprouts.",
+      "Treat for common pests like navel orangeworm and scale.",
+      "Harvest when the hull splits open (hull split); dry nuts before shelling."
+    ]
+  },
+  {
+    "num":36,
+    "name": "Quinoa",
+    "type": "White Quinoa",
+    "season": "Spring",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/f/f4/Chenopodium_quinoa0.jpg",
+    "title": "How to Grow Quinoa",
+    "overview": "A resilient, cool-to-warm season grain crop; can handle poor soils and drought.",
+    "steps": [
+      "Direct-sow $\\frac{1}{4}$ in deep in early spring, spacing 10-18 in apart.",
+      "Prefers full sun and is adapted to marginal or sandy soils.",
+      "Requires minimal water; overwatering can reduce seed production.",
+      "Minimal fertilization is needed; may benefit from a small amount of phosphorus/potassium.",
+      "Weed control is critical during the first 6 weeks of growth.",
+      "Harvest when the leaves have dropped, and the seed heads are hard and the plant is dry.",
+      "The seed must be threshed and often washed to remove saponins."
+    ]
+  },
+  {
+    "num":37,
+    "name": "Celery",
+    "type": "Utah 52-70",
+    "season": "Spring/Fall",
+    "image": "https://www.apnikheti.com/upload/crops/131idea99celery.jpg",
+    "title": "How to Grow Celery",
+    "overview": "A moisture-loving, cool-season crop that needs consistent water and rich soil; difficult for beginners.",
+    "steps": [
+      "Start seeds indoors very early (10-12 weeks before last frost) as they are slow growers.",
+      "Transplant 10-12 in apart in full sun or light shade; needs a trench in hot climates.",
+      "Must have absolutely consistent moisture; never let the soil dry out.",
+      "Fertilize heavily with balanced fertilizer every 2 weeks.",
+      "Blanching (covering the stems to keep them white) improves flavor.",
+      "Harvest outer stalks individually or cut the entire plant at the base when fully sized."
+    ]
+  },
+  {
+    "num":38,
+    "name": "Chia",
+    "type": "Salvia Hispanica",
+    "season": "Summer",
+    "image": "https://www.thespruce.com/thmb/FpJtAFF2NZAh-q9HugghsgbCQRU=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/how-to-grow-chia-seeds-5082971-hero-c23d7d2f48b14f328d488156020ecf8c.JPG",
+    "title": "How to Grow Chia",
+    "overview": "A heat-tolerant summer annual grown for its tiny, nutrient-dense seeds.",
+    "steps": [
+      "Direct-sow seeds $\\frac{1}{4}$ in deep after the last spring frost; thin plants to 18-24 in apart.",
+      "Requires a warm-to-hot climate and full sun; can tolerate poor soils.",
+      "Water sparingly; highly drought-tolerant after establishment.",
+      "Does not require heavy fertilization; avoid excess nitrogen.",
+      "Primarily grown in large fields, but suitable for small-scale garden plots.",
+      "Harvest when the flowers dry and the seed heads shatter easily."
+    ]
+  },
+  {
+    "num":39,
+    "name": "Rhubarb",
+    "type": "Victoria",
+    "season": "Spring",
+    "image": "https://cdn.britannica.com/28/197528-050-2F119484/Garden-rhubarb.jpg",
+    "title": "How to Grow Rhubarb",
+    "overview": "A cold-tolerant perennial vegetable grown for its tart, edible stalks (leaves are poisonous).",
+    "steps": [
+      "Plant crowns in early spring, ensuring the growing point is at soil level.",
+      "Plant 3-4 ft apart in a full-sun site with very rich, well-drained soil.",
+      "Water deeply during dry spells; use a thick layer of compost/manure yearly.",
+      "Do not harvest during the first two years to allow the crown to establish.",
+      "Cut flower stalks immediately to direct energy back into the roots.",
+      "Harvest stalks by pulling or twisting them off at the base (do not use a knife)."
+    ]
+  },
+  {
+    "num":40,
+    "name": "Flax",
+    "type": "Linseed",
+    "season": "Spring",
+    "image": "https://revivalseeds.ca/cdn/shop/files/Blue_Flax_530x@2x.jpg?v=1721332446",
+    "title": "How to Grow Flax",
+    "overview": "Grown for its fiber (linen) or its seeds (linseed/flaxseed).",
+    "steps": [
+      "Direct-sow $\\frac{1}{4}$–$\\frac{1}{2}$ in deep in early spring; plant densely for fiber, or more spaced for seed.",
+      "Prefers a full-sun location with deep, fertile, well-drained soil.",
+      "Requires consistent moisture, especially during the early growth phase.",
+      "Fertilize based on soil test; avoid excessive nitrogen which can cause lodging (falling over).",
+      "Weed control is essential, as the plants are not competitive early on.",
+      "Harvest for seed when the seed capsules are golden and brittle; for fiber when the lower third of the stem is yellow."
+    ]
+  },
+  {
+    "num":41,
+    "name": "Mustard",
+    "type": "Leaf Mustard",
+    "season": "Spring/Fall",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcRfSZWPLc9XY80HxQxqmYDYz7SHclMvdJmA&s",
+    "title": "How to Grow Mustard Greens",
+    "overview": "A fast-growing, cool-season leafy green with a pungent flavor; tolerates light frost.",
+    "steps": [
+      "Direct-sow 1 in deep, 6–8 in apart, in early spring or late summer.",
+      "Choose a full-sun to partial-shade location; shade prevents bolting in warm weather.",
+      "Requires rich, well-drained soil; side-dress with nitrogen every 3–4 weeks.",
+      "Keep soil constantly moist to encourage rapid, tender growth.",
+      "Scout for flea beetles; use row covers if infestation is heavy.",
+      "Harvest by picking individual outer leaves or cutting the entire plant at the base.",
+      "Bolt quickly in hot weather, making leaves bitter."
+    ]
+  },
+  {
+    "num":42,
+    "name": "Sorghum",
+    "type": "Grain Sorghum",
+    "season": "Summer",
+    "image": "https://www.southernliving.com/thmb/5K3iLsiSlTkAEd3-S8YXVGqWRnI=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/GettyImages-869995278-e94c47d072e740e08dff7239e30c4ef1.jpg",
+    "title": "How to Grow Sorghum",
+    "overview": "A drought-tolerant grain and forage crop; requires high heat and is often used as a rotation crop.",
+    "steps": [
+      "Direct-sow 1 in deep after the soil is warm and the danger of frost has passed.",
+      "Plant in rows 30–40 in apart; thin to 4–6 in spacing between plants.",
+      "Requires full sun and well-drained soil; very tolerant of heat and dry conditions.",
+      "Fertilize based on soil test; typically needs nitrogen similar to corn.",
+      "Weed control is critical in the early stages; may require herbicides or cultivation.",
+      "Harvest when the grains are hard and dry (around 18–20% moisture)."
+    ]
+  },
+  {
+    "num":43,
+    "name": "Peanuts",
+    "type": "Spanish Peanut",
+    "season": "Summer",
+    "image": "https://www.thespruce.com/thmb/7dv2dJG8NNHBUQQFi7Of6koJAMg=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/peanut-plant-profile-4797389-hero-439ff76cc5444ca7869eacb25e683306.jpg",
+    "title": "How to Grow Peanuts",
+    "overview": "A warm-season annual legume that forms its pods underground; requires 4-5 months of heat.",
+    "steps": [
+      "Sow raw, unshelled seeds 2 in deep and 10 in apart after soil temperature reaches $65^{\\circ}\\text{F}$ ($18^{\\circ}\\text{C}$).",
+      "Plant in full sun with light, sandy, well-drained soil; add calcium if soil is poor.",
+      "The plant produces yellow flowers that send \"pegs\" (stalks) into the soil, where the peanuts form.",
+      "Mound soil around the base of the plant to encourage pegging.",
+      "Water consistently, especially during the flowering/pegging period.",
+      "Harvest when the leaves turn yellow and the pods feel solid (dig up the entire plant)."
+    ]
+  },
+  {
+    "num":44,
+    "name": "Cranberry",
+    "type": "American Cranberry",
+    "season": "Spring",
+    "image": "https://m.media-amazon.com/images/I/61zORb-0biL.jpg",
+    "title": "How to Grow Cranberries",
+    "overview": "A low, creeping, woody perennial shrub native to North America; requires very acidic soil and a specific environment.",
+    "steps": [
+      "Plant cuttings or rooted vines in spring in a prepared bed of peat and sand.",
+      "Requires full sun and a very acidic soil (pH 4.0–5.5).",
+      "Must be able to flood the area for harvesting and winter protection (though not always necessary for small-scale growing).",
+      "Water with soft, acidic water; mulch with sand every few years.",
+      "Very susceptible to pests and diseases; needs vigilant care.",
+      "Harvest in the fall when berries are deep red and fully ripe."
+    ]
+  },
+  {
+    "num":45,
+    "name": "Kohlrabi",
+    "type": "Purple Kohlrabi",
+    "season": "Spring/Fall",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS3Sjmo5OzJcLOUxD0e9xB8SNpnfIsdHQAfiQ&s",
+    "title": "How to Grow Kohlrabi",
+    "overview": "A fast-growing member of the cabbage family grown for its bulbous stem base.",
+    "steps": [
+      "Direct-sow 1 in deep, 4–6 in apart, in early spring or mid-summer.",
+      "Plant in full sun and rich, well-drained soil; prefers cool weather.",
+      "Keep soil consistently moist; inconsistent watering makes the bulbs tough and woody.",
+      "Side-dress with compost or balanced fertilizer when the bulb starts to swell.",
+      "Protect from common cabbage pests like flea beetles and worms.",
+      "Harvest when the swollen stem base is 2–3 in in diameter; larger bulbs are often tough."
+    ]
+  },
+  {
+    "num":46,
+    "name": "Fennel",
+    "type": "Florence Fennel",
+    "season": "Spring/Summer",
+    "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdR-a5pIHmtCbW1qn0q6v_Vb3YhccxMugISw&s",
+    "title": "How to Grow Fennel",
+    "overview": "Grown for its crisp, anise-flavored bulb (\"Florence\" or \"Bulb\" type).",
+    "steps": [
+      "Direct-sow seeds 1 in deep; thin plants to 12–18 in apart, as they dislike transplanting.",
+      "Plant in a full"
+    ]
+  }
+]
