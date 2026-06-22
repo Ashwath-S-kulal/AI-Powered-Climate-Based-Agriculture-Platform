@@ -1,4 +1,4 @@
-import app from "../server.js";
+import app from "../index.js";
 import connectDB from "../config/db.js";
 
 export default async function handler(req, res) {
