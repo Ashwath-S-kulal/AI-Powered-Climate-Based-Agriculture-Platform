@@ -54,7 +54,7 @@ export default function CropSearchCSV() {
   useEffect(() => {
     setLoading(true);
 
-    fetch("/api/cropinfo/")
+    fetch(`${import.meta.env.VITE_BASE_URI}/api/cropinfo/`)
       .then((res) => res.json())
       .then((data) => {
         setCrops(data);
@@ -81,7 +81,7 @@ export default function CropSearchCSV() {
     setLoading(true);
     try {
       const res = await fetch(
-        `/api/cropinfo/${encodeURIComponent(finalQuery)}`
+        `${import.meta.env.VITE_BASE_URI}/api/cropinfo/${encodeURIComponent(finalQuery)}`
       );
 
       if (!res.ok) {

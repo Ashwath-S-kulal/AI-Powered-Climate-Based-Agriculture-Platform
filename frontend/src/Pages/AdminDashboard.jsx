@@ -13,7 +13,7 @@ export default function AdminDashboard() {
   const fetchUsers = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`/api/admin/getallusers`, {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URI}/api/admin/getallusers`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`,
@@ -32,7 +32,7 @@ export default function AdminDashboard() {
   const handleDeleteUser = async (userId) => {
     if (window.confirm("Permanent delete?")) {
       try {
-        const res = await fetch(`/api/admin/deleteuser/${userId}`, {
+        const res = await fetch(`${import.meta.env.VITE_BASE_URI}/api/admin/deleteuser/${userId}`, {
           method: 'DELETE',
         });
         const data = await res.json();
@@ -47,7 +47,7 @@ export default function AdminDashboard() {
     if (!window.confirm(`Update Role..?`)) return;
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`/api/admin/${userId}/role`, {
+      const res = await fetch(`${import.meta.env.VITE_BASE_URI}/api/admin/${userId}/role`, {
         method: "PUT",
         headers: { Authorization: `Bearer ${token}` },
       });

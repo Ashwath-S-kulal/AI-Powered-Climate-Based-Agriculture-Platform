@@ -90,7 +90,7 @@ export default function ChatbotPopup() {
     setInput("");
 
     try {
-      const response = await fetch("/api/ai/assistant", {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URI}/api/ai/assistant`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: userInput }),

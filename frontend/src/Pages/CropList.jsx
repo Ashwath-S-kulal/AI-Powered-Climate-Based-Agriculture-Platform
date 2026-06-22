@@ -24,7 +24,7 @@ export default function CropsList() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/api/cropsteps/")
+    fetch(`${import.meta.env.VITE_BASE_URI}/api/cropsteps/`)
       .then(res => res.json())
       .then(data => {
         if (Array.isArray(data)) setCrops(data);

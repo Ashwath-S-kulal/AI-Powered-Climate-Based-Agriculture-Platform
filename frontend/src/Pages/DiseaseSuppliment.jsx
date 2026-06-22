@@ -13,7 +13,7 @@ export default function SupplementCatalog() {
 
   useEffect(() => {
     setLoading(true);
-    fetch("/api/supplements/supplimentdata")
+    fetch(`${import.meta.env.VITE_BASE_URI}/api/supplements/supplimentdata`)
       .then((res) => res.json())
       .then((result) => {
         setAllData(result.data);

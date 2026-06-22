@@ -182,7 +182,7 @@ export default function Weather() {
   const getAIInsights = async () => {
     setIsFetchingAI(true);
     try {
-      const response = await fetch('/api/weather/ai', {
+      const response = await fetch(`${import.meta.env.VITE_BASE_URI}/api/weather/ai`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ weatherData: today })

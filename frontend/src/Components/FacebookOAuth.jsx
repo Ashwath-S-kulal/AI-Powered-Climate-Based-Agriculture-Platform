@@ -15,7 +15,7 @@ export default function OAuthFacebook() {
             const auth = getAuth(app);
 
             const result = await signInWithPopup(auth, provider);
-            const res = await fetch("/api/auth/facebook", {
+            const res = await fetch(`${import.meta.env.VITE_BASE_URI}/api/auth/facebook`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
