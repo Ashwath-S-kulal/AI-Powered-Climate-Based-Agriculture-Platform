@@ -121,14 +121,14 @@ export default function ProfilePage() {
                 <div className="mt-5 grid grid-cols-2 gap-2">
                   <button
                     onClick={handleSignOut}
-                    className="flex flex-col items-center justify-center gap-1 p-3 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors group text-center"
+                    className="flex items-center justify-center gap-1 p-3 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-lg hover:bg-gray-100 dark:hover:bg-zinc-800 transition-colors group text-center"
                   >
                     <LogOut size={16} className="text-gray-400 dark:text-gray-500 group-hover:text-gray-600 dark:group-hover:text-gray-300" />
                     <span className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-gray-700 dark:group-hover:text-gray-200">Logout</span>
                   </button>
                   <button
                     onClick={handleDeleteAccount}
-                    className="flex flex-col items-center justify-center gap-1 p-3 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 hover:border-red-200 dark:hover:border-red-900/50 transition-colors group text-center"
+                    className="flex items-center justify-center gap-1 p-3 bg-gray-50 dark:bg-zinc-950 border border-gray-200 dark:border-zinc-800 rounded-lg hover:bg-red-50 dark:hover:bg-red-950/30 hover:border-red-200 dark:hover:border-red-900/50 transition-colors group text-center"
                   >
                     <Trash2 size={16} className="text-gray-400 dark:text-gray-500 group-hover:text-red-500" />
                     <span className="text-xs font-medium text-gray-500 dark:text-gray-400 group-hover:text-red-600 dark:group-hover:text-red-400">Delete</span>
