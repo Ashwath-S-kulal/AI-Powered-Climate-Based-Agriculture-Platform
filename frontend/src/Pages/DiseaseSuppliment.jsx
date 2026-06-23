@@ -59,7 +59,7 @@ export default function SupplementCatalog() {
         </div>
       </div>
 
-      <div className="px-10 w-full max-w-screen mx-auto relative -top-6 z-20">
+      <div className="px-3 md:px-10 w-full max-w-screen mx-auto relative -top-6 z-20">
         <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm mb-6 flex flex-col md:flex-row items-center gap-4">
           <div className="relative w-full md:max-w-md">
             <FaFilter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 dark:text-zinc-500 w-3.5 h-3.5" />

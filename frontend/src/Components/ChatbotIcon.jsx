@@ -106,6 +106,7 @@ export default function ChatbotPopup() {
         },
       ]);
     } catch (err) {
+      console.error("Error fetching AI response:", err);
       setMessages((prev) => [
         ...prev,
         { sender: "assistant", text: "Error fetching response. Please try again.", time: userTimestamp },
