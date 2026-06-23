@@ -141,9 +141,8 @@ export default function Home() {
       <section className="bg-emerald-600 dark:bg-emerald-700/90 transition-colors">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {stats.map(({ icon: Icon, value, label }) => (
+            {stats.map(({ value, label }) => (
               <div key={label} className="text-center">
-                <Icon className="w-5 h-5 text-emerald-200 mx-auto mb-2" />
                 <p className="text-2xl font-bold text-white">{value}</p>
                 <p className="text-emerald-100 text-xs mt-0.5">{label}</p>
               </div>
