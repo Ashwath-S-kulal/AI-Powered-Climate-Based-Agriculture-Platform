@@ -64,7 +64,6 @@ export default function Breadcrumbs() {
                 to={link}
                 className="flex items-center gap-1 text-xs font-medium text-gray-500 dark:text-neutral-400 hover:text-green-600 dark:hover:text-green-400 transition-colors px-1"
               >
-                {/* Icon hidden on very small screens to save space */}
                 <span className="hidden xs:inline-flex">{Icon}</span>
                 <span className="capitalize">{label}</span>
               </Link>

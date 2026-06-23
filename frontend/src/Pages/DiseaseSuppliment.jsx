@@ -45,11 +45,9 @@ export default function SupplementCatalog() {
     setExpandedRow(expandedRow === index ? null : index);
   };
 
- return (
+  return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-800 dark:text-zinc-200 font-sans">
       <Header />
-
-      {/* Hero Header Area */}
       <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200 dark:border-zinc-800 pt-10 pb-12">
         <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2 text-left">
@@ -62,8 +60,6 @@ export default function SupplementCatalog() {
       </div>
 
       <div className="px-10 w-full max-w-screen mx-auto relative -top-6 z-20">
-        
-        {/* Control Bar */}
         <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm mb-6 flex flex-col md:flex-row items-center gap-4">
           <div className="relative w-full md:max-w-md">
             <FaFilter className="absolute left-4 top-1/2 transform -translate-y-1/2 text-slate-400 dark:text-zinc-500 w-3.5 h-3.5" />
@@ -87,7 +83,6 @@ export default function SupplementCatalog() {
           </div>
         </div>
 
-        {/* Loading State */}
         {loading && (
           <div className="flex flex-col justify-center items-center py-20 bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm">
             <Loader2 className="w-8 h-8 animate-spin text-emerald-600 dark:text-emerald-400 mb-4" />
@@ -97,24 +92,19 @@ export default function SupplementCatalog() {
           </div>
         )}
 
-        {/* Data List Container */}
         {!loading && csvData.length > 0 && (
           <div className="bg-white dark:bg-zinc-900 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm overflow-hidden mb-20">
-            {/* List Header */}
             <div className="grid grid-cols-[80px_1fr_100px] sm:grid-cols-[100px_1fr_120px] bg-slate-50 dark:bg-zinc-950 text-slate-500 dark:text-zinc-400 text-xs font-bold uppercase tracking-wider p-4 border-b border-slate-200 dark:border-zinc-800">
               <div className="text-center sm:text-left">Product</div>
               <div>Target Disease</div>
               <div className="text-right pr-2">Action</div>
             </div>
 
-            {/* List Body */}
             <div className="divide-y divide-slate-100 dark:divide-zinc-800">
               {csvData.map((row, idx) => {
                 const isExpanded = expandedRow === idx;
                 return (
                   <div key={idx} className="group flex flex-col transition-colors duration-200 hover:bg-slate-50/50 dark:hover:bg-zinc-800/50">
-                    
-                    {/* Row Header */}
                     <div
                       className="grid grid-cols-[80px_1fr_100px] sm:grid-cols-[100px_1fr_120px] items-center p-3 sm:p-4 cursor-pointer"
                       onClick={() => toggleRow(idx)}
@@ -132,7 +122,7 @@ export default function SupplementCatalog() {
                           </div>
                         )}
                       </div>
-                      
+
                       <div className="flex flex-col pr-4">
                         <span className="text-slate-900 dark:text-zinc-100 font-semibold text-sm sm:text-base">
                           {row.disease_name || "Unknown Disease"}
@@ -146,11 +136,10 @@ export default function SupplementCatalog() {
 
                       <div className="flex justify-end pr-2">
                         <button
-                          className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${
-                            isExpanded
+                          className={`flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold rounded-lg transition-colors ${isExpanded
                               ? "bg-slate-200 dark:bg-zinc-700 text-slate-700 dark:text-zinc-200"
                               : "bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 group-hover:bg-emerald-50 dark:group-hover:bg-emerald-950/30 group-hover:text-emerald-700 dark:group-hover:text-emerald-400"
-                          }`}
+                            }`}
                         >
                           {isExpanded ? "Hide" : "Details"}
                           {isExpanded ? <FiChevronUp className="w-3 h-3" /> : <FiChevronDown className="w-3 h-3" />}
@@ -158,7 +147,6 @@ export default function SupplementCatalog() {
                       </div>
                     </div>
 
-                    {/* Expanded Content */}
                     {isExpanded && (
                       <div className="bg-slate-50/50 dark:bg-zinc-950/50 p-4 sm:p-6 border-t border-slate-100 dark:border-zinc-800">
                         <div className="flex flex-col md:flex-row gap-6 lg:gap-8">
@@ -213,7 +201,6 @@ export default function SupplementCatalog() {
           </div>
         )}
 
-        {/* Empty State */}
         {!loading && csvData.length === 0 && allData.length > 0 && (
           <div className="text-center py-20 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm">
             <FaSyringe className="mx-auto text-3xl text-slate-300 dark:text-zinc-700 mb-3" />

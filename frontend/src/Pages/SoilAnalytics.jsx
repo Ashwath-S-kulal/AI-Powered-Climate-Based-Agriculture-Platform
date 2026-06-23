@@ -10,21 +10,18 @@ export default function FriendlySoilChecker() {
   const [userInputCity, setUserInputCity] = useState("");
   const [dropdownLocations, setDropdownLocations] = useState([]);
   
-  // Set initial state to null so we can show a specific loading state during geo-position sync
   const [currentLocation, setCurrentLocation] = useState(null);
   const [soilReport, setSoilReport] = useState(null);
   const [isDataLoading, setIsDataLoading] = useState(true);
   const [alertNotice, setAlertNotice] = useState(null);
   const searchTimeout = useRef(null);
 
-  // 1. Auto-Fetch User Location on Component Mount
   useEffect(() => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         async (position) => {
           const { latitude, longitude } = position.coords;
           
-          // Reverse geocode to get a readable name for the coordinates
           try {
             const res = await fetch(`https://nominatim.openstreetmap.org/reverse?format=json&lat=${latitude}&lon=${longitude}`);
             if (res.ok) {
@@ -47,7 +44,6 @@ export default function FriendlySoilChecker() {
         },
         (error) => {
           console.warn("Location access denied or unavailable. Falling back to default baseline.");
-          // Fallback location if user blocks geolocation access
           setCurrentLocation({
             friendlyName: "Bengaluru, Karnataka, India",
             lat: 12.9716,
@@ -56,7 +52,6 @@ export default function FriendlySoilChecker() {
         }
       );
     } else {
-      // Browser doesn't support Geolocation
       setCurrentLocation({
         friendlyName: "Bengaluru, Karnataka, India",
         lat: 12.9716,
@@ -65,14 +60,12 @@ export default function FriendlySoilChecker() {
     }
   }, []);
 
-  // Hook to reload soil data whenever location coordinates change
   useEffect(() => {
     if (currentLocation) {
       loadLiveUndergroundData(currentLocation.lat, currentLocation.lon);
     }
   }, [currentLocation]);
 
-  // Live Asynchronous Typing Recommendations (Nominatim API)
   const handleTypingSuggestions = (value) => {
     clearTimeout(searchTimeout.current);
     setUserInputCity(value);
@@ -93,7 +86,6 @@ export default function FriendlySoilChecker() {
     }, 300);
   };
 
-  // Explicit City Geolocation Fallback Search Button Method
   const triggerManualSearch = async () => {
     if (!userInputCity.trim()) return;
     setIsDataLoading(true);
@@ -118,7 +110,6 @@ export default function FriendlySoilChecker() {
     }
   };
 
-  // Open-Meteo Underground Volumetric Water Content Extraction
   const loadLiveUndergroundData = async (lat, lon) => {
     setIsDataLoading(true);
     setAlertNotice(null);
@@ -151,7 +142,6 @@ export default function FriendlySoilChecker() {
     }
   };
 
-  // Dynamic Matrix Advisory Generator
   const translateDataToAdvice = () => {
     if (!soilReport) return null;
     const { surfaceWetness, surfaceTemp } = soilReport;
@@ -195,7 +185,6 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-black text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
       <Header />
 
-      {/* Top Header Banner */}
       <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
         <div className="max-w-screen mx-auto">
           <div className="text-left md:flex md:items-left md:justify-between mb-6">
@@ -209,7 +198,6 @@ return (
             </div>
           </div>
 
-          {/* Search Control Bar */}
           <div className="max-w-screen bg-[#f1f5f9] dark:bg-zinc-900 p-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 relative transition-colors duration-200">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
@@ -256,7 +244,6 @@ return (
         </div>
       </div>
 
-      {/* Main Panel Interface Content */}
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {(isDataLoading || !currentLocation) ? (
           <div className="flex flex-col justify-center items-center py-20 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm transition-colors duration-200">
@@ -272,7 +259,6 @@ return (
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
-              {/* Left Column: Geographic Status Block */}
               {soilReport && (
                 <div className="lg:col-span-4 w-full">
                   <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm h-full flex flex-col justify-between transition-colors duration-200">
@@ -326,7 +312,6 @@ return (
                 </div>
               )}
 
-              {/* Right Column: In-Depth Stratum Layers */}
               {soilReport && (
                 <div className="lg:col-span-8 w-full flex flex-col gap-6">
                   <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm flex-grow transition-colors duration-200">
@@ -335,7 +320,6 @@ return (
                     </h2>
 
                     <div className="space-y-5">
-                      {/* Stratum 1: Shallow Topsoil Bed */}
                       <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
@@ -359,7 +343,6 @@ return (
                         </div>
                       </div>
 
-                      {/* Stratum 2: Deep Root Zone Infrastructure */}
                       <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
@@ -385,7 +368,6 @@ return (
                     </div>
                   </div>
 
-                  {/* Operational Resource Actionable Summary Box */}
                   {adviceBox && (
                     <div className={`border p-4 rounded-xl shadow-sm flex flex-col gap-2 transition-all duration-300 ${adviceBox.textColor}`}>
                       <div className="flex items-center gap-2">

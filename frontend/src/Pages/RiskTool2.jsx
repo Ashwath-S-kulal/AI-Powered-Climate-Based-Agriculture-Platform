@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-// Inline Icons for zero-dependency drop-in convenience
+
 const ShieldAlertIcon = ({ className }) => (
   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
@@ -14,19 +14,19 @@ const LeafIcon = ({ className }) => (
 );
 
 export default function ClimateRiskCalculator() {
-  // 1. Core Parameter Inputs State
+
   const [moisture, setMoisture] = useState(45);
   const [temperature, setTemperature] = useState(28);
   const [rainfall, setRainfall] = useState('moderate');
   const [cropType, setCropType] = useState('cereals');
 
-  // 2. Real-time Pure Frontend Resilience Calculation Engine
+
   const calculateResilience = () => {
     let score = 100;
     let alerts = [];
     let advice = "Balanced Preventive Management: Soil parameters are within acceptable thresholds. Maintain regular monitoring matrices and inspect under-canopy moisture retention zones weekly.";
 
-    // Moisture Evaluations
+
     if (moisture < 35) {
       score -= 25;
       alerts.push("Critical Low Moisture");
@@ -35,7 +35,7 @@ export default function ClimateRiskCalculator() {
       alerts.push("Soil Waterlogging Exposure");
     }
 
-    // Temperature Evaluations
+
     if (temperature > 38) {
       score -= 25;
       alerts.push("Severe Thermal Stress");
@@ -44,7 +44,7 @@ export default function ClimateRiskCalculator() {
       alerts.push("Sub-Optimal Heat Accumulation");
     }
 
-    // Compound Weather & Forecast Anomalies
+
     if (rainfall === 'low' && moisture < 40) {
       score -= 20;
       alerts.push("Accelerated Drought Risk Vector");
@@ -59,14 +59,14 @@ export default function ClimateRiskCalculator() {
       advice = "Optimal Yield Growth State: Current microclimate parameters align perfectly with high-yield baseline standards. Proceed with standard scheduled operational rotations.";
     }
 
-    // Crop Modifiers (Buffering capacity baseline adjustments)
-    if (cropType === 'legumes' && moisture < 30) score -= 5; // Legumes are slightly sensitive to deep dry spells
-    if (cropType === 'root crops' && moisture > 75) score -= 10; // Root crops decay quickly under high moisture
 
-    // Bound output score between 0 and 100 safely
+    if (cropType === 'legumes' && moisture < 30) score -= 5; 
+    if (cropType === 'root crops' && moisture > 75) score -= 10; 
+
+
     const finalScore = Math.max(0, Math.min(100, score));
     
-    // Assign structural classification properties
+
     let tier = { name: "Low Risk", color: "text-emerald-700 bg-emerald-50 border-emerald-200", fill: "bg-emerald-600" };
     if (finalScore < 45) {
       tier = { name: "High Risk", color: "text-rose-700 bg-rose-50 border-rose-200", fill: "bg-rose-600" };
@@ -82,7 +82,6 @@ export default function ClimateRiskCalculator() {
  return (
     <div className="w-full bg-white dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800/80 rounded-xl shadow-sm overflow-hidden font-sans transition-colors duration-200">
       
-      {/* Module Navigation Subheader Banner */}
       <div className="bg-slate-50 dark:bg-zinc-900/50 border-b border-slate-200 dark:border-zinc-800/80 px-6 py-4 flex items-center justify-between transition-colors duration-200">
         <div className="flex items-center gap-2">
           <LeafIcon className="text-emerald-600 dark:text-emerald-400" />
@@ -95,12 +94,10 @@ export default function ClimateRiskCalculator() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 divide-y lg:divide-y-0 lg:divide-x divide-slate-200 dark:divide-zinc-800">
         
-        {/* Left Column: Interactive Parametric Input Form */}
         <div className="lg:col-span-6 p-6 space-y-6">
           <div>
             <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-4">Environmental Variables</h4>
             
-            {/* Input 1: Soil Moisture */}
             <div className="space-y-2 mb-5">
               <div className="flex justify-between items-center text-xs font-semibold text-slate-700 dark:text-zinc-300">
                 <label htmlFor="moisture-slider">Soil Moisture Level</label>
@@ -117,7 +114,6 @@ export default function ClimateRiskCalculator() {
               />
             </div>
 
-            {/* Input 2: Temperature */}
             <div className="space-y-2">
               <div className="flex justify-between items-center text-xs font-semibold text-slate-700 dark:text-zinc-300">
                 <label htmlFor="temp-slider">Ambient Temperature</label>
@@ -139,7 +135,6 @@ export default function ClimateRiskCalculator() {
             <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider">Crop Configuration Matrices</h4>
             
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {/* Input 3: Rainfall Select Box */}
               <div className="space-y-1.5">
                 <label htmlFor="rainfall-select" className="text-xs font-bold text-slate-700 dark:text-zinc-300">7-Day Rainfall Forecast</label>
                 <select 
@@ -154,7 +149,6 @@ export default function ClimateRiskCalculator() {
                 </select>
               </div>
 
-              {/* Input 4: Crop Category Type Select Box */}
               <div className="space-y-1.5">
                 <label htmlFor="crop-select" className="text-xs font-bold text-slate-700 dark:text-zinc-300">Main Canopy Target</label>
                 <select 
@@ -172,13 +166,10 @@ export default function ClimateRiskCalculator() {
           </div>
         </div>
 
-        {/* Right Column: Calculated Assessment & Blueprint Advice Display */}
         <div className="lg:col-span-6 p-6 bg-slate-50/50 dark:bg-zinc-900/20 flex flex-col justify-between space-y-6 transition-colors duration-200">
           <div>
             <h4 className="text-xs font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-4">Calculated Diagnostics</h4>
-            
-            {/* Dynamic Score Indicator and State Tracker */}
-            <div className="flex items-center gap-5 bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-4 rounded-xl shadow-sm transition-colors duration-200">
+                        <div className="flex items-center gap-5 bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-4 rounded-xl shadow-sm transition-colors duration-200">
               <div className="relative flex items-center justify-center w-16 h-16 rounded-full border-4 border-slate-100 dark:border-zinc-800 flex-shrink-0">
                 <span className="text-lg font-black text-slate-800 dark:text-zinc-100 tracking-tighter">{score}</span>
               </div>
@@ -190,12 +181,10 @@ export default function ClimateRiskCalculator() {
               </div>
             </div>
 
-            {/* Micro Gauge Track Bar */}
             <div className="w-full bg-slate-200 dark:bg-zinc-800 h-1.5 rounded-full overflow-hidden mt-4">
               <div className={`h-full transition-all duration-300 ${tier.fill}`} style={{ width: `${score}%` }}></div>
             </div>
 
-            {/* Parameter Warning Chips Area */}
             {alerts.length > 0 && (
               <div className="mt-5 space-y-1.5">
                 <span className="text-[10px] font-bold text-slate-400 dark:text-zinc-500 uppercase tracking-wider block">Identified Hazard Vectors:</span>
@@ -211,7 +200,6 @@ export default function ClimateRiskCalculator() {
             )}
           </div>
 
-          {/* Contextual Action Items Response Field */}
           <div className="bg-white dark:bg-[#0d0d11] border border-slate-200/80 dark:border-zinc-800/80 p-4 rounded-xl shadow-xs space-y-2 transition-colors duration-200">
             <div className="flex items-center gap-1.5 text-xs font-bold text-slate-800 dark:text-zinc-200 tracking-tight">
               <ShieldAlertIcon className="w-3.5 h-3.5 text-slate-500 dark:text-zinc-400" />

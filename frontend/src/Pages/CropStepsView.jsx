@@ -53,9 +53,7 @@ export default function CropStepsView({ crop }) {
 
 return (
     <div className="w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm p-5 md:p-8 space-y-8">
-      
-      {/* Crop Overview Panel */}
-      <div className="flex flex-col md:flex-row gap-6 p-5 md:p-6 rounded-xl bg-slate-50/50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-800 items-start">
+            <div className="flex flex-col md:flex-row gap-6 p-5 md:p-6 rounded-xl bg-slate-50/50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-800 items-start">
         <div className="w-full md:w-36 aspect-[4/3] md:aspect-square rounded-xl overflow-hidden border border-slate-200/80 dark:border-zinc-700 bg-slate-100 dark:bg-zinc-800 flex-shrink-0">
           {crop.image ? (
             <img
@@ -86,7 +84,6 @@ return (
         </div>
       </div>
 
-      {/* Growth Timeline Section */}
       <div className="space-y-4">
         <div className="flex items-center gap-2 pb-2 border-b border-slate-100 dark:border-zinc-800">
           <FiClipboard className="text-slate-400 dark:text-zinc-500 text-lg" />
@@ -108,7 +105,6 @@ return (
             </div>
           ))}
 
-          {/* Conclusion Callout */}
           <div className="bg-amber-50/40 dark:bg-amber-950/20 border border-amber-200/70 dark:border-amber-900/50 rounded-xl p-5 col-span-full flex flex-col sm:flex-row items-center sm:justify-between gap-3 text-center sm:text-left mt-2">
             <div className="flex flex-col sm:flex-row items-center gap-3">
               <div className="w-9 h-9 rounded-lg bg-amber-100 dark:bg-amber-900/50 text-amber-700 dark:text-amber-400 flex items-center justify-center shadow-sm">

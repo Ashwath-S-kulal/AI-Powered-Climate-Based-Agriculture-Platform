@@ -70,8 +70,6 @@ export default function CropLibrary() {
  return (
   <div className="w-full min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-sans antialiased transition-colors duration-300">
     <Header />
-
-    {/* Top Professional Header Banner */}
     <div className="w-full bg-white dark:bg-zinc-950 border-b border-zinc-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-12 px-4 sm:px-20">
       <div className="max-w-screen mx-auto">
         <h1 className="text-xl sm:text-2xl font-bold text-zinc-900 dark:text-zinc-50 tracking-tight flex items-center gap-2.5">
@@ -85,9 +83,7 @@ export default function CropLibrary() {
     </div>
 
     <div className="max-w-screen mx-auto px-4 sm:px-20 py-10 space-y-12">
-      
-      {/* Core Management Tools */}
-      <section>
+            <section>
         <div className="mb-6">
           <span className="text-emerald-600 dark:text-emerald-400 font-bold tracking-wider uppercase text-[10px]">Primary Modules</span>
           <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 mt-1">Core Management Tools</h2>
@@ -141,7 +137,6 @@ export default function CropLibrary() {
         </div>
       </section>
 
-      {/* Business & Sustainability Hub */}
       <section className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-sm">
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 border-b border-zinc-100 dark:border-zinc-800/60 pb-5">
           <div>
@@ -200,7 +195,6 @@ export default function CropLibrary() {
         </div>
       </section>
 
-      {/* Recommended Reading */}
       <section>
         <div className="mb-6">
           <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
@@ -230,7 +224,6 @@ export default function CropLibrary() {
         </div>
       </section>
 
-      {/* Farmer Success Stories */}
       <section className="pb-10">
         <div className="mb-6">
           <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-2">

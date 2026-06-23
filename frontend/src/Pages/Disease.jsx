@@ -144,8 +144,6 @@ export default function Disease() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black transition-colors duration-200">
       <Header />
-
-      {/* Page Header */}
       <div className="bg-white dark:bg-[#09090b] border-b border-gray-200 dark:border-zinc-800 transition-colors duration-200">
         <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-left md:text-left md:flex md:items-left md:justify-between">
@@ -162,11 +160,10 @@ export default function Disease() {
       </div>
 
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 pb-10">
-        {/* Main Scanner + Results */}
         <form onSubmit={handleSubmit}>
           <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden transition-colors duration-200">
             <div className="grid grid-cols-1 lg:grid-cols-2">
-              {/* Left: Upload Controls */}
+
               <div className="p-6 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-zinc-800">
                 <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Upload size={15} className="text-gray-500 dark:text-zinc-500" />
@@ -174,7 +171,6 @@ export default function Disease() {
                 </h2>
 
                 <div className="grid grid-cols-2 gap-3 mb-5">
-                  {/* File Upload Box */}
                   <div
                     className={`flex flex-col items-center justify-center p-4 border-2 border-dashed rounded-xl cursor-pointer transition-colors min-h-[130px] ${uploadedImageFile
                       ? "border-emerald-300 bg-emerald-50 dark:bg-emerald-950/20"
@@ -198,7 +194,7 @@ export default function Disease() {
                     <input ref={fileInputRef} id="fileInput" type="file" accept="image/*" onChange={handleUploadImage} className="hidden" />
                   </div>
 
-                  {/* Camera Box */}
+
                   <div className="flex flex-col items-center justify-center p-4 border-2 border-dashed border-gray-300 dark:border-zinc-700 hover:border-emerald-400 hover:bg-gray-50 dark:hover:bg-zinc-900 rounded-xl cursor-pointer transition-colors min-h-[130px]">
                     {isCameraActive ? (
                       <CameraView onCapture={handleCaptureImage} onClose={clearCapturedImage} />
@@ -231,7 +227,6 @@ export default function Disease() {
                 </button>
               </div>
 
-              {/* Right: Results */}
               <div className="p-6 bg-gray-50 dark:bg-black/40 transition-colors duration-200">
                 <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-4">Diagnosis Result</h2>
 
@@ -276,7 +271,6 @@ export default function Disease() {
         </form>
 
         {loading ? (
-          /* Skeleton Loading State */
           <div className="mt-6 space-y-4 animate-pulse">
             <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900 p-4 rounded-xl space-y-3">
               <div className="h-4 w-1/3 bg-emerald-200 dark:bg-emerald-900 rounded"></div>
@@ -288,7 +282,6 @@ export default function Disease() {
             </div>
           </div>
         ) : result && !result.invalid && result.advice ? (
-          /* Actual Content */
           <div className="mt-6 space-y-4">
             <div className="bg-emerald-50 dark:bg-emerald-950/20 border border-emerald-100 dark:border-emerald-900 p-4 rounded-xl">
               <h3 className="text-sm font-bold text-emerald-900 dark:text-emerald-200 mb-2">Agronomist Insights</h3>
@@ -324,7 +317,6 @@ export default function Disease() {
           </div>
         ) : null}
 
-        {/* Navigation Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <NavLink to="/croplibrary/diseasedata" className="group">
             <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
@@ -351,7 +343,6 @@ export default function Disease() {
           </NavLink>
         </div>
 
-        {/* Diagnosis History */}
         <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden ">
           <div className="px-6 py-4 border-b border-gray-200 dark:border-zinc-800 flex items-center justify-between">
             <h2 className="text-sm font-bold text-gray-900 dark:text-white">Diagnosis History</h2>
@@ -408,7 +399,7 @@ export default function Disease() {
                     </button>
                   </div>
                 </div>
-                {/* Expanded Advice Section */}
+
                 {expandedId === h._id && h.advice && (
                   <div className="px-4 pb-4 pt-0 border-t border-gray-100 dark:border-zinc-800 bg-emerald-50/30 dark:bg-emerald-950/20 animate-in slide-in-from-top-2">
                     <p className="text-xs font-bold text-emerald-900 dark:text-emerald-200 mt-3 mb-1">

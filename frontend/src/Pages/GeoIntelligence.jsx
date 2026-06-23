@@ -12,7 +12,6 @@ import "leaflet/dist/leaflet.css";
 import L from 'leaflet';
 import Header from "../Components/Header";
 
-// Fix Leaflet marker bug
 delete L.Icon.Default.prototype._getIconUrl;
 L.Icon.Default.mergeOptions({
     iconRetinaUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/images/marker-icon-2x.png',
@@ -35,10 +34,10 @@ export default function GeoIntelligencePage() {
     const [locationName, setLocationName] = useState("Locating...");
     const [locationStatus, setLocationStatus] = useState("Requesting GPS coordinates...");
 
-    // Initialize as null to wait for GPS resolution before fetching weather data
+
     const [coords, setCoords] = useState(null);
 
-    // 1. Initial Load: Fetch Browser Geolocation
+
     useEffect(() => {
         if ("geolocation" in navigator) {
             navigator.geolocation.getCurrentPosition(
@@ -48,7 +47,7 @@ export default function GeoIntelligencePage() {
                 },
                 (error) => {
                     console.warn("Geolocation denied or failed. Using fallback location.");
-                    // Fallback to Kundapura if permission is denied
+
                     setCoords({ lat: 13.6213, lon: 74.6914 });
                     setLocationStatus("Location denied. Loading default region...");
                 },
@@ -59,9 +58,9 @@ export default function GeoIntelligencePage() {
         }
     }, []);
 
-    // 2. Fetch Telemetry and OSM Data once coords are established
+
     useEffect(() => {
-        if (!coords) return; // Do nothing until coords are set
+        if (!coords) return;
 
         const fetchAllData = async () => {
             setLoading(true);
@@ -162,7 +161,6 @@ export default function GeoIntelligencePage() {
         <div>
             <Header />
             <div className="min-h-screen bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
-                {/* Header Section */}
                 <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
                     <div>
                         <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
@@ -179,8 +177,6 @@ export default function GeoIntelligencePage() {
                     <DashboardSkeleton />
                 ) : (
                     <div className="space-y-6">
-
-                        {/* 8-Point Advanced Telemetry Ribbon */}
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
                             {[
                                 { icon: Thermometer, label: "Air Temp", val: `${data.current.temperature_2m}°C`, color: "text-orange-500" },
@@ -206,8 +202,6 @@ export default function GeoIntelligencePage() {
                         </div>
 
                         <div className="grid lg:grid-cols-3 gap-6">
-
-                            {/* Map Panel (Left 1/3) */}
                             <div className="col-span-1 bg-white dark:bg-black p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 flex flex-col h-[800px] mb-10 transition-all">
                                 <div className="flex items-start gap-2 mb-4 text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 p-3 rounded-xl border border-emerald-100 dark:border-emerald-900/40">
                                     <MousePointerClick size={20} className="mt-0.5 shrink-0" />
@@ -223,10 +217,7 @@ export default function GeoIntelligencePage() {
                                 </div>
                             </div>
 
-                            {/* Heavy Graphs Grid (Right 2/3) */}
                             <div className="col-span-1 lg:col-span-2 grid md:grid-cols-2 gap-6 h-[800px] overflow-y-auto pr-2 custom-scrollbar">
-
-                                {/* Chart 1: Deep Soil Moisture Profile */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Sprout className="text-emerald-600" size={18} /> Deep Soil Moisture Profile
@@ -245,7 +236,6 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 2: Deep Soil Temperature Profile */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Sprout className="text-orange-600" size={18} /> Subterranean Temperature
@@ -264,7 +254,6 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 3: Air Temp vs Dew Point */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Snowflake className="text-cyan-500" size={18} /> Air Temp vs Dew Point
@@ -282,7 +271,6 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 4: Wind Dynamics */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Wind className="text-teal-500" size={18} /> Wind Speed & Gust Dynamics
@@ -300,7 +288,6 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 5: Solar Radiation */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <Sun className="text-yellow-500" size={18} /> Solar Radiation (W/m²)
@@ -318,7 +305,6 @@ export default function GeoIntelligencePage() {
                                     </ResponsiveContainer>
                                 </div>
 
-                                {/* Chart 6: Evapotranspiration vs Rainfall */}
                                 <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 h-[360px] flex flex-col transition-all">
                                     <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                         <CloudRain className="text-blue-500" size={18} /> Water Balance (Loss vs Gain)

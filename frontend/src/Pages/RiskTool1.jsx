@@ -1,12 +1,10 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Header from "../Components/Header";
 import {
   FaLeaf, FaMapMarkerAlt, FaThermometerHalf, FaCloudRain,
   FaExclamationTriangle, FaFire, FaWater, FaCheckCircle,
   FaChartBar, FaSun
 } from "react-icons/fa";
-import ChatbotIcon from "../Components/ChatbotIcon";
 import { useRef } from "react";
 
 
@@ -321,7 +319,6 @@ return (
                   </div>
                 </div>
 
-                {/* Risk Distribution Aggregations */}
                 <div>
                   <h3 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-3 flex items-center gap-1.5">
                     <FaExclamationTriangle size={12} className="text-slate-400 dark:text-zinc-500" /> Stress Factor Indexes
@@ -349,7 +346,6 @@ return (
           </div>
         </div>
 
-        {/* Dynamic Recommendations Structural Block */}
         <div ref={recSectionRef} className="mt-6 bg-white dark:bg-[#09090b] border border-slate-200 dark:border-zinc-800/80 shadow-sm w-full rounded-xl p-5 transition-colors duration-200">
           <h3 className="text-sm font-semibold text-slate-900 dark:text-white uppercase tracking-wider mb-4 flex items-center gap-2">
             <FaLeaf className="text-emerald-600 dark:text-emerald-400" /> Resilient Cultivation Advice Recommendations

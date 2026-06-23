@@ -169,7 +169,6 @@ const resilienceData = [
 
 
 
-// Minimalist Sparkle SVG placeholder to ensure seamless styling compatibility
 const SparklesIcon = () => (
   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 text-emerald-600">
     <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/>
@@ -197,7 +196,6 @@ return (
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
-        {/* Clean Architectural Header Area */}
         <header className="border-b border-slate-200 dark:border-zinc-800 pb-6 mb-8">
           <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1 mb-2">
             Good Practices
@@ -207,7 +205,6 @@ return (
           </p>
         </header>
 
-        {/* Clean Segment Navigation Controls */}
         <div className="flex border-b border-slate-200 dark:border-zinc-800 overflow-x-auto scrollbar-none gap-6 mb-8">
           {resilienceData.map((category) => {
             const isActive = activeCategory.category === category.category;
@@ -228,12 +225,8 @@ return (
           })}
         </div>
 
-        {/* Split Screen Master-Detail Workspace Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
-          
-          {/* Left Master Segment Column */}
           <div className="lg:col-span-5 flex flex-col space-y-5">
-            {/* Category Context Summary Box */}
             <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-5 shadow-sm">
               <h2 className="text-lg font-bold text-slate-900 dark:text-white tracking-tight mb-2">
                 {activeCategory.category} Frameworks
@@ -243,7 +236,6 @@ return (
               </p>
             </div>
 
-            {/* Sub-items Panel List */}
             <div className="flex flex-col space-y-2 overflow-y-auto max-h-[420px] pr-1">
               {activeCategory.items.map((item, i) => {
                 const isSelected = selectedItem?.title === item.title;
@@ -271,11 +263,9 @@ return (
             </div>
           </div>
 
-          {/* Right Detail Preview Workspace Canvas */}
           <div className="lg:col-span-7 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 shadow-sm min-h-[500px] flex flex-col justify-between">
             {selectedItem ? (
               <div className="w-full flex flex-col h-full">
-                {/* Clean Image Border Frame */}
                 {selectedItem.imageUrl && selectedItem.imageUrl !== "#" ? (
                   <img
                     src={selectedItem.imageUrl}
@@ -292,7 +282,6 @@ return (
                   </div>
                 )}
 
-                {/* Content Block */}
                 <div>
                   <h3 className="text-xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-3">
                     {selectedItem.title}

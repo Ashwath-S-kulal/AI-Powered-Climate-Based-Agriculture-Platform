@@ -1,4 +1,4 @@
-import React from "react";
+
 import OAuth from "../Components/OAuth";
 import Header from "../Components/Header";
 import FacebookOAuth from "../Components/FacebookOAuth"
@@ -8,11 +8,10 @@ return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
       <Header />
 
-      {/* Container with massive negative space */}
       <main className="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-32">
 
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Left: Brand Identity */}
+      
           <div className="space-y-6">
             <span className="text-emerald-600 dark:text-emerald-400 font-bold tracking-widest text-xs uppercase">
               SmartAgri Portal
@@ -26,7 +25,7 @@ return (
             </p>
           </div>
 
-          {/* Right: Functional Access Area */}
+        
           <div className="w-full max-w-sm">
             <div className="mb-8">
               <h2 className="text-2xl font-bold mb-2">Access your account</h2>
@@ -37,7 +36,7 @@ return (
             <div className="space-y-3">
               <OAuth />
 
-              {/* Divider */}
+
               <div className="relative flex items-center py-2">
                 <div className="flex-grow border-t border-slate-200 dark:border-zinc-800"></div>
                 <span className="flex-shrink mx-4 text-[10px] uppercase tracking-widest text-slate-400 dark:text-zinc-600 font-bold bg-white dark:bg-zinc-950 px-2">

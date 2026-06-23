@@ -108,12 +108,9 @@ function FeatureCard({ icon: Icon, title, description, color, navLink, tag }) {
 export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 text-zinc-900 dark:text-zinc-100 font-sans transition-colors duration-300">
-      <Header/>
-      
-      {/* Hero + Quick Actions Context */}
+      <Header />
       <WellcomeCard />
 
-      {/* Mission & Vision Section */}
       <section className="bg-white dark:bg-zinc-950 border-b border-gray-200 dark:border-zinc-800/50 transition-colors">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-14">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
@@ -141,7 +138,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Stats Bar */}
       <section className="bg-emerald-600 dark:bg-emerald-700/90 transition-colors">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
@@ -156,7 +152,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Planning Tools Section */}
       <section className="py-14">
         <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20">
           <div className="mb-8">
@@ -172,7 +167,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Defense Tools Section */}
       <section className="py-14 bg-white dark:bg-zinc-950 border-y border-gray-200 dark:border-zinc-800/60 transition-colors">
         <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20">
           <div className="mb-8">
@@ -188,7 +182,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Knowledge Core Section */}
       <section className="py-14">
         <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20">
           <div className="mb-8">
@@ -200,8 +193,7 @@ export default function Home() {
             {features.filter(f => f.tag === "Knowledge").map((feature, i) => (
               <FeatureCard key={i} {...feature} />
             ))}
-            
-            {/* Hardcoded Knowledge Base Link Card */}
+
             <NavLink to="/croplibrary" className="group flex flex-col h-full">
               <div className="flex flex-col h-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-700 transition-all duration-200">
                 <div className="flex items-start justify-between mb-3">
@@ -223,7 +215,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Benefits Section */}
       <section className="bg-gray-900 dark:bg-zinc-900/40 border-t dark:border-zinc-800 py-14 transition-colors">
         <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
@@ -251,9 +242,7 @@ export default function Home() {
           </div>
         </div>
       </section>
-
       <Footer />
-      <ChatbotIcon />
     </div>
   );
 }

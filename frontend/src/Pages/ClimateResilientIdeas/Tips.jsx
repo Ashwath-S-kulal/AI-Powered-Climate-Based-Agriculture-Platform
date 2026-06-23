@@ -78,7 +78,6 @@ return (
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
-        {/* Clean Architectural Header Area */}
         <header className="border-b border-slate-200 dark:border-zinc-800 pb-6 mb-8">
           <h1 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 dark:text-white mt-1 mb-2">
             Climate Resilience Framework
@@ -88,7 +87,6 @@ return (
           </p>
         </header>
 
-        {/* Unified Horizontal Selection Bar */}
         <div className="grid grid-cols-2 sm:flex sm:flex-wrap gap-2.5 mb-8 p-1.5 bg-slate-200/60 dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800">
           {tips.map((sec) => {
             const Icon = sec.icon;
@@ -113,10 +111,8 @@ return (
           })}
         </div>
 
-        {/* Feature Detail Board Workspace */}
         {section && (
           <div className="bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-xl p-6 sm:p-8 shadow-sm animate-fadeIn">
-            {/* Header Description Element */}
             <div className="flex items-start gap-4 pb-6 mb-6 border-b border-slate-100 dark:border-zinc-800">
               {ActiveIcon && (
                 <div className="p-3 bg-slate-50 dark:bg-zinc-800 border border-slate-100 dark:border-zinc-700 rounded-xl flex-shrink-0">
@@ -129,7 +125,6 @@ return (
               </div>
             </div>
 
-            {/* Strategy Blueprint Stack */}
             <ul className="space-y-4">
               {section.tips.map((tip, i) => (
                 <li 

@@ -35,7 +35,6 @@ export default function WelcomeHero() {
 
   return (
     <div className="transition-colors duration-300">
-      {/* Hero Slider Container */}
       <div className="relative h-[250px] md:h-[400px] overflow-hidden bg-zinc-900 mx-2 md:mx-8 my-3 rounded-lg md:rounded-3xl shadow-xl dark:shadow-black/20">
         <div
           className="flex transition-transform duration-700 ease-in-out h-full"
@@ -49,7 +48,6 @@ export default function WelcomeHero() {
           ))}
         </div>
 
-        {/* Overlay Hero Text */}
         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 pointer-events-none z-10">
           <span className="inline-flex items-center gap-1.5 px-3 py-1 bg-emerald-500/20 border border-emerald-400/30 rounded-full text-emerald-300 text-xs font-semibold mb-4 backdrop-blur-sm">
             <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
@@ -64,7 +62,6 @@ export default function WelcomeHero() {
           </p>
         </div>
 
-        {/* Slider Navigation Buttons */}
         <button onClick={prevSlide} className="absolute left-4 top-1/2 -translate-y-1/2 z-20 p-2 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-sm text-white transition-colors">
           <ChevronLeft size={20} />
         </button>
@@ -72,7 +69,6 @@ export default function WelcomeHero() {
           <ChevronRight size={20} />
         </button>
 
-        {/* Slider Indicator Dots */}
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2 flex gap-2 z-20">
           {images.map((_, idx) => (
             <button
@@ -84,7 +80,6 @@ export default function WelcomeHero() {
         </div>
       </div>
 
-      {/* Quick Actions Container Grid */}
       <div className="bg-white dark:bg-zinc-950 border-b border-gray-200 dark:border-zinc-800/80 transition-colors duration-300">
         <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-5">
           <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-3">

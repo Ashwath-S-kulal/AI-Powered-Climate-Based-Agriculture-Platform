@@ -20,7 +20,6 @@ export default function Footer() {
     <footer className="bg-gray-900 dark:bg-zinc-950 text-gray-300 border-t border-gray-800 dark:border-zinc-800">
       <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20 py-12">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          {/* Brand */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
               <img src={logo} alt="SmartAgri" className="w-8 h-8 rounded-lg object-cover" />
@@ -35,7 +34,6 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
             <h3 className="text-white font-semibold text-sm mb-4">Quick Links</h3>
             <ul className="space-y-2.5">
@@ -49,7 +47,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Team */}
           <div>
             <h3 className="text-white font-semibold text-sm mb-4">Development By</h3>
             <div className="space-y-4">

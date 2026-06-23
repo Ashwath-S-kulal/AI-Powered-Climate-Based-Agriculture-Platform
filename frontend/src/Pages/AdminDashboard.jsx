@@ -59,8 +59,6 @@ return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] pb-12">
       <Header />
       <div className="max-w-7xl mx-auto px-6 pt-10">
-
-        {/* Page Header */}
         <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-4">
           <div>
             <h1 className="text-3xl font-bold text-slate-900 dark:text-white">Admin Console</h1>

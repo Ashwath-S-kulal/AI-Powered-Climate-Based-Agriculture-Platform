@@ -11,7 +11,6 @@ import { Loader2 } from "lucide-react";
 
 import Header from "../Components/Header";
 import CropStepsView from "./CropStepsView";
-import ChatbotIcon from "../Components/ChatbotIcon";
 
 export default function CropsList() {
   const [crops, setCrops] = useState([]);
@@ -87,11 +86,9 @@ export default function CropsList() {
 
   const isDetailViewOpen = selectedCropNum !== null;
 
- return (
+  return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-800 dark:text-zinc-200 font-sans">
       <Header />
-      
-      {/* Hero Header Area */}
       <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200 dark:border-zinc-800 pt-8 pb-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
           <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
@@ -104,9 +101,7 @@ export default function CropsList() {
       </div>
 
       <div className="px-4 w-full max-w-7xl mx-auto relative -top-6 z-20">
-        {/* Search & Filter Control Bar */}
         <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm mb-8 flex flex-col md:flex-row items-center gap-4">
-          
           <div className="relative flex-1 w-full" ref={searchInputRef}>
             <div className="flex items-center bg-slate-50 dark:bg-zinc-950 rounded-xl px-4 py-2.5 gap-3 border border-slate-200 dark:border-zinc-800 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/20 transition-all">
               <FiSearch className="text-slate-400 dark:text-zinc-500 text-lg flex-shrink-0" />
@@ -154,11 +149,10 @@ export default function CropsList() {
               <button
                 key={season}
                 onClick={() => setSeasonFilter(season === seasonFilter ? "" : season)}
-                className={`flex-1 md:flex-none items-center justify-center text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 border ${
-                  seasonFilter === season
+                className={`flex-1 md:flex-none items-center justify-center text-xs font-semibold px-4 py-2.5 rounded-xl transition-all duration-200 border ${seasonFilter === season
                     ? "bg-emerald-600 text-white border-emerald-600 shadow-sm"
                     : "bg-white dark:bg-zinc-950 hover:bg-slate-50 dark:hover:bg-zinc-800 text-slate-600 dark:text-zinc-400 border-slate-200 dark:border-zinc-800"
-                }`}
+                  }`}
               >
                 {season}
               </button>
@@ -172,7 +166,6 @@ export default function CropsList() {
           </div>
         </div>
 
-        {/* Loading State */}
         {loading && (
           <div className="flex flex-col justify-center items-center py-20">
             <Loader2 className="w-8 h-8 animate-spin text-emerald-600 dark:text-emerald-400 mb-4" />
@@ -182,7 +175,6 @@ export default function CropsList() {
           </div>
         )}
 
-        {/* Empty State */}
         {!loading && filtered.length === 0 && (
           <div className="text-center py-20 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm">
             <GiTreeGrowth className="mx-auto text-4xl text-slate-300 dark:text-zinc-700 mb-3" />
@@ -191,7 +183,6 @@ export default function CropsList() {
           </div>
         )}
 
-        {/* Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 pb-20">
           {filtered.map((c) => (
             <div
@@ -217,7 +208,7 @@ export default function CropsList() {
                 <h2 className="text-lg font-bold text-slate-900 dark:text-white mb-1 leading-tight group-hover:text-emerald-700 dark:group-hover:text-emerald-400 transition-colors">
                   {c.name}
                 </h2>
-                
+
                 <div className="mt-auto pt-4 flex justify-between items-center text-sm">
                   <span className="flex items-center px-2.5 py-1 rounded text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-zinc-800 text-slate-600 dark:text-zinc-400 border border-slate-200/60 dark:border-zinc-700">
                     {c.type}
@@ -232,10 +223,8 @@ export default function CropsList() {
         </div>
       </div>
 
-      {/* Drawer / Modal View */}
       <div className={`fixed inset-0 z-50 transition-opacity duration-300 ${isDetailViewOpen ? "opacity-100 pointer-events-auto" : "opacity-0 pointer-events-none"}`}>
         <div className="absolute inset-0 bg-slate-900/40 backdrop-blur-sm" onClick={() => setSelectedCropNum(null)}></div>
-
         <div className={`absolute mt-10 bottom-0 left-0 right-0 w-full lg:max-w-4xl max-h-[85vh] mx-auto bg-white dark:bg-zinc-900 md:rounded-t-3xl shadow-2xl flex flex-col transition-transform duration-500 ${isDetailViewOpen ? "translate-y-0" : "translate-y-full"}`}>
           {selectedCrop && (
             <>

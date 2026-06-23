@@ -67,12 +67,11 @@ export default function ProfilePage() {
       console.log(error);
     }
   };
-return (
+  return (
     <div className="min-h-screen bg-gray-50 dark:bg-[#09090b]">
       <Header />
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 pt-10 pb-12">
 
-        {/* Page Header */}
         <div className="flex items-center justify-between mb-8">
           <div>
             <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Account Settings</h1>
@@ -88,7 +87,7 @@ return (
             )}
             <button
               onClick={handleSignOut}
-              className="hidden md:inline inline-flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 text-gray-600 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors"
+              className="hidden md:flex items-center gap-1.5 px-4 py-2 bg-white dark:bg-zinc-800 border border-gray-300 dark:border-zinc-700 text-gray-600 dark:text-gray-300 rounded-lg text-sm font-medium hover:bg-gray-50 dark:hover:bg-zinc-700 transition-colors"
             >
               <LogOut size={15} /> Sign Out
             </button>
@@ -96,7 +95,6 @@ return (
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          {/* Profile Card */}
           <div className="lg:col-span-1">
             <div className="bg-white dark:bg-zinc-900 rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden">
               <div className="h-20 bg-gradient-to-r from-emerald-500 to-teal-500" />
@@ -140,7 +138,6 @@ return (
             </div>
           </div>
 
-          {/* Form Card */}
           <div className="lg:col-span-2">
             <div className="bg-white dark:bg-zinc-900 rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm p-6 sm:p-8">
               <div className="flex items-center gap-3 mb-6">

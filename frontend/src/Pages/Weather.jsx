@@ -7,7 +7,6 @@ import {
 } from 'lucide-react';
 import Header from "../Components/Header";
 import { FiSearch } from "react-icons/fi";
-import ChatbotIcon from "../Components/ChatbotIcon";
 
 
 const getWeatherIcon = (code, className = "w-12 h-12 text-slate-700") => {
@@ -69,7 +68,6 @@ export default function Weather() {
   useEffect(() => { getCurrentLocation(); }, []);
   useEffect(() => { if (coords) { getWeather(coords.lat, coords.lon); getHistory(coords.lat, coords.lon); } }, [coords]);
 
-  // --- Current Location ---
   const getCurrentLocation = () => {
     setLoading(true);
     if (!navigator.geolocation) {
@@ -88,7 +86,6 @@ export default function Weather() {
     );
   };
 
-  // --- Reverse Geocode ---
   const reverseGeocode = async (lat, lon) => {
     try {
       const url = `https://nominatim.openstreetmap.org/reverse?format=json&lat=${lat}&lon=${lon}`;
@@ -102,7 +99,6 @@ export default function Weather() {
     } catch { setLocationName(`Location at ${lat.toFixed(2)}, ${lon.toFixed(2)}`); }
   };
 
-  // --- City Search ---
   const searchCity = async (selectedCity) => {
     const query = selectedCity || city;
     if (!query) return;
@@ -126,7 +122,6 @@ export default function Weather() {
     finally { setLoading(false); setSearching(false); }
   };
 
-  // --- Fetch Suggestions ---
   const fetchSuggestions = (value) => {
     clearTimeout(searchTimeout.current);
     setCity(value);
@@ -141,7 +136,6 @@ export default function Weather() {
     }, 300);
   };
 
-  // --- Weather & History ---
   const getWeather = async (lat, lon) => {
     try {
       setLoading(true);
@@ -203,7 +197,6 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased relative pb-16 transition-colors duration-300">
       <Header />
 
-      {/* Top Banner & Search Console */}
       <div className="w-full bg-white dark:bg-zinc-950 border-b border-slate-200/80 dark:border-zinc-800/50 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
         <div className="max-w-screen mx-auto">
           <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
@@ -238,7 +231,6 @@ return (
               </button>
             </div>
 
-            {/* Suggestions Dropdown */}
             {suggestions.length > 0 && (
               <ul className="absolute left-0 right-0 z-50 mt-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100 dark:divide-zinc-800/60">
                 {suggestions.map((s, i) => (
@@ -256,7 +248,6 @@ return (
         </div>
       </div>
 
-      {/* AI Insights Segment */}
       <div className="pt-3 border-t border-slate-200 dark:border-zinc-800/60 px-6 font-sans antialiased">
         {!insights && !isFetchingAI && !loading && (
           <div className="text-left rounded-xl border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
@@ -290,7 +281,6 @@ return (
           </div>
         )}
 
-        {/* AI Insight Placeholder Skeleton */}
         {isFetchingAI && (
           <div className="rounded-2xl border border-emerald-100/70 dark:border-emerald-500/10 bg-emerald-50/20 dark:bg-emerald-950/5 p-6 shadow-sm animate-pulse space-y-5">
             <div className="space-y-2">
@@ -304,7 +294,6 @@ return (
           </div>
         )}
 
-        {/* AI Insight Readout */}
         {insights && !isFetchingAI && (
           <div className="space-y-4 animate-in fade-in slide-in-from-bottom-4 duration-400">
             <div className="rounded-2xl border border-emerald-100 dark:border-emerald-500/10 bg-emerald-50/40 dark:bg-emerald-950/10 p-6 shadow-[0_2px_12px_rgba(16,185,129,0.01)]">
@@ -357,7 +346,6 @@ return (
         )}
       </div>
 
-      {/* Main Metric Visualizations Content */}
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {loading && (
           <div className="flex flex-col justify-center items-center py-20 ">
@@ -377,7 +365,6 @@ return (
             )}
 
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
-              {/* Left Column: Today's Conditions */}
               {today && (
                 <div className="lg:col-span-4 w-full">
                   <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm h-full flex flex-col justify-between transition-colors">
@@ -408,7 +395,6 @@ return (
                       </div>
                     </div>
 
-                    {/* Today Mini Stats Strip */}
                     <div>
                       <div className="grid grid-cols-3 gap-3 pt-2">
                         <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-800/80 rounded-lg text-center">
@@ -438,7 +424,6 @@ return (
                 </div>
               )}
 
-              {/* Right Column: 7-Day Forecast Aggregation */}
               <div className="lg:col-span-8 w-full">
                 {forecast.length > 0 && (
                   <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm transition-colors">
@@ -484,7 +469,6 @@ return (
               </div>
             </div>
 
-            {/* Historical Database Logs Table */}
             {history.length > 0 && (
               <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm mt-6 w-full transition-colors">
                 <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">

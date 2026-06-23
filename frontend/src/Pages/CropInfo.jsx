@@ -4,11 +4,9 @@ import {
   FaThermometerHalf
 } from "react-icons/fa";
 import { FiSearch } from "react-icons/fi";
-import Papa from "papaparse";
 import Header from "../Components/Header";
 import { useState, useEffect } from "react";
-import ChatbotIcon from "../Components/ChatbotIcon";
-import { Loader2 } from "lucide-react"; // Assuming you have lucide-react installed from the previous component
+import { Loader2 } from "lucide-react"; 
 
 const keyDataIcons = {
   "Ideal pH": FaFlask,
@@ -162,9 +160,7 @@ export default function CropSearchCSV() {
           <main className="w-full space-y-8">
             {(isInitialState || isDataState) && (
               <div className="w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm p-3 md:p-5 space-y-10">
-                
-                {/* Search & Header Section */}
-                <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 dark:border-zinc-800 pb-6">
+                                <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 dark:border-zinc-800 pb-6">
                   <div className="flex items-center gap-4 w-full md:w-auto">
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900 p-3 rounded-xl">
                       <FaLeaf className="text-emerald-600 dark:text-emerald-400 w-6 h-6" />
@@ -209,7 +205,6 @@ export default function CropSearchCSV() {
                   </div>
                 </div>
 
-                {/* Key Stats Grid */}
                 <section className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-6">
                   {headers
                     .filter((key) => keyStatHeaders.includes(key))
@@ -243,7 +238,6 @@ export default function CropSearchCSV() {
                     })}
                 </section>
 
-                {/* Detailed Cultivation Data Table */}
                 <section className="pt-6">
                   <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
                     Detailed Cultivation Data

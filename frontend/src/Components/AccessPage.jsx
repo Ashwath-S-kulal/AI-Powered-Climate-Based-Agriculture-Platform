@@ -16,12 +16,10 @@ export default function AccessPage() {
     { icon: <BotMessageSquare size={20} />, title: "AgriBot 24/7", desc: "Instant expert support." },
   ];
 
-return (
+  return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-900 dark:text-slate-100 font-sans transition-colors duration-300">
       <Header />
-
       <main className="max-w-screen mx-auto px-3 md:px-20 py-16">
-        {/* Hero Section */}
         <section className="text-center mb-24">
           <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-sm tracking-wide uppercase">Built for Modern Agriculture</span>
           <h1 className="text-3xl md:text-5xl font-extrabold tracking-tight mt-4 mb-6 text-slate-900 dark:text-white">
@@ -36,7 +34,6 @@ return (
           </div>
         </section>
 
-        {/* Feature Grid */}
         <section>
           <div className="flex items-center gap-2 mb-10">
             <ShieldCheck className="text-emerald-600 dark:text-emerald-400" />

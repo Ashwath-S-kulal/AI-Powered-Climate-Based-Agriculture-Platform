@@ -12,7 +12,6 @@ import {
     Droplets,
     Navigation,
 } from "lucide-react";
-import ChatbotIcon from "../Components/ChatbotIcon";
 
 const IconLoader = Loader;
 const IconSearch = Search;
@@ -285,8 +284,6 @@ export default function CropRecommender() {
     return (
         <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-300 font-sans antialiased relative pb-16 transition-colors duration-200">
             <Header />
-
-            {/* Top Minimal Dashboard Banner */}
             <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
                 <div className="max-w-screen mx-auto">
                     <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
@@ -301,7 +298,6 @@ export default function CropRecommender() {
                     </div>
                     
 
-                    {/* Integrated Modern Search Control Bar */}
                     <div className="max-w-screen bg-[#f1f5f9] dark:bg-[#121212] p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
                         <div className="flex flex-col sm:flex-row gap-2 relative">
                             <div className="relative flex-1 w-full">
@@ -360,7 +356,6 @@ export default function CropRecommender() {
                 </div>
             </div>
 
-            {/* Main Visual Display Grid */}
             <main className="w-full max-w-screen mx-auto py-8 px-4 sm:px-6">
                 {(loading || !isCatalogLoaded) && (
                     <div className="flex flex-col justify-center items-center py-20 ">
@@ -379,7 +374,6 @@ export default function CropRecommender() {
 
                 {!loading && isCatalogLoaded && geocode && climate && (
                     <div className="space-y-6">
-                        {/* Environmental Core Cards */}
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                             <div className="bg-white dark:bg-[#09090b] p-5 rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm flex flex-col justify-between transition-colors duration-200">
                                 <div>
@@ -416,7 +410,6 @@ export default function CropRecommender() {
                             </div>
                         </div>
 
-                        {/* Top Crop Suitability Matrix */}
                         <div className="bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm overflow-hidden transition-colors duration-200">
                             <div className="p-5 border-b border-slate-100 dark:border-zinc-800/50 flex items-center justify-between">
                                 <h2 className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">
@@ -462,7 +455,6 @@ export default function CropRecommender() {
                             </div>
                         </div>
 
-                        {/* Point Climatology Table Structure */}
                         <div className="bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800/80 shadow-sm overflow-hidden transition-colors duration-200">
                             <div className="p-5 border-b border-slate-100 dark:border-zinc-800/50">
                                 <h2 className="text-base font-semibold text-slate-900 dark:text-white flex items-center gap-2">

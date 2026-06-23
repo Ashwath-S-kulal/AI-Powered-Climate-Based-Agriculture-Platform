@@ -10,7 +10,7 @@ export default function ChatbotPopup() {
   const [input, setInput] = useState("");
   const messagesEndRef = useRef(null);
 
-  // Set default greeting on load/user-change
+
   useEffect(() => {
     setMessages([
       {
@@ -27,13 +27,13 @@ export default function ChatbotPopup() {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, isOpen, loading]);
 
-  // Dynamic text formatter for clean bullet points, numbering, and bold styling
+
   const formatAssistantMessage = (text) => {
     return text.split('\n').map((line, index) => {
       let trimmedLine = line.trim();
       if (!trimmedLine) return <div key={index} className="h-1.5" />;
 
-      // Match lists
+
       const isBullet = trimmedLine.startsWith('-') || trimmedLine.startsWith('*');
       const isNumbered = /^\d+\.\s/.test(trimmedLine);
 
@@ -43,7 +43,7 @@ export default function ChatbotPopup() {
         trimmedLine = trimmedLine.replace(/^\d+\.\s*/, '');
       }
 
-      // Regex parser for inline **bold** blocks
+
       const textParts = trimmedLine.split(/(\*\*.*?\*\*)/g);
       const styledContent = textParts.map((part, idx) => {
         if (part.startsWith('**') && part.endsWith('**')) {
@@ -117,7 +117,7 @@ export default function ChatbotPopup() {
 
 return (
     <div className="fixed bottom-6 right-6 z-50 font-sans antialiased">
-      {/* Trigger Button */}
+
       {!isOpen && (
         <button
           onClick={() => setIsOpen(true)}
@@ -127,11 +127,9 @@ return (
         </button>
       )}
 
-      {/* Chat Window */}
+
       {isOpen && (
         <div className="w-[360px] h-[520px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-slate-200/80 dark:border-zinc-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
-
-          {/* Header */}
           <div className="bg-emerald-600 dark:bg-emerald-700 px-4 py-3.5 flex justify-between items-center text-white shadow-sm">
             <div className="flex items-center gap-2.5">
               <div className="p-1 bg-white/10 rounded-lg">
@@ -150,14 +148,12 @@ return (
             </button>
           </div>
 
-          {/* Messages Body */}
           <div className="flex-1 overflow-y-auto p-4 space-y-4 bg-slate-50/60 dark:bg-zinc-950">
             {messages.map((msg, i) => {
               const isUser = msg.sender === "user";
               return (
                 <div key={i} className={`flex items-start gap-2.5 ${isUser ? "justify-end" : "justify-start"}`}>
                   
-                  {/* Assistant Avatar Icon */}
                   {!isUser && (
                     <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-800 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 mt-0.5 shadow-sm">
                       <Bot size={14} />
@@ -178,7 +174,6 @@ return (
                         </div>
                       )}
                     </div>
-                    {/* Timestamp element */}
                     <span className={`text-[9px] font-bold text-slate-400 dark:text-zinc-500 tracking-wide px-1 ${isUser ? "text-right" : "text-left"}`}>
                       {msg.time}
                     </span>
@@ -187,7 +182,6 @@ return (
               );
             })}
 
-            {/* Micro Dot Typing Animation */}
             {loading && (
               <div className="flex items-start gap-2.5 justify-start">
                 <div className="w-7 h-7 rounded-lg bg-emerald-50 dark:bg-emerald-950 border border-emerald-100 dark:border-emerald-800 flex items-center justify-center shrink-0 text-emerald-600 dark:text-emerald-400 shadow-sm">
@@ -203,7 +197,6 @@ return (
             <div ref={messagesEndRef} />
           </div>
 
-          {/* Footer Input Bar */}
           <div className="p-3 border-t border-slate-100 dark:border-zinc-800 flex gap-2 bg-white dark:bg-zinc-900">
             <input
               value={input}

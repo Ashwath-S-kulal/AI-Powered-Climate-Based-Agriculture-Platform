@@ -122,7 +122,6 @@ const TipCard = ({ tip, isActive, onToggle }) => {
       >
         <div className="overflow-hidden">
           <div className="p-5 bg-slate-50/40 dark:bg-zinc-950">
-            {/* Mobile Summary fallback */}
             <p className="text-xs text-slate-500 dark:text-slate-400 font-medium mb-3 block sm:hidden">
               <span className="text-slate-800 dark:text-zinc-200 font-semibold">Summary:</span> {tip.summary}
             </p>
@@ -164,7 +163,6 @@ return (
       <Header />
 
       <main className="max-w-screen mx-auto px-3 md:px-20 pt-10 pb-20">
-        {/* Clean Architectural Header Area */}
         <header className="border-b border-slate-200 dark:border-zinc-800 pb-8 mb-10">
           <span className="text-emerald-600 dark:text-emerald-400 font-semibold text-xs tracking-wider uppercase">
             Agri Knowledge Core
@@ -177,7 +175,6 @@ return (
           </p>
         </header>
 
-        {/* 2-Column Professional Board */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
           {resilienceTips.map((tip) => (
             <TipCard
@@ -189,8 +186,6 @@ return (
           ))}
         </div>
       </main>
-
-      <ChatbotIcon />
     </div>
   );
 }

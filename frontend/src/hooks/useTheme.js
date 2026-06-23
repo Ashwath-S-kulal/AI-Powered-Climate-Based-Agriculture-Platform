@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 export default function useTheme() {
-  // Check localStorage, or fall back to system preference
   const [theme, setTheme] = useState(() => {
+    
     const savedTheme = localStorage.getItem("theme");
     if (savedTheme) return savedTheme;
     
@@ -18,7 +18,6 @@ export default function useTheme() {
       root.classList.remove("dark");
     }
     
-    // Save preference to localStorage
     localStorage.setItem("theme", theme);
   }, [theme]);
 

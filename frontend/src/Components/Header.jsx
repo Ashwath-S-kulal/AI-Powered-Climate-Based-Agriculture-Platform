@@ -26,11 +26,9 @@ export default function Header() {
 
   return (
     <>
-      {/* Refactored navigation header with clean zinc blur levels */}
       <header className="sticky top-0 z-50 bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md border-b border-zinc-200/80 dark:border-zinc-800/80 transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
           
-          {/* Logo */}
           <NavLink to="/" className="flex items-center gap-2.5 group focus:outline-none">
             <img src={logo} alt="SmartAgri Logo" className="h-9 w-9 object-contain transition-transform group-hover:scale-105" />
             <span className="font-bold text-xl tracking-tight bg-gradient-to-r from-zinc-900 to-zinc-700 dark:from-white dark:to-zinc-300 bg-clip-text text-transparent">
@@ -38,7 +36,6 @@ export default function Header() {
             </span>
           </NavLink>
 
-          {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-1">
             {navItems.map((item) => (
               <NavLink
@@ -56,7 +53,6 @@ export default function Header() {
               </NavLink>
             ))}
 
-            {/* Desktop Hover Dropdown */}
             <div className="relative group ml-1">
               <button className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-50 dark:hover:bg-zinc-800 px-3 py-2 rounded-lg flex items-center gap-1 transition-all duration-200 focus:outline-none">
                 Tools 
@@ -79,11 +75,8 @@ export default function Header() {
             </div>
           </nav>
 
-          {/* Right side: Auth/Profile + Theme Toggle */}
           <div className="hidden md:flex items-center gap-4">
-            
-            {/* Theme Toggle Button */}
-            <button
+                        <button
               onClick={toggleTheme}
               className="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 transition-all active:scale-95 focus:outline-none"
               aria-label="Toggle Theme"
@@ -105,9 +98,7 @@ export default function Header() {
             )}
           </div>
 
-          {/* Mobile Actions Button Group */}
           <div className="flex md:hidden items-center gap-2">
-            {/* Mobile Theme Toggle */}
             <button
               onClick={toggleTheme}
               className="p-2 rounded-xl text-zinc-600 dark:text-zinc-300 active:bg-zinc-100 dark:active:bg-zinc-800 transition-colors"
@@ -115,7 +106,6 @@ export default function Header() {
               {theme === "dark" ? <LucideIcons.Sun size={20} className="text-amber-400" /> : <LucideIcons.Moon size={20} />}
             </button>
 
-            {/* Mobile Menu Trigger */}
             <button
               className="p-2 text-zinc-600 dark:text-zinc-300 hover:bg-zinc-100 dark:hover:bg-zinc-800 rounded-xl transition-colors focus:outline-none"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -126,12 +116,10 @@ export default function Header() {
         </div>
       </header>
 
-      {/* Mobile Dark Backdrop Overlay */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 top-16 bg-zinc-900/30 dark:bg-zinc-950/50 backdrop-blur-sm z-40 md:hidden" onClick={() => setIsMobileMenuOpen(false)} />
       )}
 
-      {/* Mobile Menu Slide-out Drawer */}
       <div className={`fixed top-16 right-0 w-72 h-[calc(100vh-64px)] bg-white dark:bg-zinc-900 border-l border-zinc-200 dark:border-zinc-800 shadow-2xl flex flex-col z-40 transform transition-transform duration-300 ease-in-out md:hidden ${isMobileMenuOpen ? "translate-x-0" : "translate-x-full"}`}>
         <div className="flex flex-col p-6 gap-6 overflow-y-auto flex-1">
           <div className="flex flex-col gap-2">
@@ -164,8 +152,7 @@ export default function Header() {
           </div>
         </div>
 
-        {/* Profile / Auth Drawer Footer */}
-        <div className="border-t border-zinc-100 dark:border-zinc-800 p-5 bg-zinc-50/80 dark:bg-zinc-900/50 backdrop-blur-sm">
+        <div className="border-t border-zinc-100 dark:border-zinc-800 p-5 bg-zinc-50/80 dark:bg-zinc-900/50 backdrop-blur-sm pb-10 md:pb-0">
           {!currentUser ? (
             <Link to="/signin" onClick={() => setIsMobileMenuOpen(false)} className="block w-full py-3 bg-emerald-600 text-white rounded-xl text-center font-semibold hover:bg-emerald-700 transition shadow-sm">
               Sign In
