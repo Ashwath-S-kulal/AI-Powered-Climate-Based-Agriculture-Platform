@@ -1,67 +1,104 @@
 import React from "react";
 import logo from "../assets/logo.png";
-import { Phone, Mail, MapPin, Github, Leaf } from "lucide-react";
+import { Phone, Mail, Leaf, ArrowUpRight } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 const teamMembers = [
-    { name: "Ashwath S", phone: "+91 8431294514", email: "ashwathkulal2004@gmail.com" },
+  { name: "Ashwath S", phone: "+91 8431294514", email: "ashwathkulal2004@gmail.com" },
 ];
 
-const quickLinks = [
-  { label: "Dashboard", to: "/" },
-  { label: "Crop Library", to: "/croplibrary" },
-  { label: "Weather", to: "/weather" },
-  { label: "Disease Predictor", to: "/disease" },
-  { label: "Risk Analyzer", to: "/cropriskcalculater" },
+const linkGroups = [
+  {
+    title: "Planning & Strategy",
+    links: [
+      { label: "Dashboard Core", to: "/" },
+      { label: "Crop Risk Analyzer", to: "/cropriskcalculater" },
+      { label: "Crop Recommender", to: "/croprecomnder" },
+      { label: "Soil Analysis", to: "/soil" },
+    ]
+  },
+  {
+    title: "Defense & Markets",
+    links: [
+      { label: "Geo Intelligence", to: "/geointelligence" },
+      { label: "Disease Predictor", to: "/disease" },
+      { label: "Hyper-Local Weather", to: "/weather" },
+      { label: "Market Price Board", to: "/marketprices" },
+    ]
+  },
+  {
+    title: "Knowledge Base",
+    links: [
+      { label: "Crop Library Base", to: "/croplibrary" },
+      { label: "Crop Growing Guides", to: "/croplibrary/croplist" },
+      { label: "Deep Crop Insights", to: "/croplibrary/cropinfo" },
+      { label: "Disease Symptoms", to: "/disease/diseasedata" },
+      { label: "Disease Supplements", to: "/disease/diseasesuppliment" },
+    ]
+  }
 ];
 
 export default function Footer() {
- return (
-    <footer className="bg-gray-900 dark:bg-zinc-950 text-gray-300 border-t border-gray-800 dark:border-zinc-800">
-      <div className="max-w-screen mx-auto px-3 sm:px-6 md:px-20 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-          <div>
-            <div className="flex items-center gap-2.5 mb-4">
-              <img src={logo} alt="SmartAgri" className="w-8 h-8 rounded-lg object-cover" />
-              <span className="text-white font-bold text-lg">SmartAgri</span>
+  return (
+    <footer className="bg-gray-900 dark:bg-zinc-950 text-gray-300 border-t border-gray-800 dark:border-zinc-800 transition-colors duration-300">
+      <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-10 py-16">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-10 md:gap-8">
+
+          <div className="lg:col-span-2 space-y-4">
+            <div className="flex items-center gap-2.5">
+              <img src={logo} alt="SmartAgri" className="w-9 h-9 rounded-xl object-cover ring-2 ring-emerald-500/10" />
+              <span className="text-white font-extrabold text-xl tracking-tight">SmartAgri</span>
             </div>
-            <p className="text-sm text-gray-400 dark:text-zinc-400 leading-relaxed">
+            <p className="text-sm text-gray-400 dark:text-zinc-400 leading-relaxed max-w-sm">
               Climate-resilient agriculture platform helping farmers make data-driven decisions to maximize yield and adapt to climate change.
             </p>
-            <div className="flex items-center gap-1.5 mt-4">
-              <Leaf className="w-3.5 h-3.5 text-emerald-400" />
-              <span className="text-xs text-emerald-400 font-medium">Sustainable Farming Platform</span>
+
+          </div>
+
+          {linkGroups.map((group, index) => (
+            <div key={index} className="space-y-4">
+              <h3 className="text-white font-bold text-xs ">
+                {group.title}
+              </h3>
+              <ul className="space-y-2.5">
+                {group.links.map(({ label, to }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      className="group flex items-center text-xs text-gray-400 hover:text-white dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors duration-150"
+                    >
+                      <span>{label}</span>
+                      <ArrowUpRight className="w-3 h-3 ml-1 opacity-0 -translate-y-0.5 group-hover:opacity-100 transition-all duration-150" />
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
             </div>
-          </div>
+          ))}
 
-          <div>
-            <h3 className="text-white font-semibold text-sm mb-4">Quick Links</h3>
-            <ul className="space-y-2.5">
-              {quickLinks.map(({ label, to }) => (
-                <li key={to}>
-                  <NavLink to={to} className="text-sm text-gray-400 hover:text-white dark:text-zinc-400 dark:hover:text-zinc-100 transition-colors duration-150">
-                    {label}
-                  </NavLink>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-white font-semibold text-sm mb-4">Development By</h3>
+          <div className="space-y-4">
+            <h3 className="text-white font-bold text-xs">
+              Development By
+            </h3>
             <div className="space-y-4">
               {teamMembers.map((member, idx) => (
-                <div key={idx} className="border-b border-gray-800 dark:border-zinc-800 pb-3 last:border-0 last:pb-0">
-                  <p className="text-white text-sm font-medium">{member.name}</p>
-                  <div className="mt-1 space-y-0.5">
-                    <div className="flex items-center gap-1.5">
-                      <Phone className="w-3 h-3 text-gray-500 dark:text-zinc-600" />
-                      <span className="text-xs text-gray-400 dark:text-zinc-500">{member.phone}</span>
-                    </div>
-                    <div className="flex items-center gap-1.5">
-                      <Mail className="w-3 h-3 text-gray-500 dark:text-zinc-600" />
-                      <span className="text-xs text-gray-400 dark:text-zinc-500">{member.email}</span>
-                    </div>
+                <div key={idx} className="space-y-2">
+                  <p className="text-white text-sm font-semibold">{member.name}</p>
+                  <div className="space-y-1.5">
+                    <a
+                      href={`tel:${member.phone}`}
+                      className="flex items-center gap-2 text-xs text-gray-400 hover:text-zinc-200 transition-colors"
+                    >
+                      <Phone className="w-3.5 h-3.5 text-gray-500 dark:text-zinc-600 flex-shrink-0" />
+                      <span>{member.phone}</span>
+                    </a>
+                    <a
+                      href={`mailto:${member.email}`}
+                      className="flex items-center gap-2 text-xs text-gray-400 hover:text-zinc-200 transition-colors break-all"
+                    >
+                      <Mail className="w-3.5 h-3.5 text-gray-500 dark:text-zinc-600 flex-shrink-0" />
+                      <span>{member.email}</span>
+                    </a>
                   </div>
                 </div>
               ))}
@@ -69,9 +106,13 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-10 pt-6 border-t border-gray-800 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3">
-          <p className="text-xs text-gray-500 dark:text-zinc-500">© 2025 SmartAgri. All rights reserved.</p>
-          <p className="text-xs text-gray-500 dark:text-zinc-500">Built for climate-resilient agriculture</p>
+        <div className="mt-14 pt-8 border-t border-gray-800 dark:border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+          <p className="text-xs text-gray-500 dark:text-zinc-500">
+            © 2026 SmartAgri. All rights reserved.
+          </p>
+          <p className="text-xs text-gray-500 dark:text-zinc-500 font-medium">
+            Built for Climate-Based agriculture
+          </p>
         </div>
       </div>
     </footer>

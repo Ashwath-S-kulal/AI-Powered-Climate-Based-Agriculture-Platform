@@ -32,9 +32,6 @@ export default function GeoIntelligencePage() {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState(null);
     const [locationName, setLocationName] = useState("Locating...");
-    const [locationStatus, setLocationStatus] = useState("Requesting GPS coordinates...");
-
-
     const [coords, setCoords] = useState(null);
 
 
@@ -43,13 +40,12 @@ export default function GeoIntelligencePage() {
             navigator.geolocation.getCurrentPosition(
                 (position) => {
                     setCoords({ lat: position.coords.latitude, lon: position.coords.longitude });
-                    setLocationStatus("GPS locked. Fetching telemetry...");
                 },
                 (error) => {
                     console.warn("Geolocation denied or failed. Using fallback location.");
+                    console.error(error);
 
                     setCoords({ lat: 13.6213, lon: 74.6914 });
-                    setLocationStatus("Location denied. Loading default region...");
                 },
                 { enableHighAccuracy: true, timeout: 5000 }
             );

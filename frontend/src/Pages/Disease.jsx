@@ -123,6 +123,7 @@ export default function Disease() {
       await axios.delete(`${import.meta.env.VITE_BASE_URI}/api/predictions/deletePrediction/${id}`);
       fetchHistory();
     } catch (err) {
+      console.error("Error deleting prediction:", err);
       alert("Failed to delete prediction.");
     }
   };
@@ -318,7 +319,7 @@ export default function Disease() {
         ) : null}
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-          <NavLink to="/croplibrary/diseasedata" className="group">
+          <NavLink to="/disease/diseasedata" className="group">
             <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 bg-blue-50 dark:bg-blue-950/30 rounded-lg flex items-center justify-center">

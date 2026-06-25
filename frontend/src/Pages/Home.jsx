@@ -4,18 +4,20 @@ import Footer from "../Components/Footer";
 import { NavLink } from 'react-router-dom';
 import {
   BarChart3, Lightbulb, CalendarCheck, Sprout, Microscope, CloudSun,
-  Info, CheckCircle2, ArrowRight, Leaf, TrendingUp, Shield, Zap
+  Info, CheckCircle2, ArrowRight, Leaf, TrendingUp, Shield, Zap,
+  FlaskConical,
+  Globe2,
+  LineChart
 } from 'lucide-react';
 import ChatbotIcon from '../Components/ChatbotIcon';
 import Header from '../Components/Header';
 
-// Refactored features configuration with uniform zinc/neutral structural elements
 const features = [
   {
     icon: BarChart3,
     title: "Crop Risk Analyzer",
     description: "Real-time analysis based on weather data to identify and mitigate crop risks before they happen.",
-    color: "bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400",
+    color: "bg-blue-100 dark:bg-blue-500/10 text-blue-700 dark:text-blue-400",
     navLink: "/cropriskcalculater",
     tag: "Planning"
   },
@@ -23,31 +25,31 @@ const features = [
     icon: Lightbulb,
     title: "Crop Recommender",
     description: "AI-powered crop suggestions based on local climate patterns to maximize yield and profitability.",
-    color: "bg-violet-50 dark:bg-violet-950/40 text-violet-600 dark:text-violet-400",
+    color: "bg-violet-100 dark:bg-violet-500/10 text-violet-700 dark:text-violet-400",
     navLink: "/croprecomnder",
     tag: "Planning"
   },
   {
-    icon: CalendarCheck,
-    title: "Climate Resilient Tips",
-    description: "Evidence-based farming tips linked directly to scientific sources for sustainable practices.",
-    color: "bg-amber-50 dark:bg-amber-950/40 text-amber-600 dark:text-amber-400",
-    navLink: "/croplibrary",
+    icon: FlaskConical,
+    title: "Soil Analysis",
+    description: "Deep dive into soil health, nutrient tracking, and personalized fertilizer management strategies.",
+    color: "bg-orange-100 dark:bg-orange-500/10 text-orange-700 dark:text-orange-400",
+    navLink: "/soil",
     tag: "Planning"
   },
   {
     icon: Sprout,
     title: "Crop Growing Guide",
     description: "Stage-by-stage cultivation instructions optimized for your region and soil conditions.",
-    color: "bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400",
+    color: "bg-emerald-100 dark:bg-emerald-500/10 text-emerald-700 dark:text-emerald-400",
     navLink: "/croplibrary/croplist",
-    tag: "Planning"
+    tag: "knowledge"
   },
   {
     icon: Microscope,
     title: "Disease Predictor",
     description: "Upload a photo of your crop leaf to instantly detect diseases using deep learning AI.",
-    color: "bg-rose-50 dark:bg-rose-950/40 text-rose-600 dark:text-rose-400",
+    color: "bg-rose-100 dark:bg-rose-500/10 text-rose-700 dark:text-rose-400",
     navLink: "/disease",
     tag: "Defense"
   },
@@ -55,16 +57,48 @@ const features = [
     icon: CloudSun,
     title: "Hyper-Local Weather",
     description: "Accurate, minute-level and 10-day forecasts tailored to your exact farm location.",
-    color: "bg-sky-50 dark:bg-sky-950/40 text-sky-600 dark:text-sky-400",
+    color: "bg-sky-100 dark:bg-sky-500/10 text-sky-700 dark:text-sky-400",
     navLink: "/weather",
     tag: "Defense"
   },
   {
+    icon: Globe2,
+    title: "Geo Intelligence",
+    description: "Satellite imagery and geographic data analysis for macro-level farm planning and monitoring.",
+    color: "bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400",
+    navLink: "/geointelligence",
+    tag: "Planning"
+  },
+  {
+    icon: LineChart,
+    title: "Market Price Dashboard",
+    description: "Access real-time APMC wholesale commodity rates and track market price trends across India.",
+    color: "bg-indigo-100 dark:bg-indigo-500/10 text-indigo-700 dark:text-indigo-400",
+    navLink: "/marketprices",
+    tag: "Knowledge"
+  },
+  {
     icon: Info,
-    title: "Crop Knowledge Base",
-    description: "Comprehensive crop information covering genetics, nutrition, harvest, and market data.",
-    color: "bg-zinc-50 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-400",
+    title: "Crop Deep Information",
+    description: "Comprehensive crop information covering genetics, nutrition, harvest.",
+    color: "bg-zinc-100 dark:bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
     navLink: "/croplibrary/cropinfo",
+    tag: "Knowledge"
+  },
+  {
+    icon: Info,
+    title: "Disease Data Dashboard",
+    description: "Explore comprehensive data on crop diseases, visual symptoms, and recommended actions.",
+    color: "bg-zinc-100 dark:bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
+    navLink: "/disease/diseasedata",
+    tag: "Knowledge"
+  },
+  {
+    icon: Info,
+    title: "Disease Supplement Product",
+    description: "Browse recommended agricultural supplements and treatments tailored for specific crop diseases.",
+    color: "bg-zinc-100 dark:bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
+    navLink: "/disease/diseasesuppliment",
     tag: "Knowledge"
   },
 ];
@@ -80,7 +114,7 @@ const benefits = [
 
 const stats = [
   { icon: Leaf, value: "50+", label: "Crop Varieties" },
-  { icon: TrendingUp, value: "98%", label: "Prediction Accuracy" },
+  { icon: TrendingUp, value: "90%", label: "Prediction Accuracy" },
   { icon: Shield, value: "AI", label: "Powered Analysis" },
   { icon: Zap, value: "Live", label: "Weather Data" },
 ];
@@ -188,28 +222,10 @@ export default function Home() {
             <h2 className="text-2xl font-bold text-gray-900 dark:text-white mt-1">The Knowledge Core</h2>
             <p className="text-gray-500 dark:text-zinc-400 text-sm mt-1">A centralized, verifiable repository of agricultural data and guidance.</p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
             {features.filter(f => f.tag === "Knowledge").map((feature, i) => (
               <FeatureCard key={i} {...feature} />
             ))}
-
-            <NavLink to="/croplibrary" className="group flex flex-col h-full">
-              <div className="flex flex-col h-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-700 transition-all duration-200">
-                <div className="flex items-start justify-between mb-3">
-                  <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-teal-50 dark:bg-teal-950/40 text-teal-600 dark:text-teal-400">
-                    <Leaf size={18} />
-                  </div>
-                  <span className="text-[10px] font-semibold text-gray-400 dark:text-zinc-500 uppercase tracking-wide border border-gray-200 dark:border-zinc-800 px-2 py-0.5 rounded-full">Knowledge</span>
-                </div>
-                <h3 className="text-sm font-bold text-gray-900 dark:text-white mb-1.5">Resilience Tips & Tricks</h3>
-                <p className="text-xs text-gray-500 dark:text-zinc-400 leading-relaxed flex-grow">
-                  A comprehensive guide linking each principle directly to foundational sources — essential reading for sustainable farming.
-                </p>
-                <div className="mt-4 flex items-center gap-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 group-hover:gap-2 transition-all">
-                  Access Data <ArrowRight size={12} />
-                </div>
-              </div>
-            </NavLink>
           </div>
         </div>
       </section>

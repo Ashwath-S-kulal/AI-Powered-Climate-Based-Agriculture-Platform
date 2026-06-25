@@ -291,9 +291,6 @@ export default function CropRecommender() {
                             <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
                                 <IconLeaf className="text-emerald-600 dark:text-emerald-400" size={26} /> Smart Crop Recommender
                             </h1>
-                            <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
-                                Leverage historical point-climatology algorithms and location tracking to establish optimized crop matching models.
-                            </p>
                         </div>
                     </div>
                     

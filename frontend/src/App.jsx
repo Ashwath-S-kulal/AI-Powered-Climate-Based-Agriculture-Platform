@@ -25,6 +25,7 @@ import AdminDashboard from './Pages/AdminDashboard';
 import Breadcrumbs from "./Components/Breadcrumbs";
 import ChatbotIcon from "./Components/ChatbotIcon";
 import GeoIntelligencePage from './Pages/GeoIntelligence';
+import MarketPrices from './Pages/MarketPrice';
 
 export default function App() {
   return (
@@ -43,13 +44,14 @@ export default function App() {
           <Route path='/croplibrary' element={<CropsLibrary />} />
           <Route path="/croplibrary/croplist" element={<CropsList />} />
           <Route path='/croplibrary/cropinfo' element={<CropInfo />} />
-          <Route path='/croplibrary/diseasedata' element={<DiseaseData />} />
           <Route path='/croplibrary/stratergies' element={<Stratergies />} />
           <Route path='/croplibrary/adaptation' element={<Adaptation />} />
           <Route path='/croplibrary/tips' element={<Tips />} />
+          <Route path='/disease/diseasedata' element={<DiseaseData />} />
           <Route path='/disease/diseasesuppliment' element={<DiseaseSuppliment />} />
           <Route path='/geointelligence' element={<GeoIntelligencePage />} />
           <Route path='/weather' element={<Weather />} />
+          <Route path="/croplibrary/marketprices" element={<MarketPrices/>} />
 
           <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />

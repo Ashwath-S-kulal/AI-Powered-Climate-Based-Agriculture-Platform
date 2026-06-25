@@ -58,7 +58,6 @@ export default function Weather() {
   const [history, setHistory] = useState([]);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(true);
-  const [searching, setSearching] = useState(false);
   const [suggestions, setSuggestions] = useState([]);
   const searchTimeout = useRef(null);
 
@@ -103,7 +102,6 @@ export default function Weather() {
     const query = selectedCity || city;
     if (!query) return;
     setLoading(true);
-    setSearching(true);
     setError("");
     setSuggestions([]);
     try {
@@ -112,14 +110,14 @@ export default function Weather() {
       const data = await res.json();
       if (!data || !data.length) {
         setError(`City "${query}" not found!`);
-        setLoading(false); setSearching(false);
+        setLoading(false);
         return;
       }
       const lat = data[0].lat, lon = data[0].lon;
       setCoords({ lat, lon });
       reverseGeocode(lat, lon);
     } catch (e) { setError("Failed to search city. Check network."); console.error(e); }
-    finally { setLoading(false); setSearching(false); }
+    finally { setLoading(false); }
   };
 
   const fetchSuggestions = (value) => {
@@ -204,9 +202,7 @@ return (
               <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
                 <CloudSun className="text-emerald-600 dark:text-emerald-400" size={26} /> Live Weather Forecast Tool
               </h1>
-              <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
-                Reliable chronological atmospheric indexing and metric mapping models for adaptive resource management.
-              </p>
+            
             </div>
           </div>
 
@@ -254,7 +250,6 @@ return (
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-50">AI Weather Summary</h3>
-                <span className="text-[10px] font-bold text-slate-400 dark:text-zinc-500 bg-slate-100 dark:bg-zinc-950 px-1.5 py-0.5 rounded">BETA</span>
               </div>
               <p className="text-xs text-slate-500 dark:text-zinc-400 leading-relaxed">
                 Automatically generate an intelligent analysis of your current micro-climate data using our advanced predictive model.
