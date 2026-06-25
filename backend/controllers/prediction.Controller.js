@@ -11,6 +11,28 @@ const client = new InferenceClient(process.env.HF_TOKEN);
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
+// export const predictDisease =async (req, res) => {
+//   try {
+//     console.log("Received file:", req.file);
+//     if (!req.file) {
+//       return res.status(400).json({ error: "No file uploaded" });
+//     }
+
+//     const formData = new FormData();
+//     formData.append("image", req.file.buffer, {
+//       filename: "image.jpg",
+//       contentType: req.file.mimetype
+//     });
+//     const response = await axios.post("http://localhost:5001/predict", formData, {
+//       headers: formData.getHeaders(),
+//     });
+
+//     res.json(response.data);
+//   } catch (error) {
+//     console.error(error);
+//     res.status(500).json({ error: error.message });
+//   }
+// };
 
 export const predictDisease = async (req, res) => {
   try {

@@ -8,12 +8,31 @@ import {
 
 export default function AccessPage() {
   const features = [
-    { icon: <Microscope size={20} />, title: "Disease Info", desc: "AI-driven pathology diagnostics." },
-    { icon: <AlertTriangle size={20} />, title: "Risk Analysis", desc: "Real-time crop risk assessment." },
-    { icon: <Lightbulb size={20} />, title: "Crop Advisor", desc: "Weather-specific guidance." },
-    { icon: <CloudSun size={20} />, title: "Weather Plus", desc: "Hyper-local climate tracking." },
-    { icon: <Bug size={20} />, title: "Soil Analytics", desc: "Predictive outbreak modeling." },
-    { icon: <BotMessageSquare size={20} />, title: "AgriBot 24/7", desc: "Instant expert support." },
+    {
+      icon: <Microscope size={20} />,
+      title: "Disease Scan",
+      desc: "AI-driven disease detection via leaf image uploads."
+    },
+    {
+      icon: <AlertTriangle size={20} />,
+      title: "Risk Analysis",
+      desc: "Crop risk finding based on location with AI insights"
+    },
+    {
+      icon: <Lightbulb size={20} />,
+      title: "Crop Recommendation",
+      desc: "Weather and location-based crop recommendations."
+    },
+    {
+      icon: <Bug size={20} />,
+      title: "Soil Analytics", 
+      desc: "Soil Information based on location."
+    },
+    {
+      icon: <BotMessageSquare size={20} />,
+      title: "AgriBot 24/7",
+      desc: "Instant, automated expert support anytime."
+    },
   ];
 
   return (
