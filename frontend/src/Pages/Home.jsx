@@ -11,6 +11,7 @@ import {
 } from 'lucide-react';
 import ChatbotIcon from '../Components/ChatbotIcon';
 import Header from '../Components/Header';
+import { FaAlipay, FaDisease } from 'react-icons/fa';
 
 const features = [
   {
@@ -86,7 +87,7 @@ const features = [
     tag: "Knowledge"
   },
   {
-    icon: Info,
+    icon: FaDisease,
     title: "Disease Data Dashboard",
     description: "Explore comprehensive data on crop diseases, visual symptoms, and recommended actions.",
     color: "bg-zinc-100 dark:bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",
@@ -94,7 +95,7 @@ const features = [
     tag: "Knowledge"
   },
   {
-    icon: Info,
+    icon: FaAlipay,
     title: "Disease Supplement Product",
     description: "Browse recommended agricultural supplements and treatments tailored for specific crop diseases.",
     color: "bg-zinc-100 dark:bg-zinc-500/10 text-zinc-700 dark:text-zinc-400",

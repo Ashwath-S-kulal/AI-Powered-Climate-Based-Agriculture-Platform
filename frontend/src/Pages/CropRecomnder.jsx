@@ -295,7 +295,7 @@ export default function CropRecommender() {
                     </div>
                     
 
-                    <div className="max-w-screen bg-[#f1f5f9] dark:bg-[#121212] p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
+                    <div className="max-w-screen p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
                         <div className="flex flex-col sm:flex-row gap-2 relative">
                             <div className="relative flex-1 w-full">
                                 <IconSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={18} />

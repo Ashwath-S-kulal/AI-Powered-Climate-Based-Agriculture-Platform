@@ -43,6 +43,7 @@ export default function FriendlySoilChecker() {
           }
         },
         (error) => {
+          console.warn("Geolocation error:", error.message);
           console.warn("Location access denied or unavailable. Falling back to default baseline.");
           setCurrentLocation({
             friendlyName: "Bengaluru, Karnataka, India",
@@ -104,6 +105,7 @@ export default function FriendlySoilChecker() {
         setAlertNotice(`Location "${userInputCity}" could not be matched. Please double-check spelling.`);
       }
     } catch (err) {
+      console.error(err);
       setAlertNotice("Failed to resolve location coordinates via networks.");
     } finally {
       setIsDataLoading(false);
@@ -198,7 +200,7 @@ return (
             </div>
           </div>
 
-          <div className="max-w-screen bg-[#f1f5f9] dark:bg-zinc-900 p-1.5 rounded-xl border border-slate-200 dark:border-zinc-800 relative transition-colors duration-200">
+          <div className="max-w-screen p-1.5 rounded-xl  relative transition-colors duration-200">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
                 <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={16} />
@@ -247,7 +249,7 @@ return (
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {(isDataLoading || !currentLocation) ? (
           <div className="flex flex-col justify-center items-center py-20 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm transition-colors duration-200">
-            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 rounded-full animate-spin"></div>
+            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
             <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Syncing live telemetry parameters...</p>
           </div>
         ) : (
@@ -369,14 +371,14 @@ return (
                   </div>
 
                   {adviceBox && (
-                    <div className={`border p-4 rounded-xl shadow-sm flex flex-col gap-2 transition-all duration-300 ${adviceBox.textColor}`}>
+                    <div className={`border dark:border-none bg-slate-200/60 dark:bg-zinc-900 p-4 rounded-xl shadow-sm flex flex-col gap-2 transition-all duration-300 ${adviceBox.textColor}`}>
                       <div className="flex items-center gap-2">
                         <span className={`text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded ${adviceBox.badgeColor}`}>
                           Automated Expert Advisory
                         </span>
-                        <h3 className="text-xs sm:text-sm font-bold tracking-tight">{adviceBox.headline}</h3>
+                        <h3 className="text-xs sm:text-sm font-bold tracking-tight dark:text-white">{adviceBox.headline}</h3>
                       </div>
-                      <p className="text-xs font-medium leading-relaxed opacity-90">
+                      <p className="text-xs font-medium leading-relaxed opacity-90 dark:text-white">
                         {adviceBox.summary}
                       </p>
                     </div>
