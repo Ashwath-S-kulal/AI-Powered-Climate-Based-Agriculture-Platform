@@ -38,7 +38,7 @@ export default function ChatbotPopup() {
       const isNumbered = /^\d+\.\s/.test(trimmedLine);
 
       if (isBullet) {
-        trimmedLine = trimmedLine.replace(/^[-\*]\s*/, '');
+        trimmedLine = trimmedLine.replace(/^[-*]\s*/, '');
       } else if (isNumbered) {
         trimmedLine = trimmedLine.replace(/^\d+\.\s*/, '');
       }
@@ -130,7 +130,7 @@ return (
 
 
       {isOpen && (
-        <div className="w-[360px] h-[520px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl border border-slate-200/80 dark:border-zinc-800 flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
+        <div className="w-[360px] h-[520px] bg-white dark:bg-zinc-900 rounded-2xl shadow-2xl flex flex-col overflow-hidden animate-in slide-in-from-bottom-8 duration-300">
           <div className="bg-emerald-600 dark:bg-emerald-700 px-4 py-3.5 flex justify-between items-center text-white shadow-sm">
             <div className="flex items-center gap-2.5">
               <div className="p-1 bg-white/10 rounded-lg">
