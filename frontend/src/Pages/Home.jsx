@@ -64,7 +64,7 @@ const features = [
   },
   {
     icon: Globe2,
-    title: "Geo Intelligence",
+    title: "Climate Intelligence",
     description: "Satellite imagery and geographic data analysis for macro-level farm planning and monitoring.",
     color: "bg-cyan-100 dark:bg-cyan-500/10 text-cyan-700 dark:text-cyan-400",
     navLink: "/geointelligence",

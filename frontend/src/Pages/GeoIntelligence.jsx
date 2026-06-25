@@ -136,6 +136,18 @@ export default function GeoIntelligencePage() {
         }
     };
 
+    const handleCloseChart = (chartKey) => {
+        setAiExplanations((prev) => {
+            const updated = { ...prev };
+            delete updated[chartKey];
+            return updated;
+        });
+
+        if (explainingKey === chartKey) {
+            setExplainingKey(null);
+        }
+    };
+
     const DashboardSkeleton = () => (
         <div className="space-y-6 animate-pulse">
             <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
@@ -161,15 +173,16 @@ export default function GeoIntelligencePage() {
             <>
                 <Header />
                 <div className="min-h-screen bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
-                    <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                        <div>
-                            <h1 className="text-2xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
-                                Locating... Intelligence
-                            </h1>
-                            <p className="text-slate-500 dark:text-neutral-500 flex items-center gap-2 mt-1 font-mono text-sm">
-                                <MapPin size={14} /> 00.0000° N, 00.0000° E
-                            </p>
-                        </div>
+                    <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full pb-3 border-b border-slate-200/60 dark:border-neutral-900">
+                        <h1 className="text-base md:text-xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
+                            <span className="w-1.5 h-4 bg-emerald-500 rounded-full inline-block"></span>
+                            Locating... Climate Intelligence
+                        </h1>
+
+                        <p className="text-slate-500 dark:text-neutral-400 flex items-center gap-2 font-mono text-xs md:text-xs bg-slate-100 dark:bg-neutral-900 px-2.5 py-1 rounded-md w-fit sm:self-center self-start">
+                            <MapPin size={14} className="text-slate-400 dark:text-neutral-500" />
+                            00.0000° N, 00.0000° E
+                        </p>
                     </div>
                     <DashboardSkeleton />
                 </div>
@@ -178,24 +191,25 @@ export default function GeoIntelligencePage() {
     }
 
     return (
-        <div>
+        <div className="min-h-screen bg-slate-50 dark:bg-black transition-colors duration-300">
             <Header />
-            <div className="min-h-screen bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
-                <div className="mb-6 flex flex-col md:flex-row md:items-center justify-between gap-4">
-                    <div>
-                        <h1 className="text-xl md:text-2xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
-                            {locationName} Intelligence
-                        </h1>
-                        <p className="text-slate-500 dark:text-neutral-400 flex items-center gap-2 mt-1 font-mono text-sm">
-                            <MapPin size={14} /> {coords.lat.toFixed(4)}° N, {coords.lon.toFixed(4)}° E
-                        </p>
-                    </div>
+            <div className=" bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
+                <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full pb-3 border-b border-slate-200/60 dark:border-neutral-900">
+                    <h1 className="text-base md:text-xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
+                        <span className="w-1.5 h-4 bg-emerald-500 rounded-full inline-block"></span>
+                        {locationName} Climate Intelligence
+                    </h1>
+
+                    <p className="text-slate-500 dark:text-neutral-400 flex items-center gap-2 font-mono text-xs md:text-xs bg-slate-100 dark:bg-neutral-900 px-2.5 py-1 rounded-md w-fit sm:self-center self-start">
+                        <MapPin size={14} className="text-slate-400 dark:text-neutral-500" />
+                        {coords.lat.toFixed(4)}° N, {coords.lon.toFixed(4)}° E
+                    </p>
                 </div>
 
                 {loading || !data ? (
                     <DashboardSkeleton />
                 ) : (
-                    <div className="space-y-6">
+                    <div className="space-y-6 ">
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
                             {[
                                 { icon: Thermometer, label: "Air Temp", val: `${data.current.temperature_2m}°C`, color: "text-orange-500" },
@@ -260,7 +274,7 @@ export default function GeoIntelligencePage() {
                                         chartKey="soil_moisture"
                                         title="Deep Soil Moisture Profile"
                                         fields={["moistSurface", "moistRoot", "moistDeep"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart} onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -288,7 +302,10 @@ export default function GeoIntelligencePage() {
                                         chartKey="sub_temp"
                                         title="Subterranean Temperature"
                                         fields={["tempSurface", "tempRoot", "tempDeep"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey}
+                                        aiExplanations={aiExplanations}
+                                        onExplain={handleExplainChart}
+                                        onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -315,7 +332,7 @@ export default function GeoIntelligencePage() {
                                         chartKey="air_dew"
                                         title="Air Temp vs Dew Point"
                                         fields={["temp", "dew"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart} onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -342,7 +359,7 @@ export default function GeoIntelligencePage() {
                                         chartKey="wind_dynamics"
                                         title="Wind Speed & Gust Dynamics"
                                         fields={["wind", "gusts"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart} onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -369,7 +386,7 @@ export default function GeoIntelligencePage() {
                                         chartKey="solar_rad"
                                         title="Solar Radiation (W/m²)"
                                         fields={["radDirect", "radDiffuse"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart} onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -397,7 +414,7 @@ export default function GeoIntelligencePage() {
                                         chartKey="water_balance"
                                         title="Water Balance (Loss vs Gain)"
                                         fields={["et0", "rain"]}
-                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart}
+                                        explainingKey={explainingKey} aiExplanations={aiExplanations} onExplain={handleExplainChart} onClose={handleCloseChart}
                                     />
                                 </div>
 
@@ -446,9 +463,7 @@ function AIExplanationBlock({
         return lines.map((line, index) => {
             const trimmedLine = line.trim();
 
-            if (!trimmedLine) {
-                return <div key={index} className="h-1.5" />;
-            }
+            if (!trimmedLine) return null;
 
             if (trimmedLine.startsWith("* ") || trimmedLine.startsWith("- ") || trimmedLine.startsWith("+ ")) {
                 const cleanText = trimmedLine.replace(/^[*-+]\s+/, "");
@@ -470,54 +485,53 @@ function AIExplanationBlock({
     };
 
     return (
-        <div className="mt-4 pt-0 border-t border-slate-50 dark:border-neutral-900/60 h-full flex flex-col justify-start items-start">
-            <div className="w-full">
-                {!hasData ? (
-                    <button
-                        disabled={explainingKey !== null}
-                        onClick={() => onExplain(chartKey, title, fields)}
-                        className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 hover:bg-emerald-100 dark:hover:bg-emerald-950/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
-                    >
-                        {isThisLoading ? (
-                            <>
-                                <Loader2 size={14} className="animate-spin text-emerald-500" />
-                                <span>Analyzing Metrics...</span>
-                            </>
-                        ) : (
-                            <>
-                                <Sparkles size={14} className="text-emerald-500" />
-                                <span>AI Explanation</span>
-                            </>
-                        )}
-                    </button>
-                ) : (
-                    <div className="bg-slate-100 dark:bg-neutral-950 p-3.5 rounded-xl border border-slate-100 dark:border-neutral-900 w-full animate-fadeIn">
-                        <div className="flex items-center justify-between mb-2.5 pb-1.5 border-b border-slate-200/60 dark:border-neutral-900/60">
-                            <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
-                                <Sparkles size={12} /> SmartAgri Advisor
-                            </span>
-                            <div className="flex items-center gap-2.5">
-                                <button
-                                    onClick={() => onExplain(chartKey, title, fields)}
-                                    className="text-[10px] font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-neutral-200 transition-colors"
-                                >
-                                    Recalculate
-                                </button>
-                                <button
-                                    onClick={() => onClose && onClose(chartKey)}
-                                    aria-label="Close explanation"
-                                    className="text-slate-400 hover:text-rose-500 dark:text-neutral-500 dark:hover:text-rose-400 transition-colors p-0.5 rounded-md hover:bg-slate-200/50 dark:hover:bg-neutral-900"
-                                >
-                                    <X size={13} />
-                                </button>
-                            </div>
-                        </div>
-                        <div className="text-xs space-y-1.5 font-medium">
-                            {renderCleanContent()}
+        <div className="mt-4 pb-4 border-b border-slate-100 dark:border-neutral-900/60 w-full flex flex-col justify-start items-start">            <div className="w-full">
+            {!hasData ? (
+                <button
+                    disabled={explainingKey !== null}
+                    onClick={() => onExplain(chartKey, title, fields)}
+                    className="w-full flex items-center justify-center gap-2 py-2 px-4 rounded-xl text-xs font-semibold text-emerald-600 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 hover:bg-emerald-100 dark:hover:bg-emerald-950/40 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                    {isThisLoading ? (
+                        <>
+                            <Loader2 size={14} className="animate-spin text-emerald-500" />
+                            <span>Analyzing Metrics...</span>
+                        </>
+                    ) : (
+                        <>
+                            <Sparkles size={14} className="text-emerald-500" />
+                            <span>AI Explanation</span>
+                        </>
+                    )}
+                </button>
+            ) : (
+                <div className="bg-slate-100 dark:bg-neutral-950 p-3.5 rounded-xl border border-slate-100 dark:border-neutral-900 w-full animate-fadeIn">
+                    <div className="flex items-center justify-between mb-2.5 pb-1.5 border-b border-slate-200/60 dark:border-neutral-900/60">
+                        <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                            <Sparkles size={12} /> SmartAgri Advisor
+                        </span>
+                        <div className="flex items-center gap-2.5">
+                            <button
+                                onClick={() => onExplain(chartKey, title, fields)}
+                                className="text-[10px] font-semibold text-slate-400 hover:text-slate-600 dark:hover:text-neutral-200 transition-colors"
+                            >
+                                Recalculate
+                            </button>
+                            <button
+                                onClick={() => onClose && onClose(chartKey)}
+                                aria-label="Close explanation"
+                                className="text-slate-400 hover:text-rose-500 dark:text-neutral-500 dark:hover:text-rose-400 transition-colors p-0.5 rounded-md hover:bg-slate-200/50 dark:hover:bg-neutral-900"
+                            >
+                                <X size={13} />
+                            </button>
                         </div>
                     </div>
-                )}
-            </div>
+                    <div className="text-xs space-y-1.5 font-medium">
+                        {renderCleanContent()}
+                    </div>
+                </div>
+            )}
+        </div>
         </div>
     );
 }

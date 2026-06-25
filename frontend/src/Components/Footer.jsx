@@ -20,7 +20,7 @@ const linkGroups = [
   {
     title: "Defense & Markets",
     links: [
-      { label: "Geo Intelligence", to: "/geointelligence" },
+      { label: "Climate Intelligence", to: "/geointelligence" },
       { label: "Disease Predictor", to: "/disease" },
       { label: "Hyper-Local Weather", to: "/weather" },
       { label: "Market Price Board", to: "/marketprices" },

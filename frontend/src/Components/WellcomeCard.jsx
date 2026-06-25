@@ -11,12 +11,11 @@ const images = [
 ];
 
 const quickActions = [
-  { to: "/croplibrary/croplist", label: "Crops", icon: Sprout, color: "bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400", description: "Crop varieties & growing steps" },
+  { to: "/geointelligence", label: "Climate core", icon: Sprout, color: "bg-emerald-100 dark:bg-emerald-950/40 text-emerald-700 dark:text-emerald-400", description: "Climate Intelligence data" },
   { to: "/weather", label: "Weather", icon: CloudSun, color: "bg-sky-100 dark:bg-sky-950/40 text-sky-700 dark:text-sky-400", description: "Current weather & forecasts" },
   { to: "/disease", label: "Diagnose", icon: Microscope, color: "bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400", description: "Scan crops for diseases" },
   { to: "/soil", label: "Soil", icon: LandPlot, color: "bg-amber-100 dark:bg-amber-950/40 text-amber-700 dark:text-amber-400", description: "Analyse your Soil" },
   { to: "/croprecomnder", label: "Recommend", icon: Lightbulb, color: "bg-violet-100 dark:bg-violet-950/40 text-violet-700 dark:text-violet-400", description: "Crop suggestions for your area" },
-  { to: "/croplibrary/cropinfo", label: "Crop Info", icon: Info, color: "bg-blue-100 dark:bg-blue-950/40 text-blue-700 dark:text-blue-400", description: "Detailed crop knowledge base" },
   { to: "/cropriskcalculater", label: "Risk", icon: TriangleAlert, color: "bg-rose-100 dark:bg-rose-950/40 text-rose-700 dark:text-rose-400", description: "Calculate crop risks" },
 ];
 
@@ -57,8 +56,8 @@ export default function WelcomeHero() {
             Farm Smarter with<br />
             <span className="text-emerald-400">Climate Intelligence</span>
           </h1>
-          <p className="mt-4 text-base sm:text-lg text-zinc-300 max-w-xl leading-relaxed">
-            Predict risks, get crop recommendations, and monitor weather — all in one professional platform.
+          <p className="mt-4  mb-3 text-base sm:text-lg text-zinc-300 max-w-xl leading-relaxed">
+            Predict risks, get crop recommendations, and monitor weather <span className="hidden md:inline">- all in one professional platform.</span>
           </p>
         </div>
 
@@ -82,7 +81,7 @@ export default function WelcomeHero() {
 
       <div className="bg-white dark:bg-zinc-950 border-b border-gray-200 dark:border-zinc-800/80 transition-colors duration-300">
         <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-5">
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-7 gap-3">
+          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 gap-3">
             {quickActions.map((item, index) => {
               const Icon = item.icon;
               return (
