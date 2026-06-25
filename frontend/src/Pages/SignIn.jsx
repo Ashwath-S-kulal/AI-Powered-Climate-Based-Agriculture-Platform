@@ -8,10 +8,8 @@ return (
     <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
       <Header />
 
-      <main className="max-w-5xl mx-auto px-6 pt-20 pb-16 md:pt-32">
-
+      <main className="max-w-5xl mx-auto px-6 pt-10 md:pt-20 pb-16 md:pt-32">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-      
           <div className="space-y-6">
             <span className="text-emerald-600 dark:text-emerald-400 font-bold tracking-widest text-xs uppercase">
               SmartAgri Portal

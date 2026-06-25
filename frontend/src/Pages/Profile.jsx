@@ -74,8 +74,7 @@ export default function ProfilePage() {
 
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Account Settings</h1>
-            <p className="text-gray-500 dark:text-gray-400 text-sm mt-0.5">Manage your profile and preferences</p>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">Your Account</h1>
           </div>
           <div className="flex items-center gap-2">
             {currentUser?.isAdmin && (
