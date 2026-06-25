@@ -195,18 +195,9 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased relative pb-16 transition-colors duration-300">
       <Header />
 
-      <div className="w-full bg-white dark:bg-zinc-950 border-b border-slate-200/80 dark:border-zinc-800/50 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
+      <div className="w-full bg-white dark:bg-zinc-950 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
         <div className="max-w-screen mx-auto">
-          <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
-            <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-zinc-50 tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-                <CloudSun className="text-emerald-600 dark:text-emerald-400" size={26} /> Live Weather Forecast Tool
-              </h1>
-            
-            </div>
-          </div>
-
-          <div className="max-w-screen bg-[#f1f5f9] dark:bg-zinc-950 p-1.5 rounded-xl  dark:border-zinc-800/80 relative transition-colors">
+          <div className="max-w-screen p-1.5 rounded-xl  dark:border-zinc-800/80 relative transition-colors">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
                 <FiSearch className="absolute left-3.5 top-1/2 -translate-y-1/2 text-slate-400 dark:text-zinc-500 pointer-events-none" size={16} />
@@ -244,7 +235,7 @@ return (
         </div>
       </div>
 
-      <div className="pt-3 border-t border-slate-200 dark:border-zinc-800/60 px-6 font-sans antialiased">
+      <div className="pt-3  px-6 font-sans antialiased">
         {!insights && !isFetchingAI && !loading && (
           <div className="text-left rounded-xl border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
             <div className="flex-1">

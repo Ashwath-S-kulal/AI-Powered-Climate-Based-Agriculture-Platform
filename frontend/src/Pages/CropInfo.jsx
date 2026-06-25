@@ -137,15 +137,8 @@ export default function CropSearchCSV() {
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-800 dark:text-zinc-200 font-sans">
       <Header />
       
-      <div className="w-full max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-10">
-        <div className="text-center mb-10">
-          <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight text-left">
-            Crop Deep Information
-          </h1>
-          <p className="mt-2 text-sm text-slate-500 dark:text-zinc-400 text-left">
-            Search and analyze comprehensive cultivation data
-          </p>
-        </div>
+      <div className="w-full max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-4 md:py-8">
+        
 
         {loading && (
           <div className="flex flex-col justify-center items-center py-20">
@@ -159,7 +152,7 @@ export default function CropSearchCSV() {
         {!loading && (
           <main className="w-full space-y-8">
             {(isInitialState || isDataState) && (
-              <div className="w-full bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-2xl shadow-sm p-3 md:p-5 space-y-10">
+              <div className="w-full p-3 md:p-5 space-y-10">
                                 <div className="flex flex-col md:flex-row items-center justify-between gap-6 border-b border-slate-100 dark:border-zinc-800 pb-6">
                   <div className="flex items-center gap-4 w-full md:w-auto">
                     <div className="bg-emerald-50 dark:bg-emerald-950/30 border border-emerald-100 dark:border-emerald-900 p-3 rounded-xl">

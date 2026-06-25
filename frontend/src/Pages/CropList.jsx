@@ -89,18 +89,9 @@ export default function CropsList() {
   return (
     <div className="min-h-screen bg-slate-50 dark:bg-[#09090b] text-slate-800 dark:text-zinc-200 font-sans">
       <Header />
-      <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200 dark:border-zinc-800 pt-8 pb-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
-          <h1 className="text-2xl md:text-2xl font-extrabold text-slate-900 dark:text-white tracking-tight mb-2">
-            Crop Cultivation Guides
-          </h1>
-          <p className="text-slate-500 dark:text-zinc-400 text-sm md:text-sm mx-auto text-left">
-            Explore step-by-step growing processes for various crops across different seasons.
-          </p>
-        </div>
-      </div>
+    
 
-      <div className="px-4 w-full max-w-7xl mx-auto relative -top-6 z-20">
+      <div className="px-4  pt-5 w-full max-w-7xl mx-auto">
         <div className="bg-white dark:bg-zinc-900 p-4 rounded-2xl border border-slate-200 dark:border-zinc-800 shadow-sm mb-8 flex flex-col md:flex-row items-center gap-4">
           <div className="relative flex-1 w-full" ref={searchInputRef}>
             <div className="flex items-center bg-slate-50 dark:bg-zinc-950 rounded-xl px-4 py-2.5 gap-3 border border-slate-200 dark:border-zinc-800 focus-within:border-emerald-500 focus-within:ring-2 focus-within:ring-emerald-500/20 transition-all">

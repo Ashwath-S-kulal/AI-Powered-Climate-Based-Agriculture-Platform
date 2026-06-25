@@ -103,7 +103,7 @@ export default function ProfilePage() {
                   <img
                     src={currentUser.profilePicture}
                     alt="Profile"
-                    className="w-28 h-28 rounded-xl object-cover border-4 border-white dark:border-zinc-900 shadow-sm"
+                    className="w-24 h-24 rounded-xl object-cover border-4 border-white dark:border-zinc-900 shadow-sm"
                   />
                 </div>
                 <div className="mt-3">

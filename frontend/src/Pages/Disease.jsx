@@ -145,20 +145,7 @@ export default function Disease() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-black transition-colors duration-200">
       <Header />
-      <div className="bg-white dark:bg-[#09090b] border-b border-gray-200 dark:border-zinc-800 transition-colors duration-200">
-        <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8">
-          <div className="text-left md:text-left md:flex md:items-left md:justify-between">
-            <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-                <Microscope className="text-emerald-600 dark:text-emerald-400" size={26} /> Crop Disease Diagnosis
-              </h1>
-              <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
-                Upload or capture a leaf photo to identify diseases instantly
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
+     
 
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 pb-10">
         <form onSubmit={handleSubmit}>

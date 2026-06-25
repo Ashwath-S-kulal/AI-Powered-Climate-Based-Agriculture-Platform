@@ -284,17 +284,8 @@ export default function CropRecommender() {
     return (
         <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-300 font-sans antialiased relative pb-16 transition-colors duration-200">
             <Header />
-            <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
+            <div className="w-full bg-white dark:bg-[#09090b] pt-5 md:pt-5 pb-8 px-4 sm:px-6 transition-colors duration-200">
                 <div className="max-w-screen mx-auto">
-                    <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
-                        <div>
-                            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-                                <IconLeaf className="text-emerald-600 dark:text-emerald-400" size={26} /> Smart Crop Recommender
-                            </h1>
-                        </div>
-                    </div>
-                    
-
                     <div className="max-w-screen p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
                         <div className="flex flex-col sm:flex-row gap-2 relative">
                             <div className="relative flex-1 w-full">

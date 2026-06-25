@@ -149,10 +149,9 @@ export default function MarketPrices() {
     return (
         <div className="w-full min-h-screen bg-zinc-50 dark:bg-zinc-950 text-zinc-800 dark:text-zinc-200 font-sans antialiased transition-colors duration-200">
             <Header />
-            <main className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6">
+            <main className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-4 space-y-6">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                     <div>
-                        <h2 className="text-2xl font-black tracking-tight text-zinc-900 dark:text-zinc-50">Local Market Price</h2>
                         <div className="flex items-center text-sm text-emerald-600 dark:text-emerald-400 font-semibold mt-1">
                             <MapPin className="w-4 h-4 mr-1.5 animate-pulse" />
                             {loadingLocation ? (

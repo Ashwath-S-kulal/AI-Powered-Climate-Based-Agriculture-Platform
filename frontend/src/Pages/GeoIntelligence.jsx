@@ -34,8 +34,6 @@ export default function GeoIntelligencePage() {
     const [data, setData] = useState(null);
     const [locationName, setLocationName] = useState("Locating...");
     const [coords, setCoords] = useState(null);
-
-    // AI Insight State Maps
     const [explainingKey, setExplainingKey] = useState(null);
     const [aiExplanations, setAiExplanations] = useState({});
 
@@ -56,6 +54,7 @@ export default function GeoIntelligencePage() {
             setCoords({ lat: 13.6213, lon: 74.6914 });
         }
     }, []);
+
 
     useEffect(() => {
         if (!coords) return;
@@ -236,9 +235,9 @@ export default function GeoIntelligencePage() {
                         </div>
 
                         <div className="grid lg:grid-cols-3 gap-6">
-                            <div className="col-span-1 lg:col-span-3 grid md:grid-cols-3 gap-6 h-full overflow-y-auto pr-2 custom-scrollbar">
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                            <div className="col-span-1 lg:col-span-3 grid md:grid-cols-3 gap-6 h-full pr-2">
+                                <div >
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <Sprout className="text-emerald-600" size={18} /> Deep Soil Moisture Profile
                                         </h2>
@@ -265,8 +264,8 @@ export default function GeoIntelligencePage() {
                                     />
                                 </div>
 
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                                <div>
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <Sprout className="text-orange-600" size={18} /> Subterranean Temperature
                                         </h2>
@@ -293,8 +292,8 @@ export default function GeoIntelligencePage() {
                                     />
                                 </div>
 
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                                <div>
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <Snowflake className="text-cyan-500" size={18} /> Air Temp vs Dew Point
                                         </h2>
@@ -320,8 +319,8 @@ export default function GeoIntelligencePage() {
                                     />
                                 </div>
 
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                                <div>
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <Wind className="text-teal-500" size={18} /> Wind Speed & Gust Dynamics
                                         </h2>
@@ -347,8 +346,8 @@ export default function GeoIntelligencePage() {
                                     />
                                 </div>
 
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                                <div>
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <Sun className="text-yellow-500" size={18} /> Solar Radiation (W/m²)
                                         </h2>
@@ -374,8 +373,8 @@ export default function GeoIntelligencePage() {
                                     />
                                 </div>
 
-                                <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
-                                    <div>
+                                <div>
+                                    <div className="bg-white dark:bg-black p-5 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 min-h-[360px] h-auto flex flex-col justify-between transition-all">
                                         <h2 className="text-sm font-bold text-slate-800 dark:text-neutral-200 mb-4 flex items-center gap-2">
                                             <CloudRain className="text-blue-500" size={18} /> Water Balance (Loss vs Gain)
                                         </h2>
@@ -471,7 +470,7 @@ function AIExplanationBlock({
     };
 
     return (
-        <div className="mt-4 pt-4 border-t border-slate-50 dark:border-neutral-900/60 h-full flex flex-col justify-start items-start">
+        <div className="mt-4 pt-0 border-t border-slate-50 dark:border-neutral-900/60 h-full flex flex-col justify-start items-start">
             <div className="w-full">
                 {!hasData ? (
                     <button
@@ -492,7 +491,7 @@ function AIExplanationBlock({
                         )}
                     </button>
                 ) : (
-                    <div className="bg-slate-50 dark:bg-neutral-950 p-3.5 rounded-xl border border-slate-100 dark:border-neutral-900 w-full animate-fadeIn">
+                    <div className="bg-slate-100 dark:bg-neutral-950 p-3.5 rounded-xl border border-slate-100 dark:border-neutral-900 w-full animate-fadeIn">
                         <div className="flex items-center justify-between mb-2.5 pb-1.5 border-b border-slate-200/60 dark:border-neutral-900/60">
                             <span className="text-[10px] uppercase font-bold tracking-widest text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
                                 <Sparkles size={12} /> SmartAgri Advisor

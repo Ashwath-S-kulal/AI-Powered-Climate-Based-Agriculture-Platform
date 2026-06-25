@@ -187,19 +187,8 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-black text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
       <Header />
 
-      <div className="w-full bg-white dark:bg-[#09090b] border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
+      <div className="w-full bg-white dark:bg-[#09090b]  pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
         <div className="max-w-screen mx-auto">
-          <div className="text-left md:flex md:items-left md:justify-between mb-6">
-            <div>
-              <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-center justify-start gap-2">
-                <Sprout className="text-emerald-600 dark:text-emerald-400" size={26} /> <span className='hidden md:block'>Live Sub -</span>Soil Analytics Diagnostics
-              </h1>
-              <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
-                Real-time sub-surface telemetry profiling, soil moisture density metrics, and root-zone agricultural advisory mapping indexes.
-              </p>
-            </div>
-          </div>
-
           <div className="max-w-screen p-1.5 rounded-xl  relative transition-colors duration-200">
             <div className="flex gap-2 items-center w-full relative">
               <div className="relative flex-grow">
@@ -248,7 +237,7 @@ return (
 
       <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
         {(isDataLoading || !currentLocation) ? (
-          <div className="flex flex-col justify-center items-center py-20 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm transition-colors duration-200">
+          <div className="flex flex-col justify-center items-center py-20">
             <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
             <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Syncing live telemetry parameters...</p>
           </div>

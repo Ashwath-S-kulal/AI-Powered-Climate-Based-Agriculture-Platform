@@ -26,18 +26,7 @@ export default function WorkspaceManager() {
 return (
     <>
       <Header />
-      <div className="w-full bg-white dark:bg-zinc-950 border-b border-slate-200/80 dark:border-zinc-800/80 pt-5 md:pt-8 px-4 sm:px-6 transition-colors duration-200">
-        <div className="text-left md:text-left md:flex md:items-left md:justify-between mb-6">
-          <div>
-            <h1 className="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white tracking-tight flex items-left justify-left md:justify-start gap-2 ">
-              <FaChartBar className="text-emerald-600 dark:text-emerald-400" size={26} /> AgriSense Climate Risk Tool
-            </h1>
-            <p className="text-slate-500 dark:text-zinc-400 text-sm mt-1 max-w-xl">
-              Evaluate real-time crop resilience margins, predict contextual hazards, and map optimal environmental risk distributions.
-            </p>
-          </div>
-        </div>
-      </div>
+    
 
       <div className="w-full max-w-screen mx-auto px-2 md:px-8 py-5 pb-16 font-sans antialiased text-slate-900 dark:text-zinc-300 selection:bg-slate-200 dark:selection:bg-zinc-800 transition-colors duration-200">
         <div className="inline-flex items-center w-full sm:w-auto bg-[#edf2f6] dark:bg-[#121212] p-0.5 rounded-lg border border-slate-200/50 dark:border-zinc-800 shadow-3xs mb-5 transition-all">
