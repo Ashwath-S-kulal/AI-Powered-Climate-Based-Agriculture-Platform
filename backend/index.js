@@ -13,6 +13,7 @@
 // import AdminRoutes from "./routes/admin.routes.js";
 // import predictionRoutes from "./routes/prediction.route.js";
 // import weatherAiRoutes from "./routes/weatherai.route.js"
+// import geoRoutes from "./routes/geo.route.js"
 // import cors from "cors";
 
 // dotenv.config();
@@ -43,7 +44,7 @@
 // app.use("/api/cropdiseases", cropdiseaseRoutes);
 // app.use("/api/admin", AdminRoutes);
 // app.use("/api/weather", weatherAiRoutes);
-
+// app.use("/api/geo", geoRoutes)
 
 // connectDB();
 
@@ -74,6 +75,8 @@ import cropdiseaseRoutes from "./routes/cropdisease.route.js"
 import AdminRoutes from "./routes/admin.routes.js";
 import predictionRoutes from "./routes/prediction.route.js";
 import weatherAiRoutes from "./routes/weatherai.route.js"
+import geoRoutes from "./routes/geo.route.js"
+
 import cors from "cors";
 
 dotenv.config();
@@ -105,6 +108,8 @@ app.use("/api/cropsteps", cropStepRoutes);
 app.use("/api/cropdiseases", cropdiseaseRoutes);
 app.use("/api/admin", AdminRoutes);
 app.use("/api/weather", weatherAiRoutes);
+app.use("/api/geo", geoRoutes)
+
 
 
 export default app;
