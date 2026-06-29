@@ -104,7 +104,7 @@ export default function WelcomeHero() {
               </div>
 
               <p className="text-xs text-zinc-600 dark:text-zinc-400 leading-relaxed font-normal">
-                <strong className="text-zinc-900 dark:text-zinc-200 font-semibold">Climate Resilient Agriculture</strong> is a comprehensive AI-driven platform designed to empower farmers with actionable insights for sustainable and profitable farming. By combining machine learning, geospatial data, and agricultural expertise, the platform bridges the gap between climate science and practical farming operations.
+                <strong className="text-zinc-900 dark:text-zinc-200 font-semibold">SmartAgri</strong> is a comprehensive AI-driven platform designed to empower farmers with actionable insights for sustainable and profitable farming. By combining machine learning, geospatial data, and agricultural expertise, the platform bridges the gap between climate science and practical farming operations.
               </p>
             </div>
 
