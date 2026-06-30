@@ -109,7 +109,7 @@ export default function CropLibrary() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             <NavLink to={"/croplibrary/marketprices"} className="block group">
-              <div className="p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
+              <div className="p-6 bg-white dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-900 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
                 <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <TrendingUp className="w-6 h-6" />
                 </div>
@@ -124,7 +124,7 @@ export default function CropLibrary() {
             </NavLink>
 
             <NavLink to={"/croplibrary/croplist"} className="block group">
-              <div className="p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
+              <div className="p-6 bg-white dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-900 shadow-sm hover:border-emerald-300 dark:hover:border-emerald-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
                 <div className="w-12 h-12 rounded-lg bg-emerald-50 dark:bg-emerald-950/40 text-emerald-600 dark:text-emerald-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <Leaf className="w-6 h-6" />
                 </div>
@@ -139,7 +139,7 @@ export default function CropLibrary() {
             </NavLink>
 
             <NavLink to={"/croplibrary/cropinfo"} className="block group">
-              <div className="p-6 bg-white dark:bg-zinc-900 rounded-xl border border-zinc-200 dark:border-zinc-800 shadow-sm hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
+              <div className="p-6 bg-white dark:bg-zinc-950 rounded-xl border border-zinc-200 dark:border-zinc-900 shadow-sm hover:border-blue-300 dark:hover:border-blue-500 hover:shadow-md transition-all h-full flex flex-col relative overflow-hidden">
                 <div className="w-12 h-12 rounded-lg bg-blue-50 dark:bg-blue-950/40 text-blue-600 dark:text-blue-400 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
                   <BarChart2 className="w-6 h-6" />
                 </div>
@@ -158,8 +158,8 @@ export default function CropLibrary() {
         </section>
 
         {/* Business & Sustainability Hub */}
-        <section className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-2xl p-6 sm:p-8 shadow-sm">
-          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 border-b border-zinc-100 dark:border-zinc-800/60 pb-5">
+        <section className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-2xl p-6 sm:p-8 shadow-sm">
+          <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 gap-4 border-b border-zinc-100 dark:border-zinc-900 pb-5">
             <div>
               <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
                 <Globe2 className="text-zinc-400 dark:text-zinc-500 w-5 h-5" /> Business & Sustainability Hub
@@ -170,7 +170,7 @@ export default function CropLibrary() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             <NavLink to={"/croplibrary/tips"} className="block group">
-              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
                   <HelpCircle className="w-5 h-5" />
                 </div>
@@ -185,7 +185,7 @@ export default function CropLibrary() {
             </NavLink>
 
             <NavLink to={"/croplibrary/stratergies"} className="block group">
-              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
                   <Lightbulb className="w-5 h-5" />
                 </div>
@@ -200,7 +200,7 @@ export default function CropLibrary() {
             </NavLink>
 
             <NavLink to={"/croplibrary/adaptation"} className="block group">
-              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-800 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
+              <div className="flex items-start gap-4 p-4 rounded-xl border border-transparent hover:border-zinc-200 dark:hover:border-zinc-900 hover:bg-zinc-50 dark:hover:bg-zinc-800/40 transition-all">
                 <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-indigo-50 dark:bg-indigo-950/40 text-indigo-600 dark:text-indigo-400 flex items-center justify-center">
                   <Clock className="w-5 h-5" />
                 </div>
@@ -219,14 +219,14 @@ export default function CropLibrary() {
         {/* NEW: Today's Agricultural News */}
         <section className="pb-6">
           <div className="mb-6">
-            <h2 className="text-xl font-bold text-zinc-900 dark:text-zinc-50 flex items-center gap-2">
+            <h2 className="text-xl font-bold text-zinc-950 dark:text-zinc-50 flex items-center gap-2">
               <Newspaper className="text-zinc-400 dark:text-zinc-500 w-5 h-5" /> Today's Agricultural News
             </h2>
             <p className="text-sm text-zinc-500 dark:text-zinc-400 mt-1">Latest updates and headlines from the agricultural world.</p>
           </div>
 
           {loadingNews ? (
-            <div className="flex items-center justify-center py-10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl">
+            <div className="flex items-center justify-center py-10 bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-900 rounded-xl">
               <Loader2 className="w-8 h-8 text-emerald-500 animate-spin" />
               <span className="ml-3 text-sm text-zinc-500 dark:text-zinc-400">Loading latest news...</span>
             </div>
@@ -238,7 +238,7 @@ export default function CropLibrary() {
                   href={item.link}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block group bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-md hover:border-emerald-300 dark:hover:border-emerald-500 transition-all flex flex-col h-full"
+                  className="block group bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-xl p-5 hover:shadow-md hover:border-emerald-300 dark:hover:border-emerald-500 transition-all flex flex-col h-full"
                 >
                   <p className="text-[11px] font-semibold text-emerald-600 dark:text-emerald-400 mb-2 uppercase tracking-wider">
                     {formatDate(item.pubDate)}
@@ -265,7 +265,7 @@ export default function CropLibrary() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {recommendedBooks.map((book, idx) => (
-              <div key={idx} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl p-4 flex flex-col hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all h-full">
+              <div key={idx} className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-xl p-4 flex flex-col hover:shadow-md hover:border-zinc-300 dark:hover:border-zinc-700 transition-all h-full">
                 <div className="w-full aspect-[3.5/4] mb-4 bg-zinc-100 dark:bg-zinc-800 rounded-lg overflow-hidden border border-zinc-200/60 dark:border-zinc-700/60">
                   <img src={book.coverPlaceholder} alt={book.title} className="object-cover w-full h-full" loading="lazy" />
                 </div>
@@ -275,7 +275,7 @@ export default function CropLibrary() {
                   href={book.sourceUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-auto inline-flex items-center justify-center w-full bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-800 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-700 text-zinc-700 dark:text-zinc-300 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
+                  className="mt-auto inline-flex items-center justify-center w-full bg-zinc-50 hover:bg-zinc-100 dark:bg-zinc-950 dark:hover:bg-zinc-700 border border-zinc-200 dark:border-zinc-900 text-zinc-700 dark:text-zinc-300 px-3 py-1.5 rounded-lg text-xs font-medium transition-colors"
                 >
                   View Source
                 </a>
@@ -295,7 +295,7 @@ export default function CropLibrary() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
             {successfulFarmers.map((story, idx) => (
-              <div key={idx} className="bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 rounded-xl overflow-hidden hover:shadow-md transition-all flex flex-col h-full">
+              <div key={idx} className="bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-xl overflow-hidden hover:shadow-md transition-all flex flex-col h-full">
                 <div className="h-36 w-full bg-zinc-100 dark:bg-zinc-800 overflow-hidden relative">
                   <img
                     src={story.image}

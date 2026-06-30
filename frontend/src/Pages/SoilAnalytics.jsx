@@ -187,7 +187,7 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-black text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
       <Header />
 
-      <div className="w-full bg-white dark:bg-[#09090b]  pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
+      <div className="w-full dark:bg-[#09090b]  pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">
         <div className="max-w-screen mx-auto">
           <div className="max-w-screen p-1.5 rounded-xl  relative transition-colors duration-200">
             <div className="flex gap-2 items-center w-full relative">
@@ -211,7 +211,7 @@ return (
             </div>
 
             {dropdownLocations.length > 0 && (
-              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100 dark:divide-zinc-800">
+              <ul className="absolute left-0 right-0 z-50 mt-2 bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800 rounded-lg shadow-xl max-h-52 overflow-y-auto divide-y divide-slate-100 dark:divide-zinc-800">
                 {dropdownLocations.map((place, idx) => (
                   <li
                     key={idx}
@@ -235,7 +235,7 @@ return (
         </div>
       </div>
 
-      <div className="w-full max-w-screen mx-auto px-4 sm:px-6 mt-8">
+      <div className="w-full max-w-screen mx-auto px-4 sm:px-6">
         {(isDataLoading || !currentLocation) ? (
           <div className="flex flex-col justify-center items-center py-20">
             <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
@@ -252,9 +252,9 @@ return (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
               {soilReport && (
                 <div className="lg:col-span-4 w-full">
-                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm h-full flex flex-col justify-between transition-colors duration-200">
+                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-900 shadow-sm h-full flex flex-col justify-between transition-colors duration-200">
                     <div>
-                      <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800 pb-3 mb-4">
+                      <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-900 pb-3 mb-4">
                         <Info className="w-4 h-4 mr-1.5 text-slate-400" /> Ground Baseline Node
                       </h2>
 
@@ -267,7 +267,7 @@ return (
                         {currentLongDateStr}
                       </p>
 
-                      <div className="flex flex-col items-center py-8 my-2 border-b border-slate-100 dark:border-zinc-800 text-center">
+                      <div className="flex flex-col items-center py-8 my-2 border-b border-slate-100 dark:border-zinc-900 text-center">
                         <div className="p-4 bg-emerald-50 dark:bg-emerald-950/30 rounded-full border border-emerald-100/50 dark:border-emerald-900/50 text-emerald-600 dark:text-emerald-500">
                           <Sprout size={36} />
                         </div>
@@ -282,20 +282,20 @@ return (
 
                     <div>
                       <div className="grid grid-cols-2 gap-3 pt-2">
-                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 rounded-lg text-center">
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900 rounded-lg text-center">
                           <Thermometer className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-600 mb-1" />
                           <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Surface Temp</p>
                           <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{soilReport.surfaceTemp}°C</p>
                         </div>
 
-                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 rounded-lg text-center">
+                        <div className="p-2.5 bg-slate-50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900 rounded-lg text-center">
                           <Droplet className="w-5 h-5 mx-auto text-slate-400 dark:text-zinc-600 mb-1" />
                           <p className="text-[10px] uppercase font-semibold tracking-wider text-slate-400 dark:text-zinc-500">Top Hydration</p>
                           <p className="text-xs font-bold text-slate-800 dark:text-zinc-200 font-mono mt-0.5">{soilReport.surfaceWetness}%</p>
                         </div>
                       </div>
 
-                      <div className="bg-slate-50 dark:bg-zinc-900 border border-slate-100 dark:border-zinc-800 mt-4 px-3 py-2 rounded-lg text-slate-400 dark:text-zinc-600 italic text-[11px] text-center">
+                      <div className="bg-slate-50 dark:bg-zinc-950 border border-slate-100 dark:border-zinc-900 mt-4 px-3 py-2 rounded-lg text-slate-400 dark:text-zinc-600 italic text-[11px] text-center">
                         Soil profiles scale dynamically based on soil topology variations.
                       </div>
                     </div>
@@ -305,20 +305,20 @@ return (
 
               {soilReport && (
                 <div className="lg:col-span-8 w-full flex flex-col gap-6">
-                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-800 shadow-sm flex-grow transition-colors duration-200">
-                    <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800 pb-3 mb-4">
+                  <div className="p-5 bg-white dark:bg-[#09090b] rounded-xl border border-slate-200 dark:border-zinc-900 shadow-sm flex-grow transition-colors duration-200">
+                    <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-900 pb-3 mb-4">
                       <BarChart3 className="w-4 h-4 mr-1.5 text-slate-400" /> Vertical Stratum Layer Vectors
                     </h2>
 
                     <div className="space-y-5">
-                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
+                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
                             <p className="font-semibold text-xs text-slate-900 dark:text-zinc-200 uppercase tracking-wider">Topsoil Layer (0 to 7 cm Depth)</p>
                             <p className="text-[11px] text-slate-400 font-medium">Seed sprout incubation and shallow fertilization level</p>
                           </div>
                           <div className="text-right">
-                            <span className="text-slate-900 dark:text-zinc-200 font-mono font-bold text-xs bg-white dark:bg-black border border-slate-200 dark:border-zinc-700 px-2 py-0.5 rounded shadow-3xs">
+                            <span className="text-slate-900 dark:text-zinc-200 font-mono font-bold text-xs bg-white dark:bg-black border border-slate-200 dark:border-zinc-900 px-2 py-0.5 rounded shadow-3xs">
                               {soilReport.surfaceTemp}°C
                             </span>
                           </div>
@@ -334,7 +334,7 @@ return (
                         </div>
                       </div>
 
-                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-900 border border-slate-200/60 dark:border-zinc-800 space-y-3">
+                      <div className="p-4 rounded-xl bg-slate-50/50 dark:bg-zinc-950 border border-slate-200/60 dark:border-zinc-900 space-y-3">
                         <div className="flex justify-between items-center">
                           <div>
                             <p className="font-semibold text-xs text-slate-900 dark:text-zinc-200 uppercase tracking-wider">Deep Root Stratum (7 to 28 cm Depth)</p>
@@ -360,7 +360,7 @@ return (
                   </div>
 
                   {adviceBox && (
-                    <div className={`border dark:border-none bg-slate-200/60 dark:bg-zinc-900 p-4 rounded-xl shadow-sm flex flex-col gap-2 transition-all duration-300 ${adviceBox.textColor}`}>
+                    <div className={`border dark:border-none bg-slate-200/60 dark:bg-zinc-950 p-4 rounded-xl shadow-sm flex flex-col gap-2 transition-all duration-300 ${adviceBox.textColor}`}>
                       <div className="flex items-center gap-2">
                         <span className={`text-[9px] font-extrabold uppercase tracking-widest px-2 py-0.5 rounded ${adviceBox.badgeColor}`}>
                           Automated Expert Advisory

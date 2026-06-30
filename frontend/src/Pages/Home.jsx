@@ -123,7 +123,7 @@ const stats = [
 function FeatureCard({ icon: Icon, title, description, color, navLink, tag }) {
   return (
     <NavLink to={navLink} className="group flex flex-col h-full">
-      <div className="flex flex-col h-full bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800/80 rounded-xl p-5 hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-700 transition-all duration-200">
+      <div className="flex flex-col h-full bg-white dark:bg-zinc-950 border border-gray-200 dark:border-zinc-900 rounded-xl p-5 hover:shadow-md hover:border-gray-300 dark:hover:border-zinc-700 transition-all duration-200">
         <div className="flex items-start justify-between mb-3">
           <div className={`w-10 h-10 rounded-xl flex items-center justify-center ${color}`}>
             <Icon size={18} />

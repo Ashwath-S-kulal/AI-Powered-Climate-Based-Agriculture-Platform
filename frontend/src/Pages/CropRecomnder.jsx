@@ -284,7 +284,7 @@ export default function CropRecommender() {
     return (
         <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-300 font-sans antialiased relative pb-16 transition-colors duration-200">
             <Header />
-            <div className="w-full bg-white dark:bg-[#09090b] pt-5 md:pt-5 pb-8 px-4 sm:px-6 transition-colors duration-200">
+            <div className="w-full dark:bg-[#09090b] pt-5 md:pt-5 pb-8 px-4 sm:px-6 transition-colors duration-200">
                 <div className="max-w-screen mx-auto">
                     <div className="max-w-screen p-2 rounded-xl dark:border-zinc-800 transition-colors duration-200">
                         <div className="flex flex-col sm:flex-row gap-2 relative">
@@ -344,7 +344,7 @@ export default function CropRecommender() {
                 </div>
             </div>
 
-            <main className="w-full max-w-screen mx-auto py-8 px-4 sm:px-6">
+            <main className="w-full max-w-screen mx-auto pb-8 pt-0 px-4 sm:px-6">
                 {(loading || !isCatalogLoaded) && (
                     <div className="flex flex-col justify-center items-center py-20 ">
                         <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-800 border-t-emerald-600 dark:border-t-emerald-500 rounded-full animate-spin"></div>
@@ -410,7 +410,7 @@ export default function CropRecommender() {
                                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
                                     {recommendations.map((crop, idx) => (
                                         <div key={idx} className="bg-white dark:bg-[#0d0d11] rounded-lg border border-slate-200 dark:border-zinc-800/80 overflow-hidden flex flex-col group hover:border-slate-300 dark:hover:border-zinc-700 hover:shadow-sm transition-all duration-200">
-                                            <div className="relative bg-slate-50 dark:bg-zinc-900 h-32 w-full overflow-hidden">
+                                            <div className="relative bg-slate-50 dark:bg-zinc-950 h-32 w-full overflow-hidden">
                                                 <img
                                                     src={crop.image}
                                                     alt={crop.name}

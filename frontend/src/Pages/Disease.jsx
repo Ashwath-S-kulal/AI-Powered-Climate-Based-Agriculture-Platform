@@ -149,10 +149,10 @@ export default function Disease() {
 
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 pb-10">
         <form onSubmit={handleSubmit}>
-          <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden transition-colors duration-200">
+          <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-900 shadow-sm overflow-hidden transition-colors duration-200">
             <div className="grid grid-cols-1 lg:grid-cols-2">
 
-              <div className="p-6 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-zinc-800">
+              <div className="p-6 border-b lg:border-b-0 lg:border-r border-gray-200 dark:border-zinc-900">
                 <h2 className="text-sm font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
                   <Upload size={15} className="text-gray-500 dark:text-zinc-500" />
                   Upload Leaf Image
@@ -240,11 +240,11 @@ export default function Disease() {
                   </div>
                 ) : (
                   <div className="space-y-3">
-                    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl p-4">
+                    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-900 rounded-xl p-4">
                       <p className="text-xs text-gray-500 dark:text-zinc-400 font-medium uppercase tracking-wide">Identified Disease</p>
                       <p className="text-xl font-bold text-emerald-700 dark:text-emerald-400 mt-1">{result.prediction}</p>
                     </div>
-                    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-800 rounded-xl p-4">
+                    <div className="bg-white dark:bg-zinc-900 border border-gray-200 dark:border-zinc-900 rounded-xl p-4">
                       <p className="text-xs text-gray-500 dark:text-zinc-400 font-medium uppercase tracking-wide">Confidence Level</p>
                       <p className="text-xl font-bold text-gray-900 dark:text-zinc-100 mt-1">{(result.confidence * 100).toFixed(1)}%</p>
                       <div className="mt-2 h-2 bg-gray-100 dark:bg-zinc-800 rounded-full overflow-hidden">
@@ -307,7 +307,7 @@ export default function Disease() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <NavLink to="/disease/diseasedata" className="group">
-            <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
+            <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-900 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 bg-blue-50 dark:bg-blue-950/30 rounded-lg flex items-center justify-center">
                   <BookOpen size={16} className="text-blue-600 dark:text-blue-400" />
@@ -319,7 +319,7 @@ export default function Disease() {
           </NavLink>
 
           <NavLink to="/disease/diseasesuppliment" className="group">
-            <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-800 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
+            <div className="bg-white dark:bg-[#09090b] border border-gray-200 dark:border-zinc-900 rounded-xl p-5 hover:shadow-sm hover:border-gray-300 dark:hover:border-zinc-700 transition-all">
               <div className="flex items-center gap-3 mb-2">
                 <div className="w-9 h-9 bg-emerald-50 dark:bg-emerald-950/30 rounded-lg flex items-center justify-center">
                   <FlaskConical size={16} className="text-emerald-600 dark:text-emerald-400" />
@@ -331,8 +331,8 @@ export default function Disease() {
           </NavLink>
         </div>
 
-        <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-800 shadow-sm overflow-hidden ">
-          <div className="px-6 py-4 border-b border-gray-200 dark:border-zinc-800 flex items-center justify-between">
+        <div className="bg-white dark:bg-[#09090b] rounded-xl border border-gray-200 dark:border-zinc-900 shadow-sm overflow-hidden ">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-zinc-900 flex items-center justify-between">
             <h2 className="text-sm font-bold text-gray-900 dark:text-white">Diagnosis History</h2>
             <div className="flex gap-2">
               <button

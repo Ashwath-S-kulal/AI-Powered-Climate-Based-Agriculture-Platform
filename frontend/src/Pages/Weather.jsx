@@ -195,7 +195,7 @@ return (
     <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-100 font-sans antialiased relative pb-16 transition-colors duration-300">
       <Header />
 
-      <div className="w-full bg-white dark:bg-zinc-950 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
+      <div className="w-ful dark:bg-zinc-950 pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors">
         <div className="max-w-screen mx-auto">
           <div className="max-w-screen p-1.5 rounded-xl  dark:border-zinc-800/80 relative transition-colors">
             <div className="flex gap-2 items-center w-full relative">
@@ -204,7 +204,7 @@ return (
                 <input
                   type="text"
                   placeholder="Search location, town or region..."
-                  className="w-full pl-9 pr-4 py-2 bg-white dark:bg-zinc-900 text-slate-900 dark:text-zinc-50 placeholder-slate-400 dark:placeholder-zinc-500 border border-slate-200 dark:border-zinc-800 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
+                  className="w-full pl-9 pr-4 py-2 bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-50 placeholder-slate-400 dark:placeholder-zinc-500 border border-slate-200 dark:border-zinc-800 rounded-lg focus:border-emerald-500 dark:focus:border-emerald-400 focus:ring-1 focus:ring-emerald-500/20 outline-none transition text-sm font-medium"
                   value={city}
                   onChange={(e) => fetchSuggestions(e.target.value)}
                   onKeyDown={(e) => e.key === 'Enter' && searchCity()}
@@ -235,9 +235,9 @@ return (
         </div>
       </div>
 
-      <div className="pt-3  px-6 font-sans antialiased">
+      <div className="px-6 font-sans antialiased">
         {!insights && !isFetchingAI && !loading && (
-          <div className="text-left rounded-xl border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-900 p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
+          <div className="text-left rounded-xl border border-slate-200 dark:border-zinc-800/80 bg-white dark:bg-zinc-950 p-4 shadow-sm flex flex-col md:flex-row items-center justify-between gap-4 transition-colors">
             <div className="flex-1">
               <div className="flex items-center gap-2 mb-2">
                 <h3 className="text-sm font-semibold text-slate-900 dark:text-zinc-50">AI Weather Summary</h3>
@@ -353,7 +353,7 @@ return (
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 w-full">
               {today && (
                 <div className="lg:col-span-4 w-full">
-                  <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm h-full flex flex-col justify-between transition-colors">
+                  <div className="p-5 bg-white dark:bg-zinc-950 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm h-full flex flex-col justify-between transition-colors">
                     <div>
                       <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
                         <Calendar className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> Current Condition
@@ -412,7 +412,7 @@ return (
 
               <div className="lg:col-span-8 w-full">
                 {forecast.length > 0 && (
-                  <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm transition-colors">
+                  <div className="p-5 bg-white dark:bg-zinc-950 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm transition-colors">
                     <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
                       <Calendar className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> 7-Day Aggregation Forecast
                     </h2>
@@ -456,7 +456,7 @@ return (
             </div>
 
             {history.length > 0 && (
-              <div className="p-5 bg-white dark:bg-zinc-900 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm mt-6 w-full transition-colors">
+              <div className="p-5 bg-white dark:bg-zinc-950 rounded-xl border border-slate-200 dark:border-zinc-800/50 shadow-sm mt-6 w-full transition-colors">
                 <h2 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider flex items-center border-b border-slate-100 dark:border-zinc-800/40 pb-3 mb-4">
                   <BarChart3 className="w-4 h-4 mr-1.5 text-slate-400 dark:text-zinc-500" /> 30-Day Historical Baseline Logs
                 </h2>
@@ -476,7 +476,7 @@ return (
 
                     <tbody className="divide-y divide-slate-100 dark:divide-zinc-800/50 font-medium text-slate-700 dark:text-zinc-300">
                       {history.map((day, i) => (
-                        <tr key={i} className="bg-white dark:bg-zinc-900 hover:bg-slate-50/80 dark:hover:bg-zinc-800/30 transition-colors font-mono">
+                        <tr key={i} className="bg-white dark:bg-zinc-950 hover:bg-slate-50/80 dark:hover:bg-zinc-800/30 transition-colors font-mono">
                           <td className="px-4 py-2.5 text-slate-900 dark:text-zinc-50 font-sans font-medium">{day.date}</td>
                           <td className="px-4 py-2.5 text-center font-sans">
                             <span className="flex items-center justify-center gap-1.5">

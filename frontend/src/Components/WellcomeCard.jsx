@@ -33,9 +33,9 @@ export default function WelcomeHero() {
   const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % images.length);
 
   return (
-    <div className="max-w-[1500px] mx-auto p-4 sm:p-6 lg:p-8 transition-colors duration-300">
-      <div className="bg-zinc-50/50 dark:bg-zinc-900/20 border border-zinc-200 dark:border-zinc-800/80 rounded-md p-4 md:p-6 shadow-sm">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 mb-6 border-b border-zinc-200 dark:border-zinc-800/80">
+    <div className="max-w-screen mx-auto p-4 sm:p-6 lg:p-8 transition-colors duration-300">
+      <div className="bg-zinc-50/50 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 rounded-md p-4 md:p-6 shadow-sm">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 pb-6 mb-6 border-b border-zinc-200 dark:border-zinc-900">
           <div>
             <div className="flex items-center gap-2 text-zinc-400 dark:text-zinc-500 text-xs font-mono tracking-wider uppercase mb-1">
               <Radio size={12} className="text-emerald-500 animate-pulse" />
@@ -46,7 +46,7 @@ export default function WelcomeHero() {
             </h1>
           </div>
 
-          <div className="flex items-center gap-3 bg-white dark:bg-zinc-900 p-2 rounded-xl border border-zinc-200 dark:border-zinc-800 text-xs">
+          <div className="flex items-center gap-3 bg-white dark:bg-zinc-900 p-2 rounded-xl border border-zinc-200 dark:border-zinc-900 text-xs">
             <span className="flex items-center gap-1.5 text-zinc-500 dark:text-zinc-400 font-medium">
               <Activity size={14} className="text-emerald-500" /> System State:
             </span>
@@ -57,7 +57,7 @@ export default function WelcomeHero() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-          <div className="lg:col-span-2 relative h-[260px] sm:h-[340px] md:h-[400px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-800 shadow-inner bg-zinc-950">
+          <div className="lg:col-span-2 relative h-[260px] sm:h-[340px] md:h-[400px] rounded-2xl overflow-hidden border border-zinc-200 dark:border-zinc-900 shadow-inner bg-zinc-950">
             {images.map((img, idx) => (
               <img
                 key={idx}
@@ -92,7 +92,7 @@ export default function WelcomeHero() {
             </div>
           </div>
 
-          <div className="flex flex-col justify-between bg-white dark:bg-zinc-900/50 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-800/80 h-full max-h-[600px] lg:max-h-none overflow-hidden">
+          <div className="flex flex-col justify-between bg-white dark:bg-zinc-950 p-6 rounded-2xl border border-zinc-200 dark:border-zinc-900 h-full max-h-[600px] lg:max-h-none overflow-hidden">
             <div className="space-y-4 flex-shrink-0">
               <div className="flex items-center justify-between">
                 <h3 className="text-xs font-mono font-bold tracking-widest text-zinc-400 dark:text-zinc-500 uppercase">
@@ -137,8 +137,8 @@ export default function WelcomeHero() {
             const Icon = item.icon;
             return (
               <NavLink key={index} to={item.to} className="group block">
-                <div className={`h-full flex flex-col p-4 rounded-xl bg-white dark:bg-zinc-900/30 border border-zinc-200 dark:border-zinc-800/80 ${item.hoverBg} hover:shadow-sm transition-all duration-200`}>
-                  <div className={`w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 ${item.textColor} group-hover:scale-105 transition-transform duration-200 mb-3`}>
+                <div className={`h-full flex flex-col p-4 rounded-xl bg-white dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-900 ${item.hoverBg} hover:shadow-sm transition-all duration-200`}>
+                  <div className={`w-8 h-8 flex items-center justify-center rounded-lg bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-900 ${item.textColor} group-hover:scale-105 transition-transform duration-200 mb-3`}>
                     <Icon size={16} />
                   </div>
                   <h4 className="text-xs font-bold text-zinc-900 dark:text-white tracking-tight">

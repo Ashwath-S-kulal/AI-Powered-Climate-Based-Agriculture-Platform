@@ -327,17 +327,17 @@ return (
                     <FaExclamationTriangle size={12} className="text-slate-400 dark:text-zinc-500" /> Stress Factor Indexes
                   </h3>
                   <div className="grid grid-cols-3 gap-3 text-center">
-                    <div className="bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
+                    <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
                       <FaFire className="text-amber-600 dark:text-amber-500 mb-1 mx-auto" size={14} />
                       <p className="font-semibold text-slate-400 dark:text-zinc-500 tracking-wide text-[10px] uppercase">Drought Risk</p>
                       <p className="text-lg font-bold text-slate-800 dark:text-zinc-100 mt-0.5">{result?.riskScores?.droughtRisk ? `${result.riskScores.droughtRisk.toFixed(1)}/5` : "--"}</p>
                     </div>
-                    <div className="bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
+                    <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
                       <FaWater className="text-blue-600 dark:text-blue-400 mb-1 mx-auto" size={14} />
                       <p className="font-semibold text-slate-400 dark:text-zinc-500 tracking-wide text-[10px] uppercase">Flood Risk</p>
                       <p className="text-lg font-bold text-slate-800 dark:text-zinc-100 mt-0.5">{result?.riskScores?.floodRisk ? `${result.riskScores.floodRisk.toFixed(1)}/5` : "--"}</p>
                     </div>
-                    <div className="bg-white dark:bg-[#0d0d11] border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
+                    <div className="bg-white dark:bg-zinc-950 border border-slate-200 dark:border-zinc-800/80 p-3 rounded-xl">
                       <FaSun className="text-orange-600 dark:text-orange-400 mb-1 mx-auto" size={14} />
                       <p className="font-semibold text-slate-400 dark:text-zinc-500 tracking-wide text-[10px] uppercase">Heat Stress</p>
                       <p className="text-lg font-bold text-slate-800 dark:text-zinc-100 mt-0.5">{result?.riskScores?.heatRisk ? `${result.riskScores.heatRisk.toFixed(1)}/5` : "--"}</p>
