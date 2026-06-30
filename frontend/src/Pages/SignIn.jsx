@@ -5,7 +5,7 @@ import FacebookOAuth from "../Components/FacebookOAuth"
 
 export default function LoginPage() {
 return (
-    <div className="min-h-screen bg-white dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-900 dark:text-zinc-100 transition-colors duration-300">
       <Header />
 
       <main className="max-w-5xl mx-auto px-6 pt-10 md:pt-20 pb-16 md:pt-32">

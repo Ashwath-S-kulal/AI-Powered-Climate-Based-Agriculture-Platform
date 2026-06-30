@@ -184,7 +184,7 @@ export default function FriendlySoilChecker() {
   const currentLongDateStr = new Date().toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
 
 return (
-    <div className="min-h-screen bg-[#f8fafc] dark:bg-black text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
+    <div className="min-h-screen bg-[#f8fafc] dark:bg-zinc-950 text-slate-800 dark:text-zinc-200 font-sans antialiased relative pb-16 transition-colors duration-200">
       <Header />
 
       <div className="w-full dark:bg-[#09090b]  pt-5 md:pt-10 pb-8 px-4 sm:px-6 transition-colors duration-200">

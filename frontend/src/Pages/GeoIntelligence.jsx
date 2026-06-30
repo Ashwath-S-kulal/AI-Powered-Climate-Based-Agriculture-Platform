@@ -191,9 +191,9 @@ export default function GeoIntelligencePage() {
     }
 
     return (
-        <div className="min-h-screen bg-slate-50 dark:bg-black transition-colors duration-300">
+        <div className="min-h-screen bg-slate-50 dark:bg-zinc-950 transition-colors duration-300">
             <Header />
-            <div className=" bg-slate-50 dark:bg-black p-4 md:p-6 lg:p-8 transition-colors duration-300">
+            <div className=" bg-slate-50 dark:bg-zinc-950 p-4 md:p-6 lg:p-8 transition-colors duration-300">
                 <div className="mb-6 flex flex-col sm:flex-row sm:items-center justify-between gap-4 w-full pb-3 border-b border-slate-200/60 dark:border-neutral-900">
                     <h1 className="text-base md:text-xl font-bold text-slate-900 dark:text-neutral-50 flex items-center gap-3">
                         <span className="w-1.5 h-4 bg-emerald-500 rounded-full inline-block"></span>

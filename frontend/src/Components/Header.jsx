@@ -31,7 +31,7 @@ export default function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-50 bg-white/75 dark:bg-zinc-900/75 backdrop-blur-md border-b border-zinc-200/50 dark:border-zinc-800/50 transition-all duration-300">
+      <header className="sticky top-0 z-50 bg-[#f8fafc] dark:bg-zinc-950 backdrop-blur-md hover:shadow-sm transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
 
           <NavLink to="/" className="flex items-center gap-2.5 group focus:outline-none">
@@ -50,7 +50,7 @@ export default function Header() {
                 key={item.to}
                 to={item.to}
                 className={({ isActive }) =>
-                  `text-sm font-medium px-3 py-2 rounded-xl transition-all duration-200 ${isActive
+                  `text-xs font-medium px-3 py-2 rounded-xl transition-all duration-200 ${isActive
                     ? 'text-emerald-600 bg-emerald-50/60 dark:bg-emerald-500/10 dark:text-emerald-400 font-semibold shadow-sm shadow-emerald-500/5'
                     : 'text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/60'
                   }`
@@ -61,18 +61,18 @@ export default function Header() {
             ))}
 
             <div className="relative group ml-1">
-              <button className="text-sm font-medium text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 px-3 py-2 rounded-xl flex items-center gap-1 transition-all duration-200 focus:outline-none">
+              <button className="text-xs font-medium text-zinc-600 dark:text-zinc-300 hover:text-emerald-600 dark:hover:text-emerald-400 hover:bg-zinc-50 dark:hover:bg-zinc-800/60 px-3 py-2 rounded-xl flex items-center gap-1 transition-all duration-200 focus:outline-none">
                 Tools
                 <LucideIcons.ChevronDown size={14} className="transition-transform duration-300 group-hover:rotate-180 text-zinc-400" />
               </button>
 
               <div className="absolute top-full left-0 pt-2 opacity-0 invisible translate-y-2 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-200 w-56 z-50">
-                <div className="bg-white dark:bg-zinc-800 border border-zinc-200/60 dark:border-zinc-700 shadow-xl rounded-xl p-1.5">
+                <div className="bg-white dark:bg-zinc-950 border border-zinc-200/60 dark:border-zinc-700 shadow-xl rounded-xl p-1.5">
                   {toolItems.map((tool) => (
                     <Link
                       key={tool.to}
                       to={tool.to}
-                      className="flex items-center gap-3 px-3 py-2.5 text-sm text-zinc-600 dark:text-zinc-300 hover:bg-emerald-50/50 dark:hover:bg-zinc-700/40 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl font-medium transition-colors group/item"
+                      className="flex items-center gap-3 px-3 py-2.5 text-xs text-zinc-600 dark:text-zinc-300 hover:bg-emerald-50/50 dark:hover:bg-zinc-700/40 hover:text-emerald-600 dark:hover:text-emerald-400 rounded-xl font-medium transition-colors group/item"
                     >
                       <IconRenderer name={tool.icon} size={16} className="text-zinc-400 group-hover/item:text-emerald-500 dark:group-hover/item:text-emerald-400 transition-colors" />
                       {tool.label}
@@ -93,7 +93,7 @@ export default function Header() {
             </button>
 
             {!currentUser ? (
-              <Link to="/signin" className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-sm font-semibold shadow-md shadow-emerald-600/10 transition-all active:scale-[0.98]">
+              <Link to="/signin" className="px-4 py-2 bg-emerald-600 hover:bg-emerald-700 text-white rounded-xl text-xs font-semibold shadow-md shadow-emerald-600/10 transition-all active:scale-[0.98]">
                 Sign In
               </Link>
             ) : (
