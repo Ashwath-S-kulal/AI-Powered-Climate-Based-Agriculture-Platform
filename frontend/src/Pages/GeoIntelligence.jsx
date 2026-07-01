@@ -184,7 +184,10 @@ export default function GeoIntelligencePage() {
                             00.0000° N, 00.0000° E
                         </p>
                     </div>
-                    <DashboardSkeleton />
+                    <div className="flex flex-col justify-center items-center py-20">
+            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
+            <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Syncing live telemetry parameters...</p>
+          </div>
                 </div>
             </>
         );
