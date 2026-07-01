@@ -148,25 +148,25 @@ export default function GeoIntelligencePage() {
         }
     };
 
-    const DashboardSkeleton = () => (
-        <div className="space-y-6 animate-pulse">
-            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
-                {[...Array(8)].map((_, i) => (
-                    <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-[76px] rounded-xl" />
-                ))}
-            </div>
+    // const DashboardSkeleton = () => (
+    //     <div className="space-y-6 animate-pulse">
+    //         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+    //             {[...Array(8)].map((_, i) => (
+    //                 <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-[76px] rounded-xl" />
+    //             ))}
+    //         </div>
 
-            <div className="w-full bg-slate-200 dark:bg-neutral-900 h-[400px] mb-10 rounded-2xl" />
+    //         <div className="w-full bg-slate-200 dark:bg-neutral-900 h-[400px] mb-10 rounded-2xl" />
 
-            <div className="grid lg:grid-cols-3 gap-6">
-                <div className="col-span-1 lg:col-span-3 grid md:grid-cols-3 gap-6">
-                    {[...Array(6)].map((_, i) => (
-                        <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-[380px] rounded-2xl" />
-                    ))}
-                </div>
-            </div>
-        </div>
-    );
+    //         <div className="grid lg:grid-cols-3 gap-6">
+    //             <div className="col-span-1 lg:col-span-3 grid md:grid-cols-3 gap-6">
+    //                 {[...Array(6)].map((_, i) => (
+    //                     <div key={i} className="bg-slate-200 dark:bg-neutral-900 h-[380px] rounded-2xl" />
+    //                 ))}
+    //             </div>
+    //         </div>
+    //     </div>
+    // );
 
     if (!coords) {
         return (
@@ -184,10 +184,10 @@ export default function GeoIntelligencePage() {
                             00.0000° N, 00.0000° E
                         </p>
                     </div>
-                    <div className="flex flex-col justify-center items-center py-20">
-            <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
-            <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Syncing live telemetry parameters...</p>
-          </div>
+                    <div className="flex flex-col justify-center items-center py-28">
+                        <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Loading Data...</p>
+                    </div>
                 </div>
             </>
         );
@@ -210,7 +210,10 @@ export default function GeoIntelligencePage() {
                 </div>
 
                 {loading || !data ? (
-                    <DashboardSkeleton />
+                     <div className="flex flex-col justify-center items-center py-28">
+                        <div className="w-8 h-8 border-4 border-slate-200 dark:border-zinc-700 border-t-emerald-600 dark:border-t-emerald-600 rounded-full animate-spin"></div>
+                        <p className="text-sm font-medium text-slate-500 dark:text-zinc-500 mt-4">Loading Data...</p>
+                    </div>
                 ) : (
                     <div className="space-y-6 ">
                         <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
