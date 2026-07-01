@@ -241,8 +241,8 @@ export default function GeoIntelligencePage() {
                         </div>
                         <div className="col-span-1 bg-white dark:bg-black p-4 rounded-2xl shadow-sm border border-slate-100 dark:border-neutral-900 flex flex-col h-[400px] mb-10 transition-all">
                             <div className="flex items-start gap-2 mb-4 text-emerald-700 dark:text-emerald-400 bg-emerald-50 dark:bg-emerald-950/20 p-3 rounded-xl border border-emerald-100 dark:border-emerald-900/40">
-                                <MousePointerClick size={20} className="mt-0.5 shrink-0" />
-                                <span className="text-xs md:text-sm font-medium">Map Active: Click any region to auto-resolve location name via OSM and run a 24-hour microclimate analysis.</span>
+                                <MousePointerClick size={16} className="mt-0.5 shrink-0" />
+                                <span className="text-xs md:text-xs font-medium">Map Active: Click any region to auto-resolve location name via OSM and run a 24-hour microclimate analysis.</span>
                             </div>
                             <div className="flex-grow w-full relative z-0 rounded-xl overflow-hidden border border-slate-200 dark:border-neutral-900 dark:invert dark:brightness-90 dark:hue-rotate-180">
                                 <MapContainer center={[coords.lat, coords.lon]} zoom={10} style={{ height: "100%", width: "100%" }}>
