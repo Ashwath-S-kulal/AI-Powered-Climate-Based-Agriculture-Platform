@@ -405,12 +405,12 @@ export default function CropRiskCalculater() {
               </p>
             </div>
           ) : (
-            <div className="mt-4 pt-4 border-t border-slate-100 dark:border-zinc-800/50">
-              <h3 className="text-xs font-semibold text-slate-400 dark:text-zinc-500 uppercase tracking-wider mb-3 flex items-center gap-2">
-                <FaLeaf /> AI Situation Report
+             <div className="mt-4 pt-4 border-t border-slate-100 dark:border-zinc-800/50">
+              <h3 className="text-sm md:text-base font-semibold text-slate-900 dark:text-white mb-4 flex items-center gap-2">
+                <FaLeaf className="text-emerald-600 dark:text-emerald-400" /> AI Detailed Summary
               </h3>
-              <p className="text-sm font-medium text-slate-800 dark:text-zinc-200 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg text-blue-800 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">
-                summary Not available
+              <p className="text-xs text-slate-400 dark:text-zinc-500 bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg text-blue-800 dark:text-blue-300 border border-blue-100 dark:border-blue-800/50">
+                Awaiting for inputs...
               </p>
             </div>
           )
