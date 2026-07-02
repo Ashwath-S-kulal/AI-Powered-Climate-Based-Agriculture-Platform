@@ -38,35 +38,38 @@ export const riskCalculater = async (req, res) => {
         params: {
           latitude,
           longitude,
-          daily: "temperature_2m_max,precipitation_sum",
+          daily: "temperature_2m_max,precipitation_sum,windspeed_10m_max",
+          hourly: "relativehumidity_2m", // Grab hourly humidity to average it
           timezone: "auto",
         },
       }
     );
 
     if (!weatherRes.data?.daily) {
-      return res.status(502).json({
-        error: "Failed to fetch weather data",
-      });
+      return res.status(502).json({ error: "Failed to fetch weather data" });
     }
 
+    // Average the hourly humidity for a daily estimate
+    const humArray = weatherRes.data.hourly.relativehumidity_2m;
+    const avgHumidity = humArray ? Math.round(humArray.reduce((a, b) => a + b, 0) / humArray.length) : 50;
+
     const weatherData = {
-      temperature: weatherRes.data.daily.temperature_2m_max?.[0],
-      rainfall: weatherRes.data.daily.precipitation_sum?.[0],
+      temperature: weatherRes.data.daily.temperature_2m_max?.[0] || 25,
+      rainfall: weatherRes.data.daily.precipitation_sum?.[0] || 0,
+      windSpeed: weatherRes.data.daily.windspeed_10m_max?.[0] || 10,
+      humidity: avgHumidity
     };
 
     const normalizedCrop = crop.toLowerCase().trim();
+    const riskData = calculateRisk(weatherData, normalizedCrop, cropSensitivity);
+    const recommendations = await generateRecommendations(riskData, weatherData, normalizedCrop);
 
- const riskScores = calculateRisk(weatherData, normalizedCrop, cropSensitivity);
-
-const recommendations = await generateRecommendations(riskScores, normalizedCrop);
-
-return res.status(200).json({
-  location: { place: placeName, latitude, longitude },
-  weatherData,
-  riskScores,
-  recommendations, // This will now contain AI-generated text
-});
+    return res.status(200).json({
+      location: { place: placeName, latitude, longitude },
+      weatherData,
+      riskData,
+      recommendations,
+    });
 
   } catch (error) {
     console.error("Risk Calculator Error:", error.message);
