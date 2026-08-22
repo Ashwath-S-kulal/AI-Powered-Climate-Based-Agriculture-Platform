@@ -24,7 +24,7 @@ export const getWeatherAdvice = async (req, res) => {
         },
         { role: "user", content: JSON.stringify(weatherData) }
       ],
-      model: "llama-3.3-70b-versatile",
+      model: "openai/gpt-oss-120b",
       // Enforces clean JSON output
       response_format: { type: "json_object" }
     });

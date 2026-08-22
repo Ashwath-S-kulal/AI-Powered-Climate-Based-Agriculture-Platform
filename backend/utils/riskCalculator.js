@@ -153,7 +153,7 @@ Return ONLY a valid JSON object matching this exact schema:
   try {
     const chatCompletion = await groq.chat.completions.create({
       messages: [{ role: "user", content: prompt }],
-      model: "llama-3.3-70b-versatile",
+      model: "openai/gpt-oss-120b",
       response_format: { type: "json_object" },
     });
     return JSON.parse(chatCompletion.choices[0].message.content);
