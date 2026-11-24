@@ -26,16 +26,20 @@ import Breadcrumbs from "./Components/Breadcrumbs";
 import ChatbotIcon from "./Components/ChatbotIcon";
 import GeoIntelligencePage from './Pages/GeoIntelligence';
 import MarketPrices from './Pages/MarketPrice';
+import NetworkStatus from './Components/NetworkStatus';
 
 export default function App() {
   return (
     <BrowserRouter>
+
+      <NetworkStatus />
+
       <div className="min-h-screen bg-slate-50 text-slate-900 dark:bg-zinc-950 dark:text-slate-50 transition-colors duration-300">
-        
+
         <ScrollToTop />
         <Breadcrumbs />
         <ChatbotIcon />
-        
+
         <Routes>
           <Route path="/" element={<Dashboard />} />
           <Route path="/home" element={<Home />} />
@@ -51,7 +55,7 @@ export default function App() {
           <Route path='/disease/diseasesuppliment' element={<DiseaseSuppliment />} />
           <Route path='/geointelligence' element={<GeoIntelligencePage />} />
           <Route path='/weather' element={<Weather />} />
-          <Route path="/croplibrary/marketprices" element={<MarketPrices/>} />
+          <Route path="/croplibrary/marketprices" element={<MarketPrices />} />
 
           <Route element={<PrivateRoute />}>
             <Route path="/profile" element={<Profile />} />
