@@ -112,7 +112,7 @@ export default function Disease() {
       }
     } catch (err) {
       console.error("Prediction error:", err);
-      alert("Failed to predict disease. Check backend server.");
+      alert("Failed to predict disease. API Payment Required");
     }
     setLoading(false);
   };
