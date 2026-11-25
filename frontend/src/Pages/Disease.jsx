@@ -5,6 +5,7 @@ import ChatbotIcon from "../Components/ChatbotIcon";
 import { NavLink } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { ImageOff, RefreshCw, Trash2, Upload, Camera, Microscope, BookOpen, FlaskConical, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
+import { predictPlantDisease } from "../Components/plantDiseaseModel";
 
 const blobToFile = (blob, fileName) => new File([blob], fileName, { type: blob.type });
 
@@ -92,30 +93,92 @@ export default function Disease() {
     else setImage(null);
   }, [uploadedImageFile, capturedImageFile]);
 
+
+  // // // this API call is for Local Development Environment
+  // const handleSubmit = async (e) => {
+  //   setLoading(true);
+  //   e.preventDefault();
+  //   if (!image) return alert("Please upload or capture an image!");
+  //   const formData = new FormData();
+  //   formData.append("image", image);
+  //   try {
+  //     const res = await axios.post(`${import.meta.env.VITE_BASE_URI}/api/predictions/predict`, formData, {
+  //       headers: { "Content-Type": "multipart/form-data" },
+  //     });
+  //     const predictionResult = res.data;
+  //     if (predictionResult.confidence < 0.15) {
+  //       setResult({ invalid: true });
+  //     } else {
+  //       setResult(predictionResult);
+  //       await axios.post(`${import.meta.env.VITE_BASE_URI}/api/predictions/createPrediction/${currentUser._id}`, predictionResult);
+  //       fetchHistory();
+  //     }
+  //   } catch (err) {
+  //     console.error("Prediction error:", err);
+  //     alert("Failed to predict disease. API Payment Required");
+  //   }
+  //   setLoading(false);
+  // };
+
+
+
+
+  // this API call is for Hosted Online Environment
   const handleSubmit = async (e) => {
-    setLoading(true);
     e.preventDefault();
-    if (!image) return alert("Please upload or capture an image!");
-    const formData = new FormData();
-    formData.append("image", image);
+
+    if (!image) {
+      return alert("Please upload or capture an image!");
+    }
+
     try {
-      const res = await axios.post(`${import.meta.env.VITE_BASE_URI}/api/predictions/predict`, formData, {
-        headers: { "Content-Type": "multipart/form-data" },
-      });
+      setLoading(true);
+
+      // Step 1: Predict disease using local ONNX model
+      const localPrediction = await predictPlantDisease(image);
+
+      console.log("Local prediction:", localPrediction);
+
+      // Step 2: Get disease advice from your backend (Groq)
+      const res = await axios.post(
+        `${import.meta.env.VITE_BASE_URI}/api/predictions/predict`,
+        {
+          diseaseName: localPrediction.prediction,
+          confidence: localPrediction.confidence,
+        }
+      );
+
       const predictionResult = res.data;
+
+      // Step 3: Validate confidence
       if (predictionResult.confidence < 0.15) {
         setResult({ invalid: true });
       } else {
         setResult(predictionResult);
-        await axios.post(`${import.meta.env.VITE_BASE_URI}/api/predictions/createPrediction/${currentUser._id}`, predictionResult);
+
+        // Step 4: Save prediction to MongoDB
+        await axios.post(
+          `${import.meta.env.VITE_BASE_URI}/api/predictions/createPrediction/${currentUser._id}`,
+          predictionResult
+        );
+
         fetchHistory();
       }
+
     } catch (err) {
       console.error("Prediction error:", err);
-      alert("Failed to predict disease. API Payment Required");
+
+      alert(
+        "Prediction failed: " +
+        (err.response?.data?.error || err.message)
+      );
+
+    } finally {
+      setLoading(false);
     }
-    setLoading(false);
   };
+
+
 
   const handleDelete = async (id) => {
     if (!window.confirm("Delete this record?")) return;
@@ -145,7 +208,7 @@ export default function Disease() {
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-zinc-950 transition-colors duration-200">
       <Header />
-     
+
 
       <div className="max-w-screen mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-6 pb-10">
         <form onSubmit={handleSubmit}>

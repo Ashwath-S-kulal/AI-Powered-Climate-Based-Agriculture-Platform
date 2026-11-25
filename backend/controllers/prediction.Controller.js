@@ -12,7 +12,7 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
 
-// // this controller for Localhost Environment
+// //this controller for Localhost Environment
 // export const predictDisease =async (req, res) => {
 //   try {
 //     console.log("Received file:", req.file);
@@ -29,7 +29,42 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 //       headers: formData.getHeaders(),
 //     });
 
-//     res.json(response.data);
+//     console.log("Model response:", response.data);
+
+    
+//     const prompt = `
+//       You are a professional agronomist.
+
+//       The AI identified this crop disease: "${response.prediction}".
+
+//       Provide:
+//       1. Brief explanation.
+//       2. Three actionable treatment steps.
+//       3. AI-generated advice disclaimer.
+
+//       Return ONLY JSON:
+//       {
+//         "explanation": "",
+//         "steps": [],
+//         "disclaimer": ""
+//       }
+//     `;
+
+//     const completion = await groq.chat.completions.create({
+//       messages: [{ role: "user", content: prompt }],
+//       model: "openai/gpt-oss-120b",
+//       response_format: { type: "json_object" },
+//     });
+
+//     const advice = JSON.parse(
+//       completion.choices[0].message.content
+//     );
+
+//     return res.json({
+//       ...response.data,
+//       advice,
+//     });
+
 //   } catch (error) {
 //     console.error(error);
 //     res.status(500).json({ error: error.message });
@@ -43,55 +78,50 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 // this controller for Online hosted Environment
 export const predictDisease = async (req, res) => {
   try {
-    if (!req.file) {
+    const { diseaseName, confidence } = req.body;
+
+    if (!diseaseName) {
       return res.status(400).json({
-        error: "No file uploaded",
+        error: "Disease name is required",
       });
     }
 
-    const imageBlob = new Blob(
-      [req.file.buffer],
-      { type: req.file.mimetype }
-    );
+    const prompt = `
+      You are a professional agronomist.
 
-    const output = await client.imageClassification({
-      data: imageBlob,
-      model:
-        "linkanjarad/mobilenet_v2_1.0_224-plant-disease-identification",
-      provider: "hf-inference",
+      The AI identified this crop disease: "${diseaseName}".
+
+      Provide:
+      1. Brief explanation.
+      2. Three actionable treatment steps.
+      3. AI-generated advice disclaimer.
+
+      Return ONLY JSON:
+      {
+        "explanation": "",
+        "steps": [],
+        "disclaimer": ""
+      }
+    `;
+
+    const completion = await groq.chat.completions.create({
+      messages: [{ role: "user", content: prompt }],
+      model: "openai/gpt-oss-120b",
+      response_format: { type: "json_object" },
     });
 
-    console.log(output);
+    const advice = JSON.parse(
+      completion.choices[0].message.content
+    );
 
-    const getDiseaseAdvice = async (diseaseName) => {
-      const prompt = `
-    You are a professional agronomist. 
-    The AI identified the following crop disease: "${diseaseName}".
-    Provide a professional response with:
-    1. A brief explanation of the disease.
-    2. 3 actionable steps to control it (Organic or Chemical).
-    3. A clear safety disclaimer that this is AI-generated advice.
-    Return ONLY a JSON object: { "explanation": "", "steps": [], "disclaimer": "" }
-  `;
-
-      const completion = await groq.chat.completions.create({
-        messages: [{ role: "user", content: prompt }],
-        model: "openai/gpt-oss-120b",
-        response_format: { type: "json_object" },
-      });
-      return JSON.parse(completion.choices[0].message.content);
-    };
-
-    const advice = await getDiseaseAdvice(output[0]?.label);
-    console.log(advice)
     return res.json({
-      prediction: output[0]?.label,
-      confidence: output[0]?.score,
-      advice: advice 
+      prediction: diseaseName,
+      confidence,
+      advice,
     });
 
   } catch (error) {
-    console.error("HF Error:", error);
+    console.error("Prediction error:", error);
 
     return res.status(500).json({
       error: error.message,
