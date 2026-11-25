@@ -11,6 +11,8 @@ const client = new InferenceClient(process.env.HF_TOKEN);
 const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 
 
+
+// // this controller for Localhost Environment
 // export const predictDisease =async (req, res) => {
 //   try {
 //     console.log("Received file:", req.file);
@@ -34,6 +36,11 @@ const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
 //   }
 // };
 
+
+
+
+
+// this controller for Online hosted Environment
 export const predictDisease = async (req, res) => {
   try {
     if (!req.file) {
